@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="with=device-with, initial-scale=1">
+	<link rel="icon" type="image/png" href="img/wiki.ico">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/estilosPropios.css">
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<title>Welcome to WikiLinks</title>
+</head>
+<body>
+    	<!--menu estatico-->
+		<header>
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background: #65AAF0; border: #65AAF0;">
+		  		<div class="container">
+		    		<div class="navbar-header">
+		      			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-1">
+		        			<span class="sr-only">Desplegar/Ocultar Menu</span>
+		        			<span class="icon-bar"></span>
+		        			<span class="icon-bar"></span>
+		        			<span class="icon-bar"></span>
+		      			</button>
+		      			<a class="navbar-brand" href="index.html">
+		      				<img src="img/Wikilinkslanding.png" style="height: 33px;">
+		      			</a>
+		    		</div>
+
+		    		<!--Inicia menu-->
+			    	<div class="collapse navbar-collapse" id="navegacion-1">
+					    <ul class="nav navbar-nav navbar-right">
+					    	<li>
+					    	<form class="navbar-form form-inline navbar-left">
+		                       	<div class="input-group">
+		      						<input type="search" class="form-control" size="36" placeholder="Buscar" autofocus>
+		     						<div class="input-group-btn">
+		        						<button type="submit" class="btn btn-primary" onclick="window.open('principal.html')">
+		        							<span class="glyphicon glyphicon-search"></span>
+		        						</button>
+		      						</div>
+		   					 	</div>
+	                    	</form>
+					    	</li>
+					        <li class="ingresar">
+					        	<a href="php/registroUsuario.php"><b class="estilosLetras"><span class="glyphicon glyphicon-log-in"></span> Registrarse</b></a>
+					        </li>
+					        <li>
+					   			<a href="php/login.php"><b class="estilosLetras"><span class="glyphicon glyphicon-user"></span> Ingresar</b></a>	
+					        </li>
+					    </ul>
+			    	</div>
+		  		</div>
+			</nav>
+		</header>
+
+
+		<!--Slider de 3 imagenes-->
+		<div class="slider">
+			<div class="container-fluid">
+				<div class="col-md-12">
+					<div id="carousel-1" class="carousel slide" data-ride="carousel">
+						<!--indicadores de slider-->
+						<ol class="carousel-indicators">
+							<li data-target="#carousel-1" data-slide-to="0" class="avtive"></li>
+							<li data-target="#carousel-1" data-slide-to="1"></li>
+							<li data-target="#carousel-1" data-slide-to="2"></li>
+						</ol>
+						<!--contenedor de las imagenes de los slider-->
+						<div class="carousel-inner" role="listbox">
+							<div class="item active">
+								<img src="img/slide1.jpg" alt="Imagen1" class="img-responsive">
+								<div class="carousel-caption visible-lg visible-md visible-sm">
+									<h3>
+										<a href="#about" class="btn btn-about">Sobre nosotros<br>
+											<span class="glyphicon glyphicon-chevron-down"></span>
+										</a>
+									</h3>
+									<p>Publica tus documentos de la manera mas facil y sencilla...</p>
+								</div>
+							</div>
+							<div class="item">
+								<img src="img/slide2.jpg" alt="Imagen1" class="img-responsive">
+								<div class="carousel-caption visible-lg visible-md visible-sm">
+									<h3>
+										<a href="#about" class="btn btn-about">Sobre nosotros<br>
+												<span class="glyphicon glyphicon-chevron-down"></span>
+										</a>
+									</h3>	
+									<p>Comparte tus conocimientos de temas en especifico y alcanza un mayor nivel de puntuacion como autor...</p>
+								</div>
+							</div>
+							<div class="item">
+								<img src="img/slide3.jpg" alt="Imagen1" class="img-responsive">
+								<div class="carousel-caption visible-lg visible-md visible-sm">
+									<h3>
+										<a href="#about" class="btn btn-about">Sobre nosotros<br>
+												<span class="glyphicon glyphicon-chevron-down"></span>
+										</a>
+									</h3>	
+									<p>Puntua los mejores articulos de tus amigo o demas Usuarios...</p>
+								</div>
+							</div>
+						</div>
+						<!--Controloes atras y siguiente-->
+						<a href="#carousel-1" class="left carousel-control" role="button" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+							<span class="sr-only">Anterior</span>
+						</a>
+						<a href="#carousel-1" class="right carousel-control" role="button" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+							<span class="sr-only">siguiente</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+		<hr class="divi">
+
+
+		<!--Informacion referente al website-->
+		<section id="about" class="about bg-default">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+						<img src="img/item5.png" class="imagenesArticulos img-responsive img-circle">
+						<p class="textoCaracteristicas">
+							Accede a nuestra pagina web desde cualquier dispositivo en cualquier lugar que desees sin reestricciones de una forma facil y rapida.  
+						</p>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+					 	<img src="img/item8.png" class="imagenesArticulos img-responsive img-circle">
+						<p class="textoCaracteristicas">
+							Sube y edita tus mejores investigaciones para poder compartirlas en una de las mas grandes enciclopedias que podras encontrar en la internet de la manera facil y sencilla.
+						</p>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+						<img src="img/item6.png" class="imagenesArticulos img-responsive img-circle">
+						<P class="textoCaracteristicas">
+							Encuentra cualquier informacion que desees 100% verificada por nuestro personal mas capacitado para que tu y los tuyos en tu hogar puedan contar con la informacion mas fiable y precisa de cualquier tema. 
+						</P>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-lg-12">
+						<h2>Nuestras Tecnologias</h2>
+						<P>
+							Contamos con los servidores mas avanzados y de ultima generacion para poder brindar el mejor servicio enciclopedico virtual de mas alto rendimiento que se puede brindar para que cualquier persona sea capaz de informarse de lo que desee en cualquier momento del dia, cualquier dia de la semana. Nuestro diseño web fue creado por los mejores diseñadores web lo que nos hace contar con el diseño fluido del mercado. 
+						</P>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<!--Caracteristicas de plataforma-->
+		<section id="services" class="services bg-primary">
+	        <div class="container">
+	            <div class="row text-center">
+	                <div class="col-lg-10 col-lg-offset-1">
+	                    <h2>Nuestras Caracteristicas</h2>
+	                    <hr class="small">
+	                    <div class="row">
+	                        <div class="col-md-3 col-sm-6">
+	                            <div class="service-item">
+	                                <span class="fa-stack fa-4x">
+	                                <i class="fa fa-edit fa-stack-2x"></i>
+	                                <i class="fa fa-edit fa-stack-1x text-primary"></i>
+	                            </span>
+	                                <h4>
+	                                    <strong>Herramientas y Optimizacion</strong>
+	                                </h4>
+	                                <p>Utiliza las mejores herramientas para la edicion y lectura de documentos</p>
+	                                <a href="herramientas_optimizacion.html" class="btn btn-light">Leer Mas</a>
+	                            </div>
+	                        </div>
+	                        <div class="col-md-3 col-sm-6">
+	                            <div class="service-item">
+	                                <span class="fa-stack fa-4x">
+	                                <i class="fa fa-mobile-phone fa-stack-2x"></i>
+	                                <i class="fa fa-mobile-phone fa-stack-1x text-primary"></i>
+	                            </span>
+	                                <h4>
+	                                    <strong>Accede desde tu Movil</strong>
+	                                </h4>
+	                                <p>Accede desde tu movil o cualquier otro dispositivo a nuestro sitio web, cuando quieras, donde quieras</p>
+	                                <a href="accede_desde_movil.html" class="btn btn-light">Leer Mas</a>
+	                            </div>
+	                        </div>
+	                        <div class="col-md-3 col-sm-6">
+	                            <div class="service-item">
+	                                <span class="fa-stack fa-4x">
+	                                <i class="fa fa-align-justify fa-stack-2x"></i>
+	                                <i class="fa fa-align-justify fa-stack-1x text-primary"></i>
+	                            </span>
+	                                <h4>
+	                                    <strong>Crea tu propia categoria de contenido</strong>
+	                                </h4>
+	                                <p>Crea tu propia categoria, para que los demas miembros de la comunidad puedan compartir sus aportes</p>
+	                                <a href="crea_categoria.html" class="btn btn-light">Leer Mas</a>
+	                            </div>
+	                        </div>
+	                        <div class="col-md-3 col-sm-6">
+	                            <div class="service-item">
+	                                <span class="fa-stack fa-4x">
+	                                <i class="fa fa-facebook fa-stack-2x"></i>
+	                                <i class="fa fa-facebook fa-stack-1x text-primary"></i>
+	                            </span>
+	                                <h4>
+	                                    <strong>Comparte el contenido en redes sociales</strong>
+	                                </h4>
+	                                <p>Comparte tu contenido de una forma facil y sencilla en todas tus Redes Sociales</p>
+	                                <a href="comparte_redes_sociales.html" class="btn btn-light">Leer Mas</a>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </section>
+
+	    <!--footer y contactos-->
+	    <section class="bg-default">
+	    	<div class="container">
+	    		<div class="row">
+	    			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+	    				<h2>Mision</h2>
+	    				<p>
+	    					Nuestra mision es la de crear el centro de informacion mas amplio, seguro y fiable jamas antes visto por el ser humano y que su vez sea gratuito y facil de usar.
+	    				</p>
+	    				<h2>Vision</h2>
+	    				<p>
+	    					Esperamos llegar a ser la mejor enciclopedia virtual del mundo para que las busqueda de informacion llegue a ser algo facil de realizar.
+	    				</p>
+	    			</div>
+	    			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+	    				<div class="">
+		    				<h2>Articulos Recientes</h2>
+		    				<hr class="divi">
+		    				<h4>Quien es Jean Sibelius?</h4>
+		    				<p>
+		    					Jean Sibelius, nacido el 20 de septiembre de 1957, fue un compositor y violinista finlandés de finales del Romanticismo y comienzos del Modernismo. Es ampliamente reconocido como el mejor compositor de su país y, a través de su música...<a href="#">Seguir Leyendo</a>
+		    				<h4>Que es php?</h4>
+		    				<p>
+		    					PHP es un lenguaje de programación de uso general de código del lado del servidor originalmente diseñado para el desarrollo web de contenido dinámico...<a href="#">Seguir Leyendo</a>
+		    				</p>
+	    				</div>
+	    			</div>
+	    			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+	    				<h2>Contactos</h2>
+	    				<hr class="divi">
+	    				<ul class="list-inline">
+	                        <li>
+	                            <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+	                        </li>
+	                        <li>
+	                            <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+	                        </li>
+	                        <li>
+	                            <a href="#"><i class="fa fa-camera-retro fa-fw fa-3x"></i></a>
+	                        </li>
+	                        <li>
+	                            <a href="#"><i class="fa fa-google-plus fa-fw fa-3x"></i></a>
+	                        </li>
+	                        <li>
+	                            <a href="#"><i class="fa fa-youtube-play fa-fw fa-3x"></i></a>
+	                        </li>
+                    	</ul>
+                    	<p><span class="glyphicon glyphicon-phone"></span> 704-2266-0000</p>
+                    	<p><span class="glyphicon glyphicon-phone"></span> 704-2633-3200</p>
+                    	<p><span class="glyphicon glyphicon-phone"></span> 704-2795-0001</p>
+                    	<p>
+                    		<span class="glyphicon glyphicon-envelope"></span>
+                    		<a href="href="mailto:supportwiki@wikilink.com" tittle="Enviar a Carlos Ramos""> supportwiki@wikilink.com</a><p> Atencion al cliente 24/7.</p>
+                    	</p>
+	    			</div>
+	    		</div>
+	    		<hr class="divi">
+	    		<div class="row">
+	    			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	    				<p style="text-align: center;"><strong>©CopyRigth 2017 Proyecto de POO</strong></p>
+	    			</div>
+	    		</div>
+	    	</div>
+	    </section>
+
+	<!--archivos nesesarios para Bootstrap-->    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

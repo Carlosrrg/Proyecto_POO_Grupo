@@ -1,0 +1,63 @@
+body{
+	
+	background: red;
+}
+.row{
+	margin-right: 12px;
+	border: none;
+}
+
+h2.subtitulo{
+	font-size: 18px;
+	text-align: center;
+	font-variant: 
+}
+h3{
+	font-size: 24px;
+    font-family: 'Linux Libertine',Georgia,Times,serif;	
+}
+tr.tr-color{
+	padding: 3px;
+	text-align:center;
+	background-color:transparent;
+	color:black;
+	background-color:#B8BAFE;
+
+}
+
+.list-left{
+	color: efefef;
+	font-family: sans-serif;
+	font-size: 12px;
+	line-height: 5px;
+}
+
+.well{
+	background: slightblue;
+	color: blue;
+
+}
+
+.panel{
+    margin: auto;
+    border: 1px solid rgba(66, 209, 244, 0.6);
+}
+a{
+	color: #0645ad;
+}
+div.div1{
+
+}
+.nav{
+	font-size: 13px;
+	
+}
+
+div.main.row{
+
+
+}
+div.tabla-derecha{
+	border-color: blue;
+	width: 280px;
+}
