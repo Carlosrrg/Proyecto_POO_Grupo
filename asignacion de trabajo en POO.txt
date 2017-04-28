@@ -40,11 +40,11 @@ definitivamenete en principal.html.
 el articulo se colorea de manera extrana y el discusion muestra el iframe mal.
 
 
--claudio y carlos: modificar y avanzar en lo de tomar o subir una fotografia para que se mire mas 
+-claudio y luis: modificar y avanzar en lo de tomar o subir una fotografia para que se mire mas 
 vistoso al usuario.
 
 
--carlos: modificar el reporteArticulo.php y que lusca mas familiar al de wikipedia ademas 
+-carlos y luis: modificar el reporteArticulo.php y que lusca mas familiar al de wikipedia ademas 
 de dar funcionalidad a este para la base de datos.
 
 
@@ -89,10 +89,6 @@ poner una descripcion de en que parte del website se uso para que todas las pagi
 -la opcion subir una foto: solo sera visible en editar perfil osea perfil de los diferentes 
 usuarios.
 
-
--luis: crear un .html de ayuda solo va a mostrar instrucciones en casos de problemas no graves que el usuario va 
-poder seguirlos para solucionarlos eje.(borrar cookies del navegador o usar un navegador 
-en especifico, etc).
 
 
  
