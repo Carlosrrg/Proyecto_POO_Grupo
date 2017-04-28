@@ -52,17 +52,23 @@ de dar funcionalidad a este para la base de datos.
 de referencia el principal.html.
 
 
+-carlos: hacer la interfas para el usuario administrador creandolo lo mas 
+familiar a wikipedia. 
+
+
+-carlos: hacer interfas para el usuario normal osea el lugar donde va a ver todos 
+sus articulos y configuracion de perfil.
+
+
 -eliminar el subirArticulo.php porque ya existe un editor en los articulos es el principal.html 
 y una ves que el usuario ya se ha logeado desde ahi lo puede crear editar o eliminar.
 
 
--eliminar ese enlace de pagina aleatoria.
+-eliminar ese enlace de pagina aleatoria porque no tiene sentido.
 
 
--eliminar ese enlace de ayuda.
 
-
--carlos: crear un documento .html para donaciones el cual sea familiar a wikipedia.
+-alexis: crear un documento .html para donaciones el cual sea familiar a wikipedia.
 
 
 -alexis: crear un documento.html basandose en el principal.html que sea como un neutro que no 
@@ -70,21 +76,21 @@ tenga articulo sino solo recomendaciones para el usuario e insitarlo a que siga 
 otros articulos ejem.(https://es.wikipedia.org/wiki/Wikipedia) segui el enlace para que te fijes.
 
 
--la paleta de colores copiarla en un archivo colores.txt que esta en el repositorio y 
+- todos: la paleta de colores usada copiarla en un archivo colores.txt que esta en el repositorio y 
 poner una descripcion de en que parte del website se uso para que todas las paginas luscan igual.
 
 
--cambiar logo de mundo estilo rompecabezas por el original de wikipedia.
+-todos: cambiar logo de mundo estilo rompecabezas por el original de wikipedia.
 
 
--quitar enlace de aleatorio porque no tiene sentido.
+-quitar enlace de aleatorio del menu porque no tiene sentido.
 
 
 -la opcion subir una foto: solo sera visible en editar perfil osea perfil de los diferentes 
 usuarios.
 
 
--ayuda: solo va a mostrar instrucciones en casos de problemas no graves que el usuario va 
+-luis: crear un .html de ayuda solo va a mostrar instrucciones en casos de problemas no graves que el usuario va 
 poder seguirlos para solucionarlos eje.(borrar cookies del navegador o usar un navegador 
 en especifico, etc).
 
