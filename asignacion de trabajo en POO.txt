@@ -1,0 +1,97 @@
+Terminar todo lo de la lista para el domingo.
+
+
+-todos: usar nombramientos estandars para cada archivo html, php, javascript, css, etc. 
+osea enves de principal.html ponerle un nombre mas directo y generico como articulo.html 
+o para el css de de ese archivo poner por ejemplo css-articulo.css y asi para todos los demas 
+para asi llevar un mejor control de los archivos y que no halla confucion.
+
+
+-todos: ver el modelo relacional de la base de datos y analizarlo de como conectar la base con 
+cada parte que le toca a cada uno. 
+
+
+-ikser: arreglar el principal.html porque no muestra nada al ingresar directamente desde 
+el landing page, osea este no muestra el articulo seleccionado de unah al inicio 
+, y tendria que ya venir seleccionado el leer por default.
+
+
+-ikser y claudio: arreglar o buscar otra alternativa al iframe que muestra el articulo en las 
+secciones de leer, editar, ver historial en principal.html.
+
+
+-luis: modificar el login.php a la apariencia que tiene wikipedia osea copiar la apariencia 
+tomando de referencia el principal.html ya que en wikipedia este es el mismo.
+
+
+-luis: modificar el registroUsuario.php igual que al de wikipedia tomando como refencia el 
+principal.html
+
+
+-alexis: modificar el feedback como el de wikipedia tomando de referencia el principal.html 
+pero usando los campos a rellenar que ya estan en el retroAlimentacion.html.
+
+
+-claudio: ver lo de la tecnologia de investigacion(descargar en pdf) e implementalo 
+definitivamenete en principal.html.
+
+
+-ikser y claudio: arreglar el articulo y discusion del principal.html ya que al dar click sobre 
+el articulo se colorea de manera extrana y el discusion muestra el iframe mal.
+
+
+-claudio y carlos: modificar y avanzar en lo de tomar o subir una fotografia para que se mire mas 
+vistoso al usuario.
+
+
+-carlos: modificar el reporteArticulo.php y que lusca mas familiar al de wikipedia ademas 
+de dar funcionalidad a este para la base de datos.
+
+
+-carlos: modificar el usuarioModerador.php para que sea mas familiar a wikipedia tomando 
+de referencia el principal.html.
+
+
+-eliminar el subirArticulo.php porque ya existe un editor en los articulos es el principal.html 
+y una ves que el usuario ya se ha logeado desde ahi lo puede crear editar o eliminar.
+
+
+-eliminar ese enlace de pagina aleatoria.
+
+
+-eliminar ese enlace de ayuda.
+
+
+-carlos: crear un documento .html para donaciones el cual sea familiar a wikipedia.
+
+
+-alexis: crear un documento.html basandose en el principal.html que sea como un neutro que no 
+tenga articulo sino solo recomendaciones para el usuario e insitarlo a que siga leyendo 
+otros articulos ejem.(https://es.wikipedia.org/wiki/Wikipedia) segui el enlace para que te fijes.
+
+
+-la paleta de colores copiarla en un archivo colores.txt que esta en el repositorio y 
+poner una descripcion de en que parte del website se uso para que todas las paginas luscan igual.
+
+
+-cambiar logo de mundo estilo rompecabezas por el original de wikipedia.
+
+
+-quitar enlace de aleatorio porque no tiene sentido.
+
+
+-la opcion subir una foto: solo sera visible en editar perfil osea perfil de los diferentes 
+usuarios.
+
+
+-ayuda: solo va a mostrar instrucciones en casos de problemas no graves que el usuario va 
+poder seguirlos para solucionarlos eje.(borrar cookies del navegador o usar un navegador 
+en especifico, etc).
+
+
+ 
+-todos: colocar el mismo copyrigth 2017 que tiene el landing page para que se vea igual y con 
+esto hacer referencia a nuestro grupo de trabajo.
+  
+
+  
