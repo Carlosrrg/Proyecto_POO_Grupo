@@ -1,24 +1,22 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-	<title>Wikipeddia</title>
+	<title>WikiLinks</title>
 	<meta charset="UTF-8">
 	<link rel="icon" type="../image/png" href="../img/favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="../css/style-marco.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/estilo-formulario-reportar-articulo.css">
 	
-
 </head>
 	<body>
 		<header>
-	
 
 		</header>
 		<br>
 		<div class="div1 container-fluid ">
 			<div class="main row">
-
 				<div class="col-xs-12 co-sm-2 col-md-2 col-lg-2 hidden-xs hidden-sm">
 					<img src="../img/wiki.png" width="145" alt="Logo de Wikilinks">
 					<a href="index.html"><img src="../img/Wikilinkslanding.png" width="145"></a>
@@ -29,10 +27,9 @@
 					  <table class="table table-hover">
 						<tr><td>
 							<ul class="list-group2">
-								<li><a href="../Index.html">Portada</a></li>
-								<li><a href="../reporteArticulo.php">Reportar Articulo</a></li>
-								<li><a href="../usuarioModerador.php">Moderadores de articulos</a></li>
-								<li><a href="../subirArticulo.php">Crear paginas nuevas</a></li>
+								<li><a href="#">Portada</a></li>
+								<li><a href="usuarioModerador.php">Moderadores de articulos</a></li>
+								<li><a href="subirArticulo.php">Crear una nueva pagina</a></li>
 								<li><a>Ayuda</a></li>
 								<li><a href="#">Donaciones</a></li>
 								</ul>
@@ -56,11 +53,11 @@
 						<tr><td>
 							<h6 class="list-left">Herramientas</h6>
 							<ul class="list-group1">
-								<li><a href="">Lo que enlaza aqui</a></li>
-								<li><a href="">Cambios en enlazadas</a></li>
-								<li><a href="">Subir archivo</a></li>
-								<li><a href="">Paginas especiales</a></li>
-								<li><a href="">Enlace permanete</a></li>
+								<li><a href="#">Lo que enlaza aqui</a></li>
+								<li><a href="#">Cambios en enlazadas</a></li>
+								<li><a href="#">Subir archivo</a></li>
+								<li><a href="#">Paginas especiales</a></li>
+								<li><a href="#">Enlace permanete</a></li>
 								<li><a>Informacion de la pagina</a></li>
 								<li><a>Elemento de wikidata</a></li>
 								<li><a>Citar esta pagina</a></li>
@@ -99,13 +96,13 @@
 							       otro elemento que se pueda ocultar al minimizar la barra -->
 							  <div class="collapse navbar-collapse navbar-ex1-collapse">
 							    <ul class="nav navbar-nav">
-							      <li class=><a href="../Index.html">Inicio</a></li>
-							      <li><a href="../Principal.html">Aleatorio</a></li>
-							      <li><a href="#">Cercano</a></li>
+							      <li class=><a href="../Index.html">Crear una nueva pagina</a></li>
+							      <li><a href="../Principal.html">Moderadores de Articulos</a></li>
+							      <li><a href="#">Acceder</a></li>
 							    </ul>
 							    <ul class="nav navbar-nav">
-							      <li class=><a href="../php/login.php">Acceder</a></li>
-							      <li><a href="../php/registroUsuario.php">Crear una cuenta</a></li>
+							      <li class=><a href="../php/login.php">Crear una cuenta</a></li>
+							      <li><a href="../php/registroUsuario.php">Ayuda</a></li>
 							      <li><a href="../Feedback.html">Feedback</a></li>
 							    </ul>
 							 
@@ -174,7 +171,6 @@
 							    	'li-discusion')" href="javascript:noarticulo();">Ver Historial
 							    	</a>
 							    </li>
-			
 							</ul>
 						</div>
 						
@@ -189,9 +185,25 @@
 								</button>
 						      </span>
 						    </div>
-						</div>
-						<div class="col">
-							
+						</div><br><br><br><br><br><br><br><br>
+						<!--formulario de reporte-->
+						<div class="container">
+						<h1>Reporta un Articulo</h1>
+							<form action="">
+								<label for="">
+									Escriba su usuario:
+									<input type="text" name="txt-nombre-usuario" id="txt-nombre-usuario" placeholder="Ingrese su usuario de la plataforma">	
+							    </label>
+							    <label for="">
+									Link de articulo a reportar:
+									<input type="email" name="txt-link-articulo-reportar" id="txt-link-articulo-reportar" placeholder="Copie el link aqui">	
+							    </label>
+							    <label for="">
+									Detalle el problema:
+									<textarea name="txtArea-descripcion" id="txtArea-descripcion" placeholder=""></textarea>	
+								</label>
+								<input type="submit" name="Enviar_datos_articulo" value="Enviar" class="btn btn-primary">
+							</form>
 						</div>
 					</div>
 				</div>
@@ -201,8 +213,6 @@
 			<footer >©CopyRigth 2017 Proyecto de POO</footer>
 			<br>
 		</div>
-
-
 		<script src="../js/jquery.min.js"></script>
 		<script src="../js/bootstrap.min.js"></script>
 		<script src="../js/script-marco.js"></script>
