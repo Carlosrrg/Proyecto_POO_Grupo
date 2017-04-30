@@ -140,16 +140,11 @@
 						<div class="col-sm-4 col-md-5 hidden-xs hidden-sm">
 							<ul class="nav nav-tabs">
 							    <li id="li-articulo" name="li-articulo" class="">
-							    	<a href="javascript:articulo();">	Articulo
+							    	<a onClick="articulo();">	Articulo
 							    	</a>
 							    </li>
 							    <li id="li-discusion" name="li-discusion" class="">
-							    	<a onClick="loadPages('Articulos/Discusion.html', 
-							    	'li-discusion', 
-							    	'li-articulo',
-							    	'li-leer',
-							    	'li-editar',
-							    	'li-ver-historial')" href="javascript:noarticulo();">Discusion
+							    	<a onClick="discusion();" >Discusion
 							    	</a>
 							    </li>
 							   
@@ -158,30 +153,15 @@
 						<div class="col-sm-4 col-md-4 col- hidden-xs hidden-sm">
 							<ul class="nav nav-tabs">
 							    <li name="li-leer" id="li-leer" class="">
-							    	<a onClick="loadPages('Articulos/Unah.html',
-							    	'li-leer', 
-							    	'li-articulo',
-							    	'li-editar',
-							    	'li-discusion',
-							    	'li-ver-historial')" href="javascript:noarticulo();">	Leer
+							    	<a onClick="leer();" >	Leer
 							    	</a>
 							    </li>
 							    <li name="li-editar" id="li-editar" class="">
-							    	<a onClick="loadPages('EditorTexto/Editor.html',
-							    	'li-editar', 
-							    	'li-articulo',
-							    	'li-leer',
-							    	'li-discusion',
-							    	'li-ver-historial')" href="javascript:noarticulo();">Editar
+							    	<a onClick="editar();" >Editar
 							    	</a>
 							    </li>
 							    <li name="li-ver-historial" id="li-ver-historial" class="">
-							    	<a onClick="loadPages('Articulos/Historial.html',
-							    	'li-ver-historial', 
-							    	'li-articulo',
-							    	'li-leer',
-							    	'li-editar',
-							    	'li-discusion')" href="javascript:noarticulo();">Ver Historial
+							    	<a onClick="historial();" >Ver Historial
 							    	</a>
 							    </li>
 			
@@ -202,8 +182,8 @@
 						</div>
 
 						<!--Insertar pagina externa dentro de esta pagina-->						
-						<div class="articulo col-xs-12 col-lg-12" id="noarticulo">
-							<iframe id="ifr" frameborder="0" name="ifr" scrolling="yes" height="auto" width="100%" frameborder="0" scrolling="no"          src="Articulos/Unah.html" name="iframe_a"></iframe>
+						<div id="noarticulo">
+						
 						</div>
 						<div id="articulo">
 						
