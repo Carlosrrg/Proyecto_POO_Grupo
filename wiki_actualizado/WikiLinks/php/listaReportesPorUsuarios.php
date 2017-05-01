@@ -4,10 +4,12 @@
 	<title>WikiLinks</title>
 	<meta charset="UTF-8">
 	<link rel="icon" type="image/png" href="img/favicon.ico" />
+
 	<link rel="stylesheet" type="text/css" href="../css/style-marco.css">
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../css/funcion.css">
+	
 </head>
 	<body>
 		<header>
@@ -29,9 +31,9 @@
 						<tr><td>
 							<ul class="list-group2">
 								<li><a href="#">Portada</a></li>
+								<li><a href="perfilUsuarioModerador.php">Ver mi perfil</a></li>
 								<li><a href="ListaUsuarioModerador.php">Ver lista de articulos</a></li>
-								<li><a href="listaReportesArticulosModerador.php">Ver articulos reportados</a></li>
-								<li><a href="subirArticulo.php">Crear Articulo</a></li>
+								<li><a href="subirArticulo.php">Crear paginas nuevas</a></li>
 								<li><a>Ayuda</a></li>
 								<li><a href="#">Donaciones</a></li>
 							</ul>
@@ -103,7 +105,7 @@
 							    </ul>
 							    <ul class="nav navbar-nav">
 							      <li class=><a href="login.php">Crear una cuenta</a></li>
-							      <li><a href="#">Ayuda</a></li>
+							      <li><a href="registroUsuario.php">Ayuda</a></li>
 							      <li><a href="../Feedback.html">Feedback</a></li>
 							    </ul>
 							  </div>
@@ -186,59 +188,67 @@
 								</button>
 						      </span>
 						    </div>
-						</div><br><br><br><br><br><br><br>
+						</div><br><br><br><br><br><br><br><br>
 						<div class="container">
-							<h2>Datos personales de #NOMBRE DE USUARIO DEL MODERADOR#</h2><br>
-							<div class="col-lg-4 col-md-4 col-sm-12">
-								<div class="input-group">
-									<img src="" id="imagen" width="200" height="200"><br>
-									<button class="btn btn-default" id="btn-camara-moderador">Capturar</button>
-									<button class="btn btn-default" id="btn-guardar-moderador">Seleccionar del PC</button>
-									<video id="video"></video>
-									<canvas id="canvas"></canvas>
-								</div>
-							</div>
-							<div class="col-lg-8 col-md-8 col-sm-12">
-								<div style="width: 55%;">
-									<form action="#">
-										<table class="table">
-											<tr><a href="#">Editar</a></tr>
-											<tr>
-												<td>Nombre completo:</td>
-												<td><input type="text" name="txt-nombre-moderador" id="txt-nombre-moderador" value="Carlos Roberto Ramos Garcia" size="50px" disabled></td>
-											</tr>
-											<tr>
-												<td>Correo:</td>
-												<td><input type="text" name="txt-correo-moderador" id="txt-correo-moderador" value="carlos06@gmail.com" size="50px" disabled></td>
-											</tr>
-											<tr>
-												<td>Fecha de nacimiento:</td>
-												<td><input type="date" name="txt-date-moderador" id="txt-date-moderador" value="2012-10-10" size="50px" disabled></td>
-											</tr>
-											<tr>
-												<td>Usuario:</td>
-												<td><input type="text" name="txt-usuario-moderador" id="txt-usuario-moderador" value="carlos067" size="50px" disabled></td>
-											</tr>
-											<tr>
-												<td>Contrasena:</td>
-												<td><input type="password" name="txt-contrasena-moderador" id="txt-contrasena-moderador" value="carlos123456" size="50px" disabled></td>
-											</tr>
-											<tr>
-												<td>Especialidad:</td>
-												<td><input type="text" name="txt-especialidad-moderador" id="txt-especialidad-moderador" value="Programacion" size="50px" disabled></td>
-											</tr>
-											<tr>
-												<td>Categoria preferida:</td>
-												<td><select name="slc-categoria-moderador" id="slc-categoria-moderador" disabled value="categoria 1">
-													<option>categoria 1</option>
-												</select></td>
-											</tr>
-										</table>
-										<button class="btn btn-primary" disabled>Aceptar</button>
-										<button class="btn btn-danger">Solicitud de renuncia</button>
-									</form>
-								</div>
-							</div>
+							<a href="listaReportesArticulosModerador.php" class="btn btn-default">Regresar a reportes</a>
+							<h1>Reportes detallados de los usuarios que reportaron</h1><br>
+								<form action="">
+					           		<table class="table table-hover" style="width: 70%">
+										<tr>
+											<th scope="col">N. de reporte</th>
+											<th scope="col">Articulo</th>
+											<th scope="col">Usuario que reporta articulo</th>
+											<th scope="col">Descripcion</th>
+											<th scope="col">accion</th>
+										</tr>
+									 
+										<tr>
+											<td>1</td>
+											<td><a href="#">articulo 1</a></td>
+											<td>carlosrr09</td>
+											<td>Esta es la descripcion que se tomo en reportarArticulo.php</td>
+											<td>
+										    	<a href="#" class="btn btn-default" id="btn-enviar-mensaje" name="btn-enviar-mensaje">Enviar mensaje</a>
+										    </td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td><a href="#">articulo 1</a></td>
+											<td>carlosrr09</td>
+											<td>Esta es la descripcion que se tomo en reportarArticulo.php</td>
+											<td>
+										    	<a href="#" class="btn btn-default" id="btn-enviar-mensaje" name="btn-enviar-mensaje">Enviar mensaje</a>
+										    </td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td><a href="#">articulo 1</a></td>
+											<td>carlosrr09</td>
+											<td>Esta es la descripcion que se tomo en reportarArticulo.php</td>
+											<td>
+										    	<a href="#" class="btn btn-default" id="btn-enviar-mensaje" name="btn-enviar-mensaje">Enviar mensaje</a>
+										    </td>
+										</tr>
+										<tr>
+											<td>4</td>
+											<td><a href="#">articulo 1</a></td>
+											<td>carlosrr09</td>
+											<td>Esta es la descripcion que se tomo en reportarArticulo.php</td>
+											<td>
+										    	<a href="#" class="btn btn-default" id="btn-enviar-mensaje" name="btn-enviar-mensaje">Enviar mensaje</a>
+										    </td>
+										</tr>
+										<tr>
+											<td>5</td>
+											<td><a href="#">articulo 1</a></td>
+											<td>carlosrr09</td>
+											<td>Esta es la descripcion que se tomo en reportarArticulo.php</td>
+											<td>
+										    	<a href="#" class="btn btn-default" id="btn-enviar-mensaje" name="btn-enviar-mensaje">Enviar mensaje</a>
+										    </td>
+										</tr>
+									</table>
+						      	</form>
 						</div>	
 					</div>
 				</div>
@@ -251,7 +261,6 @@
 		<script src="../js/jquery.min.js"></script>
 		<script src="../js/bootstrap.min.js"></script>
 		<script src="../js/script-marco.js"></script>
-		<script type="text/javascript" src="../js/funciones.js"></script>
 		<script type="text/javascript" src="../js/manejodiv.js"></script>
 		<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="../js/descargarpdf.js"></script>
