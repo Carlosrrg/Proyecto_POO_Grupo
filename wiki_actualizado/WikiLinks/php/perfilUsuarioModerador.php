@@ -245,7 +245,12 @@
 				</div>
 			</div>
 			<br><br><br>
-			<footer >©CopyRigth 2017 Proyecto de POO</footer>
+			<hr class="divi">
+			<div class="row">
+    			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    				<p style="text-align: center;"><strong>©Copyrigth 2017 - Proyecto de POO</strong></p>
+    			</div>
+    		</div>
 			<br>
 		</div>
 		<script src="../js/jquery.min.js"></script>
