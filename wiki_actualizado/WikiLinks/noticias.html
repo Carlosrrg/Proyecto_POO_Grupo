@@ -35,7 +35,6 @@
 						<tr><td>
 							<ul class="list-group2">
 								<li><a href="Index.html">Portada</a></li>
-								<li><a href="php/SubirFoto.php">Subir foto</a></li>
 								<li><a href="php/reportarArticulo.php">Reportar Articulo</a></li>
 								<li><a href="php/usuarioModerador.php">Moderador</a></li>
 								<li><a href="php/subirArticulo.php">Crear paginas nuevas</a></li>
@@ -136,12 +135,12 @@
 						
 						<div class="col-sm-4 col-md-5 hidden-xs hidden-sm">
 							<ul class="nav nav-tabs">
-							    <li id="li-articulo" name="li-articulo" class="">
-							    	<a onClick="articulo();">	Articulo
+							    <li id="li-articulo" name="li-articulo" class="active" >
+							    	<a href="#noticias" data-toggle="tab" onClick="">	Noticias
 							    	</a>
 							    </li>
-							    <li id="li-discusion" name="li-discusion" class="">
-							    	<a onClick="discusion();" >Discusion
+							    <li id="li-discusion" name="li-discusion" class="" >
+							    	<a onClick="" href="#discusion" data-toggle="tab">Discusión
 							    	</a>
 							    </li>
 							   
@@ -149,16 +148,12 @@
 						</div>
 						<div class="col-sm-4 col-md-4 col- hidden-xs hidden-sm">
 							<ul class="nav nav-tabs">
-							    <li name="li-leer" id="li-leer" class="">
-							    	<a onClick="leer();" >	Leer
+							    <li id="li-articulo" name="li-articulo" class="active" >
+							    	<a onClick="" href="#noticias" data-toggle="tab">Leer
 							    	</a>
 							    </li>
-							    <li name="li-editar" id="li-editar" class="">
-							    	<a onClick="editar();" >Editar
-							    	</a>
-							    </li>
-							    <li name="li-ver-historial" id="li-ver-historial" class="">
-							    	<a onClick="historial();" >Ver Historial
+							    <li name="li-ver-historial" id="li-ver-historial" class="" >
+							    	<a onClick="" href="#ver-historial" data-toggle="tab">Ver Historial 
 							    	</a>
 							    </li>
 			
@@ -179,261 +174,286 @@
 						</div>
 
 
- 						<!-- Seccion de Inicio -->
-						<div class="container col-xs-12 col-lg-12 " style="margin: 5px;">
-							<div id="div-inicio" class="col-xs-12 panel panel-primary" style="margin-top: 30px; background-color: #F2F5FD; opacity: 4; ">
-								<table class="table"> 
-								      <tr>
-								        <td>
-									        <h3><a href="principal.html">Bienvenidos</a> a Wikilinks, </h3>
-									        la enciclopedia de contenido libre que todos pueden <a href="">editar.</a>
-								        </td>
-								        <td style="text-align: right;">
-								        <script type="text/javascript">
-											var d = new Date();
-											var d=new Date();
-											var dia=new Array(7);
-											dia[0]="Domingo";
-											dia[1]="Lunes";
-											dia[2]="Martes";
-											dia[3]="Miercoles";
-											dia[4]="Jueves";
-											dia[5]="Viernes";
-											dia[6]="Sabado";
-											var mm=new Date();
-											var m2 = mm.getMonth() + 1;
-											var mesok = (m2 < 10) ? '0' + m2 : m2;
-											var mesok=new Array(12);
-											mesok[0]="Enero";
-											mesok[1]="Febrero";
-											mesok[2]="Marzo";
-											mesok[3]="Abril";
-											mesok[4]="Mayo";
-											mesok[5]="Junio";
-											mesok[6]="Julio";
-											mesok[7]="Agosto";
-											mesok[8]="Septiembre";
-											mesok[9]="Octubre";
-											mesok[10]="Noviembre";
-											mesok[11]="Diciembre";
 
-
-											document.write
-											(
-												d.getHours(),':'+d.getMinutes(),':'+d.getSeconds(),', '+dia[d.getDay()], '<br>'+
-												d.getDate(),' de '+ mesok[mm.getMonth()],' de '+d.getFullYear(),'<br> 1 331 871 artículos en español.'
-											);
-										</script></td>
-								      </tr>
-								  </table>
-							</div>
-
-							<!-- Seccion de Informacion -->
-							<div class="container-fluid row">
-								<div class="col-md-6 panel panel-primary" style="background-color: #F2F5FD; opacity: 4;" >
-									<center>
-										<label><a href="">Participacion y Comunidad*  </a></label><br>
-										<p>
-											<a href="">¿Cómo colaborar?*  </a>
-											<a href="">Bienvenida* </a>
-											<a href="">¿Eres profesor o alumno?*  </a>
-											<a href="">Primeros pasos* </a>
-											<a href="">Contenidos de ayuda*  </a>
-											<a href="">Preguntas frecuentes *  </a>
-										</p>
-									</center>
-								</div>
-
-								<div class="col-md-6 panel panel-primary" style="background-color: #F2F5FD; opacity: 4;"  >
-									<center>
-										<label><a href="">Busquedas y consultas</a></label>
-										<p>
-											<a href="">Portales tematicos</a>
-											<a href="">Explorar Wikipedia</a><br>
-
-										</p>
-									</center><br>
-								</div>
-							</div>
-
-							<div class="container-fluid row">
-							<!-- parte izquierda -->
-								<div class="col-md-6 panel panel-primary" style="background-color: #F2F5FD; opacity: 4;" >
-									<center>
-										<span class="glyphicon glyphicon-star"></span>
-											<heater>
-												<label><a href="">Articulo Destacado</a></label>
-											</heater>
-									</center>
-									<div class="row padding">
-								<!-- Titulo del articulo -->
-								<div class="panel panel-default col-md-12">
-									<h1 id="firstHeading" class="firstHeading" lang="es">
-										Universidad Nacional Autónoma de Honduras
-									</h1>
-									
-									<!-- Imagen del articulo -->
-									<div >
-										<img src="img/tabla-unah.png" style="float: right">
-									</div>
-									<!-- contenido del articulo -->
-									<p>
-										La <strong>Universidad Nacional Autónoma de Honduras (UNAH)</strong> es una institución autónoma, laica y estatal de la república de Honduras, con personalidad jurídica, que goza de la potestad de organizar, gestionar y desarrollar la educación superior del país, en los niveles de licenciatura, de segunda especialidad y en los grados: bachillerato, maestría, doctoral. Por mandato constitucional, contribuirá a la investigación científica, humanística y tecnológica, a la difusión general de la cultura y al estudio y análisis de los problemas nacionales con el fin de participar en la transformación de la nación hondureña.
-									</p>
-									<p>
-										Actualmente, su sede se ubica en la Ciudad Universitaria de la UNAH que lleva el nombre del primer rector de la universidad, el presbítero José Trinidad Reyes.
-									</p>
-
-									<h3>Historia</h3>
-									<p>
-										El 14 de diciembre de 1845, se fundó el primer centro de estudios superiores de Honduras "La Sociedad del Genio Emprendedor y del Buen Gusto", gracias a la iniciativa del presbítero José Trinidad Reyes quien fungió como primer rector, a esta iniciativa se sumaron los estudiantes Máximo Soto, Alejandro Flores, Miguel Antonio Rovelo, Yanuario Girón y Pedro Chirinos.
-									</p>
-									<p>
-										Dicha sociedad que era de carácter privado, recibió protección del gobierno del país, desde el 10 de marzo de 1846, bajo el nombre de Academia Literaria de Tegucigalpa.
-									</p>
-
-									<h3>Fundación</h3>
-									<p>
-										El 10 de marzo de 1846 el Congreso otorgó título de Academia Literaria de Tegucigalpa a la sociedad, siendo el presidente don Coronado Chávez, quien brindó apoyo a este centro educativo; luego el 19 de septiembre de 1847 siendo presidente, Licenciado Juan Lindo, elevó la academia a rango de Universidad Central, ubicada en Tegucigalpa. Se impartían clases de derecho civil, filosofía, letras y teología. El primer local de la Universidad fue el convento de San Francisco. Luego se trasladó al edificio contiguo de la iglesia La Merced.2
-									</p>
-									<p>
-										Fue así como el 19 de septiembre de 1847, de ello hace 170 años, se inauguró solemnemente la Universidad, en ceremonia pública, encabezada por el Presidente Juan Lindo, el nombrado Rector José Trinidad Reyes, el Obispo de Honduras Francisco de Paula Campoy y Pérez. En 1849 la sede de la Universidad fue el Convento de San Francisco situado en el actual parque Valle de Tegucigalpa, el primer graduado de esta casa de estudios fue Sinforiano Rovelo, como bachiller en filosofía.
-									</p>
-									<p>
-										El 2 de julio de 1850 las cámaras legislativas de Comayagua, aprueban los "Estatutos de la Universidad del Estado de Honduras", al año siguiente 1851 el folleto de los estatutos, ya impreso consigna: "Tegucigalpa, Imprenta de la academia, 1851"3
-									</p>
-									<p>
-										Después, en 1869 la sede de la Universidad pasó al edificio contiguo a la iglesia La Merced, allí permaneció hasta que fue trasladada a lo que es ahora la Ciudad Universitaria, cuya construcción había comenzado el 30 de junio de 1965.
-									</p>
-									<h3>Autonomía</h3>
-									<p>
-										La Universidad Nacional Autónoma de Honduras conquistó la Autonomía el día 15 de octubre de 1957 en virtud del Decreto No. 170 emitido por la Junta Militar del Gobierno, constituida por los oficiales señores General Roque Rodríguez, Coronel Héctor Caraccioli Moncada y Mayor e Ingeniero Roberto Gálvez Barnes. En donde Congreso se comprometió a dar el 6% del presupuesto de la república a la Universidad para hacerse cargo de la educación superior en el país.
-									</p>
-									<p>
-										la “Ley Orgánica de la Universidad Nacional Autónoma de Honduras” de 1957 estuvo vigente hasta el 11 de febrero de 2005, cuando fue sustituida por la nueva Ley aprobada por el Congreso Nacional según decreto No.209-2004.</p>
-
-								</div>
-							</div>
-						</div>
-						 <!-- Parte derecha -->
-						<div class="col-md-6 panel panel-primary" style="background-color: #F2F5FD; opacity: 4;" >
-							<center>
-								<span class="glyphicon glyphicon-globe"></span>
-									<heater>
-										<label><a href="">Actualidad</a></label>
-									</heater>
-							</center>
-							<div class="row padding">
-								<!-- Titulo del articulo -->
-								<div class="panel panel-default col-md-12">
-									<h1 id="firstHeading" class="firstHeading" lang="es">
-										Universidad Nacional Autónoma de Honduras
-									</h1>
-									
-									<!-- Imagen del articulo -->
-									<div >
-										<img src="img/tabla-unah.png" style="float: right">
-									</div>
-									<!-- contenido del articulo -->
-									<p>
-										La <strong>Universidad Nacional Autónoma de Honduras (UNAH)</strong> es una institución autónoma, laica y estatal de la república de Honduras, con personalidad jurídica, que goza de la potestad de organizar, gestionar y desarrollar la educación superior del país, en los niveles de licenciatura, de segunda especialidad y en los grados: bachillerato, maestría, doctoral. Por mandato constitucional, contribuirá a la investigación científica, humanística y tecnológica, a la difusión general de la cultura y al estudio y análisis de los problemas nacionales con el fin de participar en la transformación de la nación hondureña.
-									</p>
-									<p>
-										Actualmente, su sede se ubica en la Ciudad Universitaria de la UNAH que lleva el nombre del primer rector de la universidad, el presbítero José Trinidad Reyes.
-									</p>
-
-									<h3>Historia</h3>
-									<p>
-										El 14 de diciembre de 1845, se fundó el primer centro de estudios superiores de Honduras "La Sociedad del Genio Emprendedor y del Buen Gusto", gracias a la iniciativa del presbítero José Trinidad Reyes quien fungió como primer rector, a esta iniciativa se sumaron los estudiantes Máximo Soto, Alejandro Flores, Miguel Antonio Rovelo, Yanuario Girón y Pedro Chirinos.
-									</p>
-									<p>
-										Dicha sociedad que era de carácter privado, recibió protección del gobierno del país, desde el 10 de marzo de 1846, bajo el nombre de Academia Literaria de Tegucigalpa.
-									</p>
-
-
-								</div>
-							</div>
-
-							
-						</div>
-
-
-							
-						</div>
-
-						<div class="container-fluid row">
-							<div class="col-md-6 panel panel-primary" style="background-color: #F2F5FD; opacity: 4;" >
-									<center>
-										<span class="glyphicon glyphicon-upload"></span>
-											<heater>
-												<label><a href="">Recursos del Dia</a></label>
-											</heater>
-									</center>
-									<div class="row padding">
-								<!-- Titulo del articulo -->
-								<div class="panel panel-default col-md-12">
-									<h1 id="firstHeading" class="firstHeading" lang="es">
-										Universidad Nacional Autónoma de Honduras
-									</h1>
-									
-									<!-- Imagen del articulo -->
-									<div >
-										<img src="img/tabla-unah.png" style="float: right">
-									</div>
-									<!-- contenido del articulo -->
-									<p>
-										La <strong>Universidad Nacional Autónoma de Honduras (UNAH)</strong> es una institución autónoma, laica y estatal de la república de Honduras, con personalidad jurídica, que goza de la potestad de organizar, gestionar y desarrollar la educación superior del país, en los niveles de licenciatura, de segunda especialidad y en los grados: bachillerato, maestría, doctoral. Por mandato constitucional, contribuirá a la investigación científica, humanística y tecnológica, a la difusión general de la cultura y al estudio y análisis de los problemas nacionales con el fin de participar en la transformación de la nación hondureña.
-									</p>
-									<p>
-										Actualmente, su sede se ubica en la Ciudad Universitaria de la UNAH que lleva el nombre del primer rector de la universidad, el presbítero José Trinidad Reyes.
-									</p>
-
-									<h3>Historia</h3>
-									<p>
-										El 14 de diciembre de 1845, se fundó el primer centro de estudios superiores de Honduras "La Sociedad del Genio Emprendedor y del Buen Gusto", gracias a la iniciativa del presbítero José Trinidad Reyes quien fungió como primer rector, a esta iniciativa se sumaron los estudiantes Máximo Soto, Alejandro Flores, Miguel Antonio Rovelo, Yanuario Girón y Pedro Chirinos.
-									</p>
-									<p>
-										Dicha sociedad que era de carácter privado, recibió protección del gobierno del país, desde el 10 de marzo de 1846, bajo el nombre de Academia Literaria de Tegucigalpa.
-									</p>
-
-									<h3>Fundación</h3>
-									<p>
-										El 10 de marzo de 1846 el Congreso otorgó título de Academia Literaria de Tegucigalpa a la sociedad, siendo el presidente don Coronado Chávez, quien brindó apoyo a este centro educativo; luego el 19 de septiembre de 1847 siendo presidente, Licenciado Juan Lindo, elevó la academia a rango de Universidad Central, ubicada en Tegucigalpa. Se impartían clases de derecho civil, filosofía, letras y teología. El primer local de la Universidad fue el convento de San Francisco. Luego se trasladó al edificio contiguo de la iglesia La Merced.2
-									</p>
-									<p>
-										Fue así como el 19 de septiembre de 1847, de ello hace 170 años, se inauguró solemnemente la Universidad, en ceremonia pública, encabezada por el Presidente Juan Lindo, el nombrado Rector José Trinidad Reyes, el Obispo de Honduras Francisco de Paula Campoy y Pérez. En 1849 la sede de la Universidad fue el Convento de San Francisco situado en el actual parque Valle de Tegucigalpa, el primer graduado de esta casa de estudios fue Sinforiano Rovelo, como bachiller en filosofía.
-									</p>
-									<p>
-										El 2 de julio de 1850 las cámaras legislativas de Comayagua, aprueban los "Estatutos de la Universidad del Estado de Honduras", al año siguiente 1851 el folleto de los estatutos, ya impreso consigna: "Tegucigalpa, Imprenta de la academia, 1851"3
-									</p>
-									<p>
-										Después, en 1869 la sede de la Universidad pasó al edificio contiguo a la iglesia La Merced, allí permaneció hasta que fue trasladada a lo que es ahora la Ciudad Universitaria, cuya construcción había comenzado el 30 de junio de 1965.
-									</p>
-									<h3>Autonomía</h3>
-									<p>
-										La Universidad Nacional Autónoma de Honduras conquistó la Autonomía el día 15 de octubre de 1957 en virtud del Decreto No. 170 emitido por la Junta Militar del Gobierno, constituida por los oficiales señores General Roque Rodríguez, Coronel Héctor Caraccioli Moncada y Mayor e Ingeniero Roberto Gálvez Barnes. En donde Congreso se comprometió a dar el 6% del presupuesto de la república a la Universidad para hacerse cargo de la educación superior en el país.
-									</p>
-									<p>
-										la “Ley Orgánica de la Universidad Nacional Autónoma de Honduras” de 1957 estuvo vigente hasta el 11 de febrero de 2005, cuando fue sustituida por la nueva Ley aprobada por el Congreso Nacional según decreto No.209-2004.</p>
-
-								</div>
-							</div>
-						</div>
-
-						</div>
-					</div>
-				</div>
 
 						<!--Insertar pagina externa dentro de esta pagina-->						
-						
+ 						<div class="tab-content" id="">
+						 	<!--Div que muestra actualmente al presionar el boton Noticias o Leer-->
+							<div class="tab-pane fade col-xs-12 col-lg-12 in active" id="noticias">
+						 		
+							<!-- Aqui comienza contenido de seccion de noticias -->
 
-					</div>	
-				</div>
-				</div>
+						 		<!-- Seccion de Inicio -->
+								
+
+								<div class="container col-xs-12 col-lg-12 " style="margin: 5px;">
+									<div id="div-inicio" class="col-xs-12 panel panel-primary" style="margin-top: 30px; background-color: #F2F5FD; opacity: 4; ">
+										<table class="table"> 
+										    <tr>
+										        <td>
+											        <h3><a href="principal.html">Bienvenidos</a> a Wikilinks, </h3>
+											        la enciclopedia de contenido libre que todos pueden <a href="">editar.</a>
+										        </td>
+										        <td style="text-align: right;">
+										        <script type="text/javascript">
+													var d = new Date();
+													var d=new Date();
+													var dia=new Array(7);
+													dia[0]="Domingo";
+													dia[1]="Lunes";
+													dia[2]="Martes";
+													dia[3]="Miercoles";
+													dia[4]="Jueves";
+													dia[5]="Viernes";
+													dia[6]="Sabado";
+													var mm=new Date();
+													var m2 = mm.getMonth() + 1;
+													var mesok = (m2 < 10) ? '0' + m2 : m2;
+													var mesok=new Array(12);
+													mesok[0]="Enero";
+													mesok[1]="Febrero";
+													mesok[2]="Marzo";
+													mesok[3]="Abril";
+													mesok[4]="Mayo";
+													mesok[5]="Junio";
+													mesok[6]="Julio";
+													mesok[7]="Agosto";
+													mesok[8]="Septiembre";
+													mesok[9]="Octubre";
+													mesok[10]="Noviembre";
+													mesok[11]="Diciembre";
+
+
+													document.write
+													(
+														d.getHours(),':'+d.getMinutes(),':'+d.getSeconds(),', '+dia[d.getDay()], '<br>'+
+														d.getDate(),' de '+ mesok[mm.getMonth()],' de '+d.getFullYear(),'<br> 1 331 871 artículos en español.'
+													);
+												</script></td>
+										    </tr>
+										</table>
+									</div>
+
+									<!-- Seccion de Informacion -->
+									<div class="container-fluid row">
+										<div class="col-md-6 panel panel-primary" style="background-color: #F2F5FD; opacity: 4;" >
+											<center>
+												<label><a href="">Participacion y Comunidad*  </a></label><br>
+												<p>
+													<a href="">¿Cómo colaborar?*  </a>
+													<a href="">Bienvenida* </a>
+													<a href="">¿Eres profesor o alumno?*  </a>
+													<a href="">Primeros pasos* </a>
+													<a href="">Contenidos de ayuda*  </a>
+													<a href="">Preguntas frecuentes *  </a>
+												</p>
+											</center>
+										</div>
+
+										<div class="col-md-6 panel panel-primary" style="background-color: #F2F5FD; opacity: 4;"  >
+											<center>
+												<label><a href="">Busquedas y consultas</a></label>
+												<p>
+													<a href="">Portales tematicos</a>
+													<a href="">Explorar Wikipedia</a><br>
+
+												</p>
+											</center><br>
+										</div>
+									</div>
+
+
+									<div class="container-fluid row">
+										<!-- parte izquierda -->
+										<div class="col-md-6 panel panel-primary" style="background-color: #F2F5FD; opacity: 4;" >
+											<center>
+												<span class="glyphicon glyphicon-star"></span>
+													<heater>
+														<label><a href="">Articulo Destacado</a></label>
+													</heater>
+											</center>
+											<div class="row padding">
+												<!-- Titulo del articulo -->
+												<div class="panel panel-default col-md-12">
+													<h1 id="firstHeading" class="firstHeading" lang="es">
+														Universidad Nacional Autónoma de Honduras
+													</h1>
+													
+													<!-- Imagen del articulo -->
+													<div >
+														<img src="img/tabla-unah.png" style="float: right">
+													</div>
+													<!-- contenido del articulo -->
+													<p>
+														La <strong>Universidad Nacional Autónoma de Honduras (UNAH)</strong> es una institución autónoma, laica y estatal de la república de Honduras, con personalidad jurídica, que goza de la potestad de organizar, gestionar y desarrollar la educación superior del país, en los niveles de licenciatura, de segunda especialidad y en los grados: bachillerato, maestría, doctoral. Por mandato constitucional, contribuirá a la investigación científica, humanística y tecnológica, a la difusión general de la cultura y al estudio y análisis de los problemas nacionales con el fin de participar en la transformación de la nación hondureña.
+													</p>
+													<p>
+														Actualmente, su sede se ubica en la Ciudad Universitaria de la UNAH que lleva el nombre del primer rector de la universidad, el presbítero José Trinidad Reyes.
+													</p>
+
+													<h3>Historia</h3>
+													<p>
+														El 14 de diciembre de 1845, se fundó el primer centro de estudios superiores de Honduras "La Sociedad del Genio Emprendedor y del Buen Gusto", gracias a la iniciativa del presbítero José Trinidad Reyes quien fungió como primer rector, a esta iniciativa se sumaron los estudiantes Máximo Soto, Alejandro Flores, Miguel Antonio Rovelo, Yanuario Girón y Pedro Chirinos.
+													</p>
+													<p>
+														Dicha sociedad que era de carácter privado, recibió protección del gobierno del país, desde el 10 de marzo de 1846, bajo el nombre de Academia Literaria de Tegucigalpa.
+													</p>
+
+													<h3>Fundación</h3>
+													<p>
+														El 10 de marzo de 1846 el Congreso otorgó título de Academia Literaria de Tegucigalpa a la sociedad, siendo el presidente don Coronado Chávez, quien brindó apoyo a este centro educativo; luego el 19 de septiembre de 1847 siendo presidente, Licenciado Juan Lindo, elevó la academia a rango de Universidad Central, ubicada en Tegucigalpa. Se impartían clases de derecho civil, filosofía, letras y teología. El primer local de la Universidad fue el convento de San Francisco. Luego se trasladó al edificio contiguo de la iglesia La Merced.2
+													</p>
+													<p>
+														Fue así como el 19 de septiembre de 1847, de ello hace 170 años, se inauguró solemnemente la Universidad, en ceremonia pública, encabezada por el Presidente Juan Lindo, el nombrado Rector José Trinidad Reyes, el Obispo de Honduras Francisco de Paula Campoy y Pérez. En 1849 la sede de la Universidad fue el Convento de San Francisco situado en el actual parque Valle de Tegucigalpa, el primer graduado de esta casa de estudios fue Sinforiano Rovelo, como bachiller en filosofía.
+													</p>
+													<p>
+														El 2 de julio de 1850 las cámaras legislativas de Comayagua, aprueban los "Estatutos de la Universidad del Estado de Honduras", al año siguiente 1851 el folleto de los estatutos, ya impreso consigna: "Tegucigalpa, Imprenta de la academia, 1851"3
+													</p>
+													<p>
+														Después, en 1869 la sede de la Universidad pasó al edificio contiguo a la iglesia La Merced, allí permaneció hasta que fue trasladada a lo que es ahora la Ciudad Universitaria, cuya construcción había comenzado el 30 de junio de 1965.
+													</p>
+													<h3>Autonomía</h3>
+													<p>
+														La Universidad Nacional Autónoma de Honduras conquistó la Autonomía el día 15 de octubre de 1957 en virtud del Decreto No. 170 emitido por la Junta Militar del Gobierno, constituida por los oficiales señores General Roque Rodríguez, Coronel Héctor Caraccioli Moncada y Mayor e Ingeniero Roberto Gálvez Barnes. En donde Congreso se comprometió a dar el 6% del presupuesto de la república a la Universidad para hacerse cargo de la educación superior en el país.
+													</p>
+													<p>
+														la “Ley Orgánica de la Universidad Nacional Autónoma de Honduras” de 1957 estuvo vigente hasta el 11 de febrero de 2005, cuando fue sustituida por la nueva Ley aprobada por el Congreso Nacional según decreto No.209-2004.</p>
+
+												</div>
+											</div>
+										</div>
+
+
+
+
+
+										 <!-- Parte derecha -->
+										<div class="col-md-6 panel panel-primary" style="background-color: #F2F5FD; opacity: 4;" >
+											<center>
+												<span class="glyphicon glyphicon-globe"></span>
+													<heater>
+														<label><a href="">Actualidad</a></label>
+													</heater>
+											</center>
+											<div class="row padding">
+												<!-- Titulo del articulo -->
+												<div class="panel panel-default col-md-12">
+													<h1 id="firstHeading" class="firstHeading" lang="es">
+														Universidad Nacional Autónoma de Honduras
+													</h1>
+													
+													<!-- Imagen del articulo -->
+													<div >
+														<img src="img/tabla-unah.png" style="float: right">
+													</div>
+													<!-- contenido del articulo -->
+													<p>
+														La <strong>Universidad Nacional Autónoma de Honduras (UNAH)</strong> es una institución autónoma, laica y estatal de la república de Honduras, con personalidad jurídica, que goza de la potestad de organizar, gestionar y desarrollar la educación superior del país, en los niveles de licenciatura, de segunda especialidad y en los grados: bachillerato, maestría, doctoral. Por mandato constitucional, contribuirá a la investigación científica, humanística y tecnológica, a la difusión general de la cultura y al estudio y análisis de los problemas nacionales con el fin de participar en la transformación de la nación hondureña.
+													</p>
+													<p>
+														Actualmente, su sede se ubica en la Ciudad Universitaria de la UNAH que lleva el nombre del primer rector de la universidad, el presbítero José Trinidad Reyes.
+													</p>
+
+													<h3>Historia</h3>
+													<p>
+														El 14 de diciembre de 1845, se fundó el primer centro de estudios superiores de Honduras "La Sociedad del Genio Emprendedor y del Buen Gusto", gracias a la iniciativa del presbítero José Trinidad Reyes quien fungió como primer rector, a esta iniciativa se sumaron los estudiantes Máximo Soto, Alejandro Flores, Miguel Antonio Rovelo, Yanuario Girón y Pedro Chirinos.
+													</p>
+													<p>
+														Dicha sociedad que era de carácter privado, recibió protección del gobierno del país, desde el 10 de marzo de 1846, bajo el nombre de Academia Literaria de Tegucigalpa.
+													</p>
+
+
+												</div>
+											</div>
+
+										</div>
+									</div>
+
+									<div class="container-fluid row">
+										<div class="col-md-6 panel panel-primary" style="background-color: #F2F5FD; opacity: 4;" >
+												<center>
+													<span class="glyphicon glyphicon-upload"></span>
+														<heater>
+															<label><a href="">Recursos del Dia</a></label>
+														</heater>
+												</center>
+												<div class="row padding">
+											<!-- Titulo del articulo -->
+											<div class="panel panel-default col-md-12">
+												<h1 id="firstHeading" class="firstHeading" lang="es">
+													Universidad Nacional Autónoma de Honduras
+												</h1>
+												
+												<!-- Imagen del articulo -->
+												<div >
+													<img src="img/tabla-unah.png" style="float: right">
+												</div>
+												<!-- contenido del articulo -->
+												<p>
+													La <strong>Universidad Nacional Autónoma de Honduras (UNAH)</strong> es una institución autónoma, laica y estatal de la república de Honduras, con personalidad jurídica, que goza de la potestad de organizar, gestionar y desarrollar la educación superior del país, en los niveles de licenciatura, de segunda especialidad y en los grados: bachillerato, maestría, doctoral. Por mandato constitucional, contribuirá a la investigación científica, humanística y tecnológica, a la difusión general de la cultura y al estudio y análisis de los problemas nacionales con el fin de participar en la transformación de la nación hondureña.
+												</p>
+												<p>
+													Actualmente, su sede se ubica en la Ciudad Universitaria de la UNAH que lleva el nombre del primer rector de la universidad, el presbítero José Trinidad Reyes.
+												</p>
+
+												<h3>Historia</h3>
+												<p>
+													El 14 de diciembre de 1845, se fundó el primer centro de estudios superiores de Honduras "La Sociedad del Genio Emprendedor y del Buen Gusto", gracias a la iniciativa del presbítero José Trinidad Reyes quien fungió como primer rector, a esta iniciativa se sumaron los estudiantes Máximo Soto, Alejandro Flores, Miguel Antonio Rovelo, Yanuario Girón y Pedro Chirinos.
+												</p>
+												<p>
+													Dicha sociedad que era de carácter privado, recibió protección del gobierno del país, desde el 10 de marzo de 1846, bajo el nombre de Academia Literaria de Tegucigalpa.
+												</p>
+
+												<h3>Fundación</h3>
+												<p>
+													El 10 de marzo de 1846 el Congreso otorgó título de Academia Literaria de Tegucigalpa a la sociedad, siendo el presidente don Coronado Chávez, quien brindó apoyo a este centro educativo; luego el 19 de septiembre de 1847 siendo presidente, Licenciado Juan Lindo, elevó la academia a rango de Universidad Central, ubicada en Tegucigalpa. Se impartían clases de derecho civil, filosofía, letras y teología. El primer local de la Universidad fue el convento de San Francisco. Luego se trasladó al edificio contiguo de la iglesia La Merced.2
+												</p>
+												<p>
+													Fue así como el 19 de septiembre de 1847, de ello hace 170 años, se inauguró solemnemente la Universidad, en ceremonia pública, encabezada por el Presidente Juan Lindo, el nombrado Rector José Trinidad Reyes, el Obispo de Honduras Francisco de Paula Campoy y Pérez. En 1849 la sede de la Universidad fue el Convento de San Francisco situado en el actual parque Valle de Tegucigalpa, el primer graduado de esta casa de estudios fue Sinforiano Rovelo, como bachiller en filosofía.
+												</p>
+												<p>
+													El 2 de julio de 1850 las cámaras legislativas de Comayagua, aprueban los "Estatutos de la Universidad del Estado de Honduras", al año siguiente 1851 el folleto de los estatutos, ya impreso consigna: "Tegucigalpa, Imprenta de la academia, 1851"3
+												</p>
+												<p>
+													Después, en 1869 la sede de la Universidad pasó al edificio contiguo a la iglesia La Merced, allí permaneció hasta que fue trasladada a lo que es ahora la Ciudad Universitaria, cuya construcción había comenzado el 30 de junio de 1965.
+												</p>
+												<h3>Autonomía</h3>
+												<p>
+													La Universidad Nacional Autónoma de Honduras conquistó la Autonomía el día 15 de octubre de 1957 en virtud del Decreto No. 170 emitido por la Junta Militar del Gobierno, constituida por los oficiales señores General Roque Rodríguez, Coronel Héctor Caraccioli Moncada y Mayor e Ingeniero Roberto Gálvez Barnes. En donde Congreso se comprometió a dar el 6% del presupuesto de la república a la Universidad para hacerse cargo de la educación superior en el país.
+												</p>
+												<p>
+													la “Ley Orgánica de la Universidad Nacional Autónoma de Honduras” de 1957 estuvo vigente hasta el 11 de febrero de 2005, cuando fue sustituida por la nueva Ley aprobada por el Congreso Nacional según decreto No.209-2004.</p>
+
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+
+							<!--Aqui finaliza el contenido de noticias-->
+
+							</div>
+						 	
+						 	<!--Div que muestra actualmente al presionar el boton Discusion-->
+							<div class="tab-pane fade col-xs-12 col-lg-12" id="discusion">
+								<h1>Discusion</h1>
+							</div>
+
+							<!--Div que muestra actualmente al presionar el boton ver Historial-->
+							<div class="tab-pane fade col-xs-12 col-lg-12" id="ver-historial">
+								<h1>Historial</h1>
+							</div>
+
 			</div>
-		<br><br><br>
-		<footer >-Programacion Orientada a Objetos 1500-</footer>
 		<br>
+			<hr class="divi">
+
+			<div class="row">
+    			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    				<p style="text-align: center;"><strong>©Copyrigth 2017 - Proyecto de POO</strong></p>
+    			</div>
+    		</div>		
 		</div>
 		
 		
