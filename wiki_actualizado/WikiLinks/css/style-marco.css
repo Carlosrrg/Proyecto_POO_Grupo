@@ -45,6 +45,11 @@ tr.tr-color{
 	background-color:#B8BAFE;
 
 }
+.divi{
+	width: 90%;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
 .list-group2{
 	line-height:21px;
 	padding-left: 0.1em;
