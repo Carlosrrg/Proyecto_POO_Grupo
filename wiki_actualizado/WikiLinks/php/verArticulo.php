@@ -3,27 +3,16 @@
 <head>
 	<title>Wikilinks</title>
 	<meta charset="UTF-8">
-	<link rel="icon" type="image/png" href="img/favicon.ico" />
+	<link rel="icon" type="image/png" href="../img/favicon.ico" />
 
-	<link rel="stylesheet" type="text/css" href="css/style-marco.css">
+	<link rel="stylesheet" type="text/css" href="../css/style-marco.css">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
 	
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script  src="js/script-marco.js"></script>
-
-	<script type="text/javascript" src="js/manejodiv.js"></script>
-	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-	<script type="text/javascript" src="js/descargarpdf.js"></script>
-	<script type="text/javascript" src="js/jspdf.min.js"></script>
 
 
-	
-	<!--Usarlo habilita las funciones del editor pero genera problemas con la funcion ver articulo y descargar pdf
-	<script type="text/javascript" src="js/js-editor.js"></script>
-	-->
+
 </head>
 	<body>
 		<header>
@@ -35,9 +24,9 @@
 			<div class="main row">
 
 				<div class="col-xs-12 co-sm-2 col-md-2 col-lg-2 hidden-xs hidden-sm">
-					<img src="img/wiki.png" width="135" alt="Logo de Wikilinks">
+					<img src="../img/wiki.png" width="135" alt="Logo de Wikilinks">
 					<br><br>
-					<a href="index.html"><img src="img/Wikilinkslanding.png" width="145"></a>
+					<a href="../index.html"><img src="../img/Wikilinkslanding.png" width="145"></a>
 					<br><br>
 					
 					<!--Menu lateral izquierdo-->
@@ -46,12 +35,12 @@
 					  <table class="table table-hover">
 						<tr><td>
 							<ul class="list-group2">
-								<li><a href="Index.html">Portada</a></li>
-								<li><a href="php/SubirFoto.php">Subir foto</a></li>
-								<li><a href="php/reportarArticulo.php">Reportar Articulo</a></li>
-								<li><a href="php/usuarioModerador.php">Moderador</a></li>
-								<li><a href="php/subirArticulo.php">Crear paginas nuevas</a></li>
-								<li><a href="">Pagina aleatoria</a></li>
+								<li><a href="../Index.html">Portada</a></li>
+								<li><a href="SubirFoto.php">Subir foto</a></li>
+								<li><a href="reportarArticulo.php">Reportar Articulo</a></li>
+								<li><a href="usuarioModerador.php">Moderador</a></li>
+								<li><a href="subirArticulo.php">Crear paginas nuevas</a></li>
+								<li><a href="#">Pagina aleatoria</a></li>
 								<li><a>Ayuda</a></li>
 								<li><a href="#">Donaciones</a></li>
 								</ul>
@@ -63,7 +52,7 @@
 							<ul class="list-group1">
 								<li><a>Crear un libro</a></li>
 								<li>
-									<a href="Articulos/Unah.html" target="_blank">Version para imprimir</a></li>
+									<a href="../Articulos/Unah.html" target="_blank">Version para imprimir</a></li>
 									<a href="javascript:getpdf();">Descargar como PDF</a>
 							</ul>
 						</td></tr>	
@@ -120,12 +109,12 @@
 							  <div class="collapse navbar-collapse navbar-ex1-collapse">
 							    <ul class="nav navbar-nav">
 							      <li class=><a href="../Index.html">Inicio</a></li>
-							      <li><a href="../Principal.html">Aleatorio</a></li>
+							      <li><a href="verArticulo.php">Aleatorio</a></li>
 							      <li><a href="#">Cercano</a></li>
 							    </ul>
 							    <ul class="nav navbar-nav">
-							      <li class=><a href="../php/login.php">Acceder</a></li>
-							      <li><a href="../php/registroUsuario.php">Crear una cuenta</a></li>
+							      <li class=><a href="login.php">Acceder</a></li>
+							      <li><a href="registroUsuario.php">Crear una cuenta</a></li>
 							      <li><a href="../Feedback.html">Feedback</a></li>
 							    </ul>
 							 
@@ -139,9 +128,9 @@
 								<!--Accesos para ventana media, grande-->
 								<h6>
 								<span class="glyphicon glyphicon-user"></span>
-									<a href="php/login.php">Acceder</a>&nbsp;&nbsp;
-									<a href="php/registroUsuario.php">Crear una cuenta</a>&nbsp;&nbsp;
-									<a href="retroAlimentacion.html">Feedback</a>&nbsp;&nbsp;
+									<a href="login.php">Acceder</a>&nbsp;&nbsp;
+									<a href="registroUsuario.php">Crear una cuenta</a>&nbsp;&nbsp;
+									<a href="../retroAlimentacion.html">Feedback</a>&nbsp;&nbsp;
 
 								</h6>
 							</div>
@@ -192,9 +181,6 @@
 						</div>
 
 						<!--Insertar pagina externa dentro de esta pagina-->						
-						
-						<!--Div usado anteriormente para mostrar el articulo-->
-				
 						
 						<div class="tab-content" id="">
 							<!--Div que muestra actualmente al presionar el boton Articulo o Leer-->
@@ -253,7 +239,7 @@
 
 							<!--Ventana interna para editar articulo-->
 							<div class="tab-pane fade col-xs-12 col-lg-12" id="editar">
-								<form id="form1" name="form1" method="post" action="Articulo/Unah.html">
+								<form id="form1" name="form1" method="post" action="../Articulos/Unah.html">
 								  <div class="btn-group">
 
 								    <!--Negrita-->
@@ -388,7 +374,13 @@
     		</div>
 		</div>
 
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 
+		<script type="text/javascript" src="../js/manejodiv.js"></script>
+		<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="../js/descargarpdf.js"></script>
+		<script type="text/javascript" src="../js/jspdf.min.js"></script>
 
 	</body>
 </html>
