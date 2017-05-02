@@ -239,86 +239,20 @@
 
 							<!--Ventana interna para editar articulo-->
 							<div class="tab-pane fade col-xs-12 col-lg-12" id="editar">
-								<form id="form1" name="form1" method="post" action="../Articulos/Unah.html">
-								  <div class="btn-group">
+								<!DOCTYPE html>
+								<html>
+								<head>
+								  <script src="../tinymce/js/tinymce/tinymce.min.js"></script>
+								  <script src="../tinymce/js/tinymce/langs/es.js"></script>
+								  <script>tinymce.init({ selector:'textarea' });</script>
 
-								    <!--Negrita-->
-								    <button class="btn btn-default" type="button" name="Submit" value="C" onclick="formato('bold')">
-								      <b>N</b>      
-								    </button >
-								    <!--Italica-->
-								    <button class="btn btn-default" type="button" name="Submit2" value="C" onclick="formato('italic')">
-								      <i>N</i>      
-								    </button >
-								    <!--Subrayar-->
-								    <button class="btn btn-default" type="button" name="Submit3" value="S" onclick="formato('underline')">
-								      <u>N</u>      
-								    </button>
-								    <!--Remover Fromato-->
-								    <button class="btn btn-default" type="button" name="Submit4" value="remover formato" onclick="formato('RemoveFormat')">
-								      Remover formato
-								    </button>
-								    
-								    <!--Quitar enlace-->
-								    <button class="btn btn-default" type="button" name="Submit9" value="quitar link" onclick="formato('Unlink')">
-								      Quitar enlace
-								    </button>
-								    
-								    <!--Texto rojo-->
-								    <button class="btn btn-default" type="button" name="Submit7" value="texto rojo" onclick="color('#FF0000')">
-								      Texto rojo
-								    </button>
-
-								      <!--deshacer -->
-								    <button class="btn btn-default" type="button" name="Submit10" value="deshacer" onclick="formato('undo')">
-								      <span class="glyphicon glyphicon-chevron-left"></span>
-								    </button>
-
-								    <!--Rehacer-->
-								    <button class="btn btn-default" type="button" name="Submit11" value="rehacer" onclick="formato('redo')">
-								      <span class="glyphicon glyphicon-chevron-right"></span>
-								    </button>
-
-									<div class="btn-group">
-									    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-									    Insertar <span class="caret"></span></button>
-									    <ul class="dropdown-menu" role="menu">
-									      <li>
-									        <!--Enlace-->
-									        <button class="btn btn-default" type="button" name="Submit5" value="link" onclick="insertarEnlace()">
-									          <span class="glyphicon glyphicon-paperclip"></span> Enlace
-									        </button>
-									      </li>
-									      <li>
-									        <!--Imagen-->
-									        <button class="btn btn-default" type="button" name="Submit6" value="imagen" onclick="insertarImagen()">
-									          <span class="glyphicon glyphicon-picture"></span> Imagen
-									        </button>
-									      </li>
-									      <li>
-									      
-									        <!--Insertat HTML-->
-									        <button class="btn btn-default" type="button" name="Submit12" value="insertar html" onclick="inHTML()">
-									          <span class="glyphicon glyphicon-menu-left"></span>
-									          HTML
-									          <span class="glyphicon glyphicon-menu-right"></span>
-									        </button>
-									      </li>								    
-									    </ul>
-									</div>  
-
-									<input class="btn btn-default" name="ver" type="button" id="ver" onclick="htmlOEditor(event)" value="Ver html" />
-									
-
-								</div>
-								<br />
-								
-								<iframe id="edit" src="" width="100%" height="500" style=" border:1px solid #000;"></iframe>
-								<div id="ht" style="width:100%; height:300px; overflow:auto; border:1px solid #999; display:none"></div>
-								
-								</form>
-								-->
+								</head>
+								<body>
+								  <textarea></textarea>
+								</body>
+								</html>
 							</div>
+
 							<!--Ver historial de modificaciones-->
 							<div class="tab-pane fade col-xs-12 col-lg-12" id="historial">
 								<div class="container">
