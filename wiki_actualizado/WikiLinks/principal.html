@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-	<title>Wikipeddia</title>
+	<title>Wikilinks</title>
 	<meta charset="UTF-8">
 	<link rel="icon" type="image/png" href="img/favicon.ico" />
 
@@ -9,14 +9,21 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/script-marco.js"></script>
+	
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script  src="js/script-marco.js"></script>
+
 	<script type="text/javascript" src="js/manejodiv.js"></script>
 	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="js/descargarpdf.js"></script>
 	<script type="text/javascript" src="js/jspdf.min.js"></script>
 
+
+	
+	<!--Usarlo habilita las funciones del editor pero genera problemas con la funcion ver articulo y descargar pdf
+	<script type="text/javascript" src="js/js-editor.js"></script>
+	-->
 </head>
 	<body>
 		<header>
@@ -28,8 +35,10 @@
 			<div class="main row">
 
 				<div class="col-xs-12 co-sm-2 col-md-2 col-lg-2 hidden-xs hidden-sm">
-					<img src="img/wiki.png" width="145" alt="Logo de Wikilinks">
+					<img src="img/wiki.png" width="135" alt="Logo de Wikilinks">
+					<br><br>
 					<a href="index.html"><img src="img/Wikilinkslanding.png" width="145"></a>
+					<br><br>
 					
 					<!--Menu lateral izquierdo-->
 					
@@ -53,8 +62,9 @@
 							<h6 class="list-left">Imprimir/Exportar</h6>
 							<ul class="list-group1">
 								<li><a>Crear un libro</a></li>
-								<li><a>Version para imprimir</a></li>
-								<a href="javascript:getpdf();">Descargar como PDF</a>
+								<li>
+									<a href="Articulos/Unah.html" target="_blank">Version para imprimir</a></li>
+									<a href="javascript:getpdf();">Descargar como PDF</a>
 							</ul>
 						</td></tr>	
 						<tr><td>
@@ -139,12 +149,12 @@
 						
 						<div class="col-sm-4 col-md-5 hidden-xs hidden-sm">
 							<ul class="nav nav-tabs">
-							    <li id="li-articulo" name="li-articulo" class="">
-							    	<a onClick="articulo();">	Articulo
+							    <li id="li-articulo" name="li-articulo" class="active" >
+							    	<a href="#articulo" data-toggle="tab" onClick="">	Articulo
 							    	</a>
 							    </li>
-							    <li id="li-discusion" name="li-discusion" class="">
-							    	<a onClick="discusion();" >Discusion
+							    <li id="li-discusion" name="li-discusion" class="" >
+							    	<a onClick="" href="#discusion" data-toggle="tab">Discusion
 							    	</a>
 							    </li>
 							   
@@ -152,16 +162,16 @@
 						</div>
 						<div class="col-sm-4 col-md-4 col- hidden-xs hidden-sm">
 							<ul class="nav nav-tabs">
-							    <li name="li-leer" id="li-leer" class="">
-							    	<a onClick="leer();" >	Leer
+							    <li id="li-articulo" name="li-articulo" class="active" >
+							    	<a onClick="" href="#articulo" data-toggle="tab">Leer
 							    	</a>
 							    </li>
-							    <li name="li-editar" id="li-editar" class="">
-							    	<a onClick="editar();" >Editar
+							    <li name="li-editar" id="li-editar" class="" >
+							    	<a onClick="" href="#editar" data-toggle="tab">Editar
 							    	</a>
 							    </li>
-							    <li name="li-ver-historial" id="li-ver-historial" class="">
-							    	<a onClick="historial();" >Ver Historial
+							    <li name="li-ver-historial" id="li-ver-historial" class="" >
+							    	<a onClick="" href="#historial" data-toggle="tab">Ver Historial 
 							    	</a>
 							    </li>
 			
@@ -182,10 +192,184 @@
 						</div>
 
 						<!--Insertar pagina externa dentro de esta pagina-->						
-						<div id="noarticulo">
 						
-						</div>
-						<div id="articulo">
+						<!--Div usado anteriormente para mostrar el articulo-->
+				
+						
+						<div class="tab-content" id="">
+							<!--Div que muestra actualmente al presionar el boton Articulo o Leer-->
+							<div class="tab-pane fade col-xs-12 col-lg-12 in active" id="articulo">ArticulO</div>
+
+							<!--Formulario de discucion del articulo-->
+							<div class="tab-pane fade col-xs-12 col-lg-12" id="discusion">
+								<h2>Discusión</h2>
+								  <p>Puedes dejar tu opinión sobre el tema del artículo.</p>
+
+								  <div class="well">
+								    <div class="form-group">
+								      <label for="comment">Commentar:</label>
+								      <textarea class="form-control" rows="5" id="comment"></textarea>
+								    </div>
+								    <button type="button" class="btn btn-default">Publicar</button>
+								  </div>
+								  
+
+								  <div class="well">
+								    <table class="table table-hover">
+								      <thead>  
+								        <tr>
+								          <th>Juan Lopez</th>
+								          <th>12/03/16</th>
+								        </tr>
+								      </thead>
+								    </table>
+								    <p>Muy bien redactado, me parece muy interesante la informacion publicada.</p>
+								  </div> 
+
+								  <div class="well">
+								    <table class="table table-hover">
+								      <thead>  
+								        <tr>
+								          <th>Maria Perez</th>
+								          <th>04/07/16</th>
+								        </tr>
+								      </thead>
+								    </table>
+								    <p>Excelente informacion, gracias por el aporte.</p>
+								  </div> 
+
+								  <div class="well">
+								    <table class="table table-hover">
+								      <thead>  
+								        <tr>
+								          <th>Juan Lopez</th>
+								          <th>12/03/16</th>
+								        </tr>
+								      </thead>
+								    </table>
+								    <p>Muy bien redactado, me parece muy interesante la informacion publicada.</p>
+								  </div> 
+							</div>
+
+							<!--Ventana interna para editar articulo-->
+							<div class="tab-pane fade col-xs-12 col-lg-12" id="editar">
+								<form id="form1" name="form1" method="post" action="Articulo/Unah.html">
+								  <div class="btn-group">
+
+								    <!--Negrita-->
+								    <button class="btn btn-default" type="button" name="Submit" value="C" onclick="formato('bold')">
+								      <b>N</b>      
+								    </button >
+								    <!--Italica-->
+								    <button class="btn btn-default" type="button" name="Submit2" value="C" onclick="formato('italic')">
+								      <i>N</i>      
+								    </button >
+								    <!--Subrayar-->
+								    <button class="btn btn-default" type="button" name="Submit3" value="S" onclick="formato('underline')">
+								      <u>N</u>      
+								    </button>
+								    <!--Remover Fromato-->
+								    <button class="btn btn-default" type="button" name="Submit4" value="remover formato" onclick="formato('RemoveFormat')">
+								      Remover formato
+								    </button>
+								    
+								    <!--Quitar enlace-->
+								    <button class="btn btn-default" type="button" name="Submit9" value="quitar link" onclick="formato('Unlink')">
+								      Quitar enlace
+								    </button>
+								    
+								    <!--Texto rojo-->
+								    <button class="btn btn-default" type="button" name="Submit7" value="texto rojo" onclick="color('#FF0000')">
+								      Texto rojo
+								    </button>
+
+								      <!--deshacer -->
+								    <button class="btn btn-default" type="button" name="Submit10" value="deshacer" onclick="formato('undo')">
+								      <span class="glyphicon glyphicon-chevron-left"></span>
+								    </button>
+
+								    <!--Rehacer-->
+								    <button class="btn btn-default" type="button" name="Submit11" value="rehacer" onclick="formato('redo')">
+								      <span class="glyphicon glyphicon-chevron-right"></span>
+								    </button>
+
+									<div class="btn-group">
+									    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									    Insertar <span class="caret"></span></button>
+									    <ul class="dropdown-menu" role="menu">
+									      <li>
+									        <!--Enlace-->
+									        <button class="btn btn-default" type="button" name="Submit5" value="link" onclick="insertarEnlace()">
+									          <span class="glyphicon glyphicon-paperclip"></span> Enlace
+									        </button>
+									      </li>
+									      <li>
+									        <!--Imagen-->
+									        <button class="btn btn-default" type="button" name="Submit6" value="imagen" onclick="insertarImagen()">
+									          <span class="glyphicon glyphicon-picture"></span> Imagen
+									        </button>
+									      </li>
+									      <li>
+									      
+									        <!--Insertat HTML-->
+									        <button class="btn btn-default" type="button" name="Submit12" value="insertar html" onclick="inHTML()">
+									          <span class="glyphicon glyphicon-menu-left"></span>
+									          HTML
+									          <span class="glyphicon glyphicon-menu-right"></span>
+									        </button>
+									      </li>								    
+									    </ul>
+									</div>  
+
+									<input class="btn btn-default" name="ver" type="button" id="ver" onclick="htmlOEditor(event)" value="Ver html" />
+									
+
+								</div>
+								<br />
+								
+								<iframe id="edit" src="" width="100%" height="500" style=" border:1px solid #000;"></iframe>
+								<div id="ht" style="width:100%; height:300px; overflow:auto; border:1px solid #999; display:none"></div>
+								
+								</form>
+								-->
+							</div>
+							<!--Ver historial de modificaciones-->
+							<div class="tab-pane fade col-xs-12 col-lg-12" id="historial">
+								<div class="container">
+								  <h2>Historial</h2>
+								  <p>Historial de modificaciones hechas por usuarios</p>            
+								  <table class="table table-hover">
+								    <thead>
+								      <tr>
+								        <th>Usuario</th>
+								        <th>Fecha</th>
+								        <th>Descripcion</th>
+								      </tr>
+								    </thead>
+								    <tbody>
+								      <tr>
+								        <td>John M.</td>
+								        <td>12/01/17</td>
+								        <td>Nuevo rector agregado</td>
+								      </tr>
+								      <tr>
+								        <td>Maria V.</td>
+								        <td>04/01/17</td>
+								        <td>Correcciones ortograficas</td>
+								      </tr>      <tr>
+								        <td>Andres L.</td>
+								        <td>01/01/17</td>
+								        <td>Ubicacion actualizada</td>
+								      </tr>      <tr>
+								        <td>Juana L.</td>
+								        <td>12/12/16</td>
+								        <td>Creacion del articulo</td>
+								      </tr>
+								    </tbody>
+								  </table>
+								</div>
+							</div>
+							
 						
 						</div>
 					</div>
@@ -195,9 +379,13 @@
 
 
 			</div>
-			<br><br><br>
-			<footer >-Programacion Orientada a Objetos 1500-</footer>
-			<br>
+			<hr class="divi">
+
+			<div class="row">
+    			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    				<p style="text-align: center;"><strong>©Copyrigth 2017 - Proyecto de POO</strong></p>
+    			</div>
+    		</div>
 		</div>
 
 
