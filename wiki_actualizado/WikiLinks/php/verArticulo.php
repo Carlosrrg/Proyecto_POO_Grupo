@@ -139,11 +139,11 @@
 						<div class="col-sm-4 col-md-5 hidden-xs hidden-sm">
 							<ul class="nav nav-tabs">
 							    <li id="li-articulo" name="li-articulo" class="active" >
-							    	<a href="#articulo" data-toggle="tab" onClick="">	Articulo
+							    	<a href="#articulo" data-toggle="tab" onClick="">	Artículo
 							    	</a>
 							    </li>
 							    <li id="li-discusion" name="li-discusion" class="" >
-							    	<a onClick="" href="#discusion" data-toggle="tab">Discusion
+							    	<a onClick="" href="#discusion" data-toggle="tab">Discusión
 							    	</a>
 							    </li>
 							   
@@ -184,7 +184,7 @@
 						
 						<div class="tab-content" id="">
 							<!--Div que muestra actualmente al presionar el boton Articulo o Leer-->
-							<div class="tab-pane fade col-xs-12 col-lg-12 in active" id="articulo">ArticulO</div>
+							<div class="tab-pane fade col-xs-12 col-lg-12 in active" id="articulo">ArtículO</div>
 
 							<!--Formulario de discucion del articulo-->
 							<div class="tab-pane fade col-xs-12 col-lg-12" id="discusion">
@@ -193,48 +193,26 @@
 
 								  <div class="well">
 								    <div class="form-group">
-								      <label for="comment">Commentar:</label>
+								      <label for="comment">Comentar:</label>
 								      <textarea class="form-control" rows="5" id="comment"></textarea>
 								    </div>
 								    <button type="button" class="btn btn-default">Publicar</button>
 								  </div>
 								  
-
-								  <div class="well">
-								    <table class="table table-hover">
-								      <thead>  
-								        <tr>
-								          <th>Juan Lopez</th>
-								          <th>12/03/16</th>
-								        </tr>
-								      </thead>
-								    </table>
-								    <p>Muy bien redactado, me parece muy interesante la informacion publicada.</p>
-								  </div> 
-
-								  <div class="well">
-								    <table class="table table-hover">
-								      <thead>  
-								        <tr>
-								          <th>Maria Perez</th>
-								          <th>04/07/16</th>
-								        </tr>
-								      </thead>
-								    </table>
-								    <p>Excelente informacion, gracias por el aporte.</p>
-								  </div> 
-
-								  <div class="well">
-								    <table class="table table-hover">
-								      <thead>  
-								        <tr>
-								          <th>Juan Lopez</th>
-								          <th>12/03/16</th>
-								        </tr>
-								      </thead>
-								    </table>
-								    <p>Muy bien redactado, me parece muy interesante la informacion publicada.</p>
-								  </div> 
+								  <?php for ($i=0; $i < 10; $i++) { 
+								  	echo '<div class="well">
+										    <table class="table table-hover">
+										      <thead>  
+										        <tr>
+										          <th>Juan Lopez</th>
+										          <th>12/03/16</th>
+										        </tr>
+										      </thead>
+										    </table>
+										    <p>Muy bien redactado, me parece muy interesante la informacion publicada.</p>
+										  </div>';
+								  } ?>
+								   
 							</div>
 
 							<!--Ventana interna para editar articulo-->
@@ -244,11 +222,13 @@
 								<head>
 								  <script src="../tinymce/js/tinymce/tinymce.min.js"></script>
 								  <script src="../tinymce/js/tinymce/langs/es.js"></script>
-								  <script>tinymce.init({ selector:'textarea' });</script>
+								  <script>tinymce.init({ selector:'#area-editor' });</script>
 
 								</head>
 								<body>
-								  <textarea></textarea>
+								  <textarea id="area-editor">
+								  	<div id="div-editor">dgdfgdfg</div>
+								  </textarea>
 								</body>
 								</html>
 							</div>
@@ -257,7 +237,7 @@
 							<div class="tab-pane fade col-xs-12 col-lg-12" id="historial">
 								<div class="container">
 								  <h2>Historial</h2>
-								  <p>Historial de modificaciones hechas por usuarios</p>            
+								  <p>Historial de modificaciones hechas por usuarios.</p>            
 								  <table class="table table-hover">
 								    <thead>
 								      <tr>
@@ -267,24 +247,14 @@
 								      </tr>
 								    </thead>
 								    <tbody>
-								      <tr>
-								        <td>John M.</td>
-								        <td>12/01/17</td>
-								        <td>Nuevo rector agregado</td>
-								      </tr>
-								      <tr>
-								        <td>Maria V.</td>
-								        <td>04/01/17</td>
-								        <td>Correcciones ortograficas</td>
-								      </tr>      <tr>
-								        <td>Andres L.</td>
-								        <td>01/01/17</td>
-								        <td>Ubicacion actualizada</td>
-								      </tr>      <tr>
-								        <td>Juana L.</td>
-								        <td>12/12/16</td>
-								        <td>Creacion del articulo</td>
-								      </tr>
+								      <?php 
+								      for ($i=0; $i < 40; $i++){
+									      echo '
+									      <tr>
+									        <td>John M.</td>
+									        <td>12/01/17</td>
+									        <td>Nuevo rector agregado</td>
+									      </tr>';} ?>
 								    </tbody>
 								  </table>
 								</div>
