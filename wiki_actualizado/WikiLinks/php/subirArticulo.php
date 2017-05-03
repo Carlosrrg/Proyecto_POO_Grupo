@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Wikilinks</title>
@@ -45,16 +45,7 @@
 								</ul>
 
 						</td></tr>
-						
-						<tr><td>
-							<h6 class="list-left">Imprimir/Exportar</h6>
-							<ul class="list-group1">
-								<li><a>Crear un libro</a></li>
-								<li>
-									<a href="../Articulos/Unah.html" target="_blank">Version para imprimir</a></li>
-									<a href="javascript:getpdf();">Descargar como PDF</a>
-							</ul>
-						</td></tr>	
+
 						<tr><td>
 							<h6 class="list-left">En otros proyectos</h6>
 							<ul class="list-group1">
@@ -81,7 +72,7 @@
 					<br>	
 				</div>
 				
-				<div   class=" col-xs-12 col-sm-12 col-md-10 col-lg-10 ">
+				<div class=" col-xs-12 col-sm-12 col-md-10 col-lg-10 ">
 					<div class="row">
 						<div class="visible-xs visible-sm" >
 							<!--Menu para dispositivos moviles-->
@@ -138,30 +129,19 @@
 						<div class="col-sm-4 col-md-5 hidden-xs hidden-sm">
 							<ul class="nav nav-tabs">
 							    <li id="li-articulo" name="li-articulo" class="active" >
-							    	<a href="#articulo" data-toggle="tab" onClick="">	Artículo
+							    	<a href="#editor" data-toggle="tab" onClick="">	Página especial
 							    	</a>
-							    </li>
-							    <li id="li-discusion" name="li-discusion" class="" >
-							    	<a onClick="" href="#discusion" data-toggle="tab">Discusión
-							    	</a>
-							    </li>
-							   
+							    </li>  
 							</ul>
 						</div>
 						<div class="col-sm-4 col-md-4 col- hidden-xs hidden-sm">
 							<ul class="nav nav-tabs">
-							    <li id="li-articulo" name="li-articulo" class="active" >
-							    	<a onClick="" href="#articulo" data-toggle="tab">Leer
+							    
+							    <li name="li-editar" id="li-editar" class="active" >
+							    	<a onClick="" href="" data-toggle="tab">Editar
 							    	</a>
 							    </li>
-							    <li name="li-editar" id="li-editar" class="" >
-							    	<a onClick="" href="#editar" data-toggle="tab">Editar
-							    	</a>
-							    </li>
-							    <li name="li-ver-historial" id="li-ver-historial" class="" >
-							    	<a onClick="" href="#historial" data-toggle="tab">Ver Historial 
-							    	</a>
-							    </li>
+							    
 			
 							</ul>
 						</div>
@@ -182,88 +162,19 @@
 						<!--Insertar pagina externa dentro de esta pagina-->						
 						
 						<div class="tab-content" id="">
-							<!--Div que muestra actualmente al presionar el boton Articulo o Leer-->
-							<div class="tab-pane fade col-xs-12 col-lg-12 in active" id="articulo">ArtículO</div>
-
-							<!--Formulario de discucion del articulo-->
-							<div class="tab-pane fade col-xs-12 col-lg-12" id="discusion">
-								<h2>Discusión</h2>
-								  <p>Puedes dejar tu opinión sobre el tema del artículo.</p>
-
-								  <div class="well">
-								    <div class="form-group">
-								      <label for="comment">Comentar:</label>
-								      <textarea class="form-control" rows="5" id="comment"></textarea>
-								    </div>
-								    <button type="button" class="btn btn-default">Publicar</button>
-								  </div>
-								  
-								  <?php for ($i=0; $i < 10; $i++) { 
-								  	echo '<div class="well">
-										    <table class="table table-hover">
-										      <thead>  
-										        <tr>
-										          <th>Juan Lopez</th>
-										          <th>12/03/16</th>
-										        </tr>
-										      </thead>
-										    </table>
-										    <p>Muy bien redactado, me parece muy interesante la informacion publicada.</p>
-										  </div>';
-								  } ?>
-								   
-							</div>
-
 							<!--Ventana interna para editar articulo-->
-							<div class="tab-pane fade col-xs-12 col-lg-12" id="editar">
-								<!DOCTYPE html>
-								<html>
-								<head>
-								  <script src="../tinymce/js/tinymce/tinymce.min.js"></script>
-								  <script src="../tinymce/js/tinymce/langs/es.js"></script>
-								  <script>tinymce.init({ selector:'#area-editor' });</script>
-
-								</head>
-								<body>
-								  <textarea id="area-editor">
-								  	<div id="div-editor">dgdfgdfg</div>
-								  </textarea>
-								</body>
-								</html>
-							</div>
-
-							<!--Ver historial de modificaciones-->
-							<div class="tab-pane fade col-xs-12 col-lg-12" id="historial">
-								<div class="container">
-								  <h2>Historial</h2>
-								  <p>Historial de modificaciones hechas por usuarios.</p>            
-								  <table class="table table-hover">
-								    <thead>
-								      <tr>
-								        <th>Usuario</th>
-								        <th>Fecha</th>
-								        <th>Descripcion</th>
-								      </tr>
-								    </thead>
-								    <tbody>
-								      <?php 
-								      for ($i=0; $i < 40; $i++){
-									      echo '
-									      <tr>
-									        <td>John M.</td>
-									        <td>12/01/17</td>
-									        <td>Nuevo rector agregado</td>
-									      </tr>';} ?>
-								    </tbody>
-								  </table>
-								</div>
-							</div>
 							
-						
+							<div class="tab-pane fade col-xs-12 col-lg-12 in active well" id="editor">
+								<h2>Crear un nuevo artículo </h2>
+								<textarea id="area-editor">
+									<div id="div-editor">Crear nuevo articulo</div>
+								</textarea>
+							</div>
 						</div>
+
 					</div>
 				</div>
-				</div>
+				
 
 
 
@@ -284,6 +195,10 @@
 		<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="../js/descargarpdf.js"></script>
 		<script type="text/javascript" src="../js/jspdf.min.js"></script>
+
+		<script src="../tinymce/js/tinymce/tinymce.min.js"></script>
+		<script src="../tinymce/js/tinymce/langs/es.js"></script>
+		<script>tinymce.init({ selector:'#area-editor' });</script>
 
 	</body>
 </html>
