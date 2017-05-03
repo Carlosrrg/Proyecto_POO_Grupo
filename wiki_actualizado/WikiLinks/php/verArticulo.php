@@ -37,10 +37,9 @@
 							<ul class="list-group2">
 								<li><a href="../noticias.html">Portada</a></li>
 								<li><a href="reportarArticulo.php">Reportar Articulo</a></li>
-								<li><a href="usuarioModerador.php">Moderador</a></li>
-								<li><a href="subirArticulo.php">Crear paginas nuevas</a></li>
-								<li><a href="#">Pagina aleatoria</a></li>
-								<li><a>Ayuda</a></li>
+								<li><a href="#">Moderadores</a></li>
+								<li><a href="#">Crear nueva pagina</a></li>
+								<li><a href="#">Ayuda</a></li>
 								<li><a href="#">Donaciones</a></li>
 								</ul>
 
