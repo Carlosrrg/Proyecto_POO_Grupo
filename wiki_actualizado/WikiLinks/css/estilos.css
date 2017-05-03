@@ -1,52 +1,15 @@
 /* ----- ----- ----- ----- */
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0; }
-
-body {
-  font-size: 16px;
-  background: #fff;
-  font-family: "Roboto"; }
 
 a {
   color: #FF4136; }
 
-.wrap {
-  width: 90%;
-  max-width: 1000px;
-  margin: auto; }
 
-.info {
-  text-align: center;
-  padding: 20px;
-  color: #001F3F;
-  border-bottom: 1px solid #ccc; }
-  .info p {
-    margin-top: 20px; }
-
-.formulario {
-  /* --------------------------------------- */
-  /* ----- Radio Button */
-  /* --------------------------------------- */
-  /* --------------------------------------- */
-  /* ----- Checkbox */
-  /* --------------------------------------- */ }
-  .formulario h2 {
-    font-size: 16px;
-    color: #001F3F;
-    margin-bottom: 20px;
-    margin-left: 20px; }
-  .formulario > div {
-    padding: 20px 0;
-    border-bottom: 1px solid #ccc; }
+  
   .formulario .radio label,
   .formulario .checkbox label {
     display: inline-block;
     cursor: pointer;
-    color: #FF4136;
+    color: #000000;
     position: relative;
     padding: 5px 15px 5px 51px;
     font-size: 1em;
@@ -60,7 +23,7 @@ a {
     .formulario .radio label:before,
     .formulario .checkbox label:before {
       content: "";
-      display: inline-block;
+      display: none;
       width: 17px;
       height: 17px;
       position: absolute;
@@ -74,9 +37,9 @@ a {
       display: none; }
     .formulario input[type="radio"]:checked + label {
       padding: 5px 15px;
-      background: #FF4136;
+      background: #2A4B8D;
       border-radius: 2px;
-      color: #fff; }
+      color: #ffffff; }
   .formulario .checkbox label:before {
     border-radius: 3px; }
   .formulario .checkbox input[type="checkbox"] {
@@ -85,7 +48,7 @@ a {
       display: none; }
     .formulario .checkbox input[type="checkbox"]:checked + label {
       background: #FF4136;
-      color: #fff;
+      color: #ffffff;
       padding: 5px 15px; }
 
 /*# sourceMappingURL=estilos.css.map */
