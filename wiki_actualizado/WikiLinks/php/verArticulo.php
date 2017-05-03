@@ -35,7 +35,7 @@
 					  <table class="table table-hover">
 						<tr><td>
 							<ul class="list-group2">
-								<li><a href="../noticias.html">Portada</a></li>
+								<li><a href="../index.html">Portada</a></li>
 								<li><a href="reportarArticulo.php">Reportar Articulo</a></li>
 								<li><a href="#">Moderadores</a></li>
 								<li><a href="subirArticulo.php">Crear Articulo</a></li>

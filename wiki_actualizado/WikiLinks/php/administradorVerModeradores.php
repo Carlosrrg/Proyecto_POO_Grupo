@@ -31,7 +31,7 @@
 					  <table class="table table-hover">
 						<tr><td>
 							<ul class="list-group2">
-								<li><a href="../noticias.html">Portada</a></li>
+								<li><a href="../index.html">Portada</a></li>
 								<li><a href="administrador.php">Ver notificaciones</a></li>
 								<li><a href="subirArticulo.php">Crear articulo</a></li>
 								<li><a href="#">Ayuda</a></li>

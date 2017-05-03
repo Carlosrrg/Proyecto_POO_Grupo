@@ -29,7 +29,7 @@
 					  <table class="table table-hover">
 						<tr><td>
 							<ul class="list-group2">
-								<li><a href="../noticias.html">Portada</a></li>
+								<li><a href="../index.html">Portada</a></li>
 								<li><a href="ListaUsuarioNormalArticulos.php">Ver mis articulos</a></li>
 								<li><a href="subirArticulo.php">Crear Articulo</a></li>
 								<li><a href="#">Ayuda</a></li>

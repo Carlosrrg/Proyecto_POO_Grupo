@@ -15,7 +15,7 @@
 
 		</header>
 		<br>
-		<div class="div1 container-fluid ">
+		<div  class="div1 container-fluid ">
 			<div class="main row">
 				<div class="col-xs-12 co-sm-2 col-md-2 col-lg-2 hidden-xs hidden-sm">
 					<img src="../img/wiki.png" width="135" alt="Logo de Wikilinks">
@@ -28,7 +28,7 @@
 					  <table class="table table-hover">
 						<tr><td>
 							<ul class="list-group2">
-								<li><a href="../noticias.html">Portada</a></li>
+								<li><a href="../index.html">Portada</a></li>
 								<li><a href="#">Moderadores</a></li>
 								<li><a href="subirArticulo.php">Crear articulo</a></li>
 								<li><a href="#">Ayuda</a></li>
@@ -125,8 +125,11 @@
 						
 						<div class="col-sm-9 col-md-9 hidden-xs hidden-sm">
 							<ul class="nav nav-tabs">
+
+							    
 							    <li id="li-articulo" name="li-articulo" class="active" >
 							    	<a href="#log-in" data-toggle="tab" onClick="">Página especial
+
 							    	</a>
 							    </li>
 							</ul>
@@ -142,10 +145,15 @@
 								</button>
 						      </span>
 						    </div>
+
+						</div><br>
+						<!--registro-->
+								
+								
 						</div>
 
 						<div class="tab-content" id="">
-							<!--Div que muestra actualmente al presionar el boton Articulo o Leer-->
+							<!---Div que muestra actualmente al presionar el boton Articulo o Leer-->
 							<div class="tab-pane fade col-xs-12 col-lg-12 in active well" id="log-in">
 						<!--registro-->
 								<h1>Ingresar</h1>
@@ -153,17 +161,23 @@
 								<form style="width: 400px; padding-left: px;">
 								  	<div class="form-group">
 									    <label for="text">Nombre</label>
-									    <input type="text" class="form-control" id="txt-nombre">
+									    <input type="text" name="txt-nombre"  class="form-control" id="txt-nombre">
 									  </div>
 								  	<div class="form-group">
 									    <label for="pwd">Contraseña</label>
 									    <input type="password" class="form-control" id="txt-contrasena">
 								 	</div>
-								 	<div class="checkbox">
-								    	<label><input type="checkbox" align="left">Mantener sesión iniciada</label> 
-								  	</div>
+								 	 <div class="checkbox form-group row">
+										  	<div class="form-group">
+										  		<label style="display: block; padding-left: 15px; text-indent: -15px;"><input style="width: 23px; height: 23px; padding:  0; margin: 0; vertical-align:  bottom; position: relative; top: -1px; *overflow: hidden;" type="checkbox" name="">&nbsp;<span style="font-size: 15px"> mantener mi sesion iniciada</span></label>
+										  	</div>
+											
 								  	
-								  	<button type="submit" class="btn btn-primary">acceder</button>
+								  	<div class="form-group row">
+										  	<input type="submit"  class="btn btn-primary" id="btn-login" name="btn-login" value="acceder">
+										  	
+									</div>
+
 								</form>
 							</div>
 													
