@@ -165,7 +165,7 @@
 									  </div>
 								  	<div class="form-group">
 									    <label for="pwd">Contraseña</label>
-									    <input type="password" class="form-control" name="txt-contrasena"id="txt-contrasena">
+									    <input type="password" class="form-control" id="txt-contrasena">
 								 	</div>
 								 	 <div class="checkbox form-group row">
 										  	<div class="form-group">
