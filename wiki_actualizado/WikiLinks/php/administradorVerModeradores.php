@@ -3,7 +3,7 @@
 <head>
 	<title>WikiLinks</title>
 	<meta charset="UTF-8">
-	<link rel="icon" type="image/png" href="img/favicon.ico" />
+	<link rel="icon" type="image/png" href="../img/favicon.ico" />
 
 	<link rel="stylesheet" type="text/css" href="../css/style-marco.css">
 
@@ -21,9 +21,10 @@
 			<div class="main row">
 
 				<div class="col-xs-12 co-sm-2 col-md-2 col-lg-2 hidden-xs hidden-sm">
-					<img src="../img/wiki.png" width="145" alt="Logo de Wikilinks">
+					<img src="../img/wiki.png" width="135" alt="Logo de Wikilinks">
+					<br><br>
 					<a href="../index.html"><img src="../img/Wikilinkslanding.png" width="145"></a>
-					
+					<br><br>
 					<!--Menu lateral izquierdo-->
 					
 					<div class="">            
@@ -105,7 +106,6 @@
 							    <ul class="nav navbar-nav">
 							      <li class=><a href="login.php">Crear una cuenta</a></li>
 							      <li><a href="registroUsuario.php">Ayuda</a></li>
-							      <li><a href="../Feedback.html">Feedback</a></li>
 							    </ul>
 							  </div>
 							</nav>
@@ -119,63 +119,19 @@
 								<span class="glyphicon glyphicon-user"></span>
 									<a href="login.php">Acceder</a>&nbsp;&nbsp;
 									<a href="registroUsuario.php">Crear una cuenta</a>&nbsp;&nbsp;
-									<a href="../retroAlimentacion.html">Feedback</a>&nbsp;&nbsp;
 
 								</h6>
 							</div>
 						</div>
 						
-						<div class="col-sm-4 col-md-5 hidden-xs hidden-sm">
+						<div class="col-sm-9 col-md-9 hidden-xs hidden-sm">
 							<ul class="nav nav-tabs">
-							    <li id="li-articulo" name="li-articulo" class="">
-							    	<a href="javascript:articulo();">	Articulo
+							    <li id="li-articulo" name="li-articulo" class="active" >
+							    	<a href="#admin-moderador" data-toggle="tab" onClick="">Página especial
 							    	</a>
 							    </li>
-							    <li id="li-discusion" name="li-discusion" class="">
-							    	<a onClick="loadPages('Articulos/Discusion.html', 
-							    	'li-discusion', 
-							    	'li-articulo',
-							    	'li-leer',
-							    	'li-editar',
-							    	'li-ver-historial')" href="javascript:noarticulo();">Discusion
-							    	</a>
-							    </li>
-							   
 							</ul>
 						</div>
-						<div class="col-sm-4 col-md-4 col- hidden-xs hidden-sm">
-							<ul class="nav nav-tabs">
-							    <li name="li-leer" id="li-leer" class="">
-							    	<a onClick="loadPages('Articulos/Unah.html',
-							    	'li-leer', 
-							    	'li-articulo',
-							    	'li-editar',
-							    	'li-discusion',
-							    	'li-ver-historial')" href="javascript:noarticulo();">	Leer
-							    	</a>
-							    </li>
-							    <li name="li-editar" id="li-editar" class="">
-							    	<a onClick="loadPages('EditorTexto/Editor.html',
-							    	'li-editar', 
-							    	'li-articulo',
-							    	'li-leer',
-							    	'li-discusion',
-							    	'li-ver-historial')" href="javascript:noarticulo();">Editar
-							    	</a>
-							    </li>
-							    <li name="li-ver-historial" id="li-ver-historial" class="">
-							    	<a onClick="loadPages('Articulos/Historial.html',
-							    	'li-ver-historial', 
-							    	'li-articulo',
-							    	'li-leer',
-							    	'li-editar',
-							    	'li-discusion')" href="javascript:noarticulo();">Ver Historial
-							    	</a>
-							    </li>
-			
-							</ul>
-						</div>
-						
 						
 						<!--Barra de busqueda-->
 						<div class="col-xs-11 col-sm-11 col-md-3">
@@ -187,61 +143,67 @@
 								</button>
 						      </span>
 						    </div>
-						</div><br><br><br><br><br><br><br>
+						</div>
+						<div class="tab-content" id="">
+							<!--Div que muestra actualmente al presionar el boton Articulo o Leer-->
+							<div class="tab-pane fade col-xs-12 col-lg-12 in active well" id="admin-moderador">
+								<h2>Moderadores de Wikilinks</h2>
+									<form id="val-admin" action="">
+						           		<table class="table table-hover">
+										  	<tr>
+											    <th scope="col">codigo del moderador</th>
+											    <th scope="col">Nombre del moderador</th>
+											    <th scope="col">Fecha de nacimiento</th>
+											    <th scope="col">Sexo</th>
+											    <th scope="col">Pais de procedencia</th>
+											    <th scope="col">Especializacion</th>
+										  	</tr> 
+										  	<tr>
+											    <td>1</td>
+											    <td><a href="#">Petronilo gutierrez</a></td>
+											    <td>1990-10-10</td>
+											    <td>masculino</td>
+											    <td>Canada</td>
+											    <td>Ingeniero en software</td>
+											</tr>
+											<tr>
+											    <td>2</td>
+											    <td><a href="#">Petronilo gutierrez</a></td>
+											    <td>1990-10-10</td>
+											    <td>masculino</td>
+											    <td>Canada</td>
+											    <td>Ingeniero en software</td>
+											</tr>
+											<tr>
+											    <td>3</td>
+											    <td><a href="#">Petronilo gutierrez</a></td>
+											    <td>1990-10-10</td>
+											    <td>masculino</td>
+											    <td>Canada</td>
+											    <td>Ingeniero en software</td>
+											</tr>
+											<tr>
+											    <td>4</td>
+											    <td><a href="#">Petronilo gutierrez</a></td>
+											    <td>1990-10-10</td>
+											    <td>masculino</td>
+											    <td>Canada</td>
+											    <td>Ingeniero en software</td>
+											</tr>
+											<tr>
+											    <td>5</td>
+											    <td><a href="#">Petronilo gutierrez</a></td>
+											    <td>1990-10-10</td>
+											    <td>masculino</td>
+											    <td>Canada</td>
+											    <td>Ingeniero en software</td>
+											</tr>
+										</table>
+							      	</form><br>
+							</div>
+						</div>
 						<div class="container">
-							<h2>Moderadores de Wikilinks</h2>
-								<form id="val-admin" action="">
-					           		<table class="table table-hover">
-									  	<tr>
-										    <th scope="col">codigo del moderador</th>
-										    <th scope="col">Nombre del moderador</th>
-										    <th scope="col">Fecha de nacimiento</th>
-										    <th scope="col">Sexo</th>
-										    <th scope="col">Pais de procedencia</th>
-										    <th scope="col">Especializacion</th>
-									  	</tr> 
-									  	<tr>
-										    <td>1</td>
-										    <td><a href="#">Petronilo gutierrez</a></td>
-										    <td>1990-10-10</td>
-										    <td>masculino</td>
-										    <td>Canada</td>
-										    <td>Ingeniero en software</td>
-										</tr>
-										<tr>
-										    <td>2</td>
-										    <td><a href="#">Petronilo gutierrez</a></td>
-										    <td>1990-10-10</td>
-										    <td>masculino</td>
-										    <td>Canada</td>
-										    <td>Ingeniero en software</td>
-										</tr>
-										<tr>
-										    <td>3</td>
-										    <td><a href="#">Petronilo gutierrez</a></td>
-										    <td>1990-10-10</td>
-										    <td>masculino</td>
-										    <td>Canada</td>
-										    <td>Ingeniero en software</td>
-										</tr>
-										<tr>
-										    <td>4</td>
-										    <td><a href="#">Petronilo gutierrez</a></td>
-										    <td>1990-10-10</td>
-										    <td>masculino</td>
-										    <td>Canada</td>
-										    <td>Ingeniero en software</td>
-										</tr>
-										<tr>
-										    <td>5</td>
-										    <td><a href="#">Petronilo gutierrez</a></td>
-										    <td>1990-10-10</td>
-										    <td>masculino</td>
-										    <td>Canada</td>
-										    <td>Ingeniero en software</td>
-										</tr>
-									</table>
-						      	</form><br>
+								
 						</div>	
 					</div>
 				</div>

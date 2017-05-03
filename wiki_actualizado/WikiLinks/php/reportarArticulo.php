@@ -18,7 +18,8 @@
 		<div class="div1 container-fluid ">
 			<div class="main row">
 				<div class="col-xs-12 co-sm-2 col-md-2 col-lg-2 hidden-xs hidden-sm">
-					<img src="../img/wiki.png" width="145" alt="Logo de Wikilinks">
+					<img src="../img/wiki.png" width="135" alt="Logo de Wikilinks">
+					<br><br>
 					<a href="index.html"><img src="../img/Wikilinkslanding.png" width="145"></a>
 					
 					<!--Menu lateral izquierdo-->
@@ -103,7 +104,6 @@
 							    <ul class="nav navbar-nav">
 							      <li class=><a href="../php/login.php">Crear una cuenta</a></li>
 							      <li><a href="../php/registroUsuario.php">Ayuda</a></li>
-							      <li><a href="../Feedback.html">Feedback</a></li>
 							    </ul>
 							 
 							  </div>
@@ -118,62 +118,19 @@
 								<span class="glyphicon glyphicon-user"></span>
 									<a href="login.php">Acceder</a>&nbsp;&nbsp;
 									<a href="registroUsuario.php">Crear una cuenta</a>&nbsp;&nbsp;
-									<a href="../retroAlimentacion.html">Feedback</a>&nbsp;&nbsp;
 
 								</h6>
 							</div>
 						</div>
 						
-						<div class="col-sm-4 col-md-5 hidden-xs hidden-sm">
+						<div class="col-sm-9 col-md-9 hidden-xs hidden-sm">
 							<ul class="nav nav-tabs">
-							    <li id="li-articulo" name="li-articulo" class="">
-							    	<a href="javascript:articulo();">	Articulo
-							    	</a>
-							    </li>
-							    <li id="li-discusion" name="li-discusion" class="">
-							    	<a onClick="loadPages('', 
-							    	'li-discusion', 
-							    	'li-articulo',
-							    	'li-leer',
-							    	'li-editar',
-							    	'li-ver-historial')" href="javascript:noarticulo();">Discusion
-							    	</a>
-							    </li>
-							   
-							</ul>
-						</div>
-						<div class="col-sm-4 col-md-4 col- hidden-xs hidden-sm">
-							<ul class="nav nav-tabs">
-							    <li name="li-leer" id="li-leer" class="">
-							    	<a onClick="loadPages('Articulos/Unah.html',
-							    	'li-leer', 
-							    	'li-articulo',
-							    	'li-editar',
-							    	'li-discusion',
-							    	'li-ver-historial')" href="javascript:noarticulo();">	Leer
-							    	</a>
-							    </li>
-							    <!--li name="li-editar" id="li-editar" class="">
-							    	<a onClick="loadPages('EditorTexto/Editor.html',
-							    	'li-editar', 
-							    	'li-articulo',
-							    	'li-leer',
-							    	'li-discusion',
-							    	'li-ver-historial')" href="javascript:noarticulo();">Editar
-							    	</a>
-							    </li-->
-							    <li name="li-ver-historial" id="li-ver-historial" class="">
-							    	<a onClick="loadPages('Articulos/Historial.html',
-							    	'li-ver-historial', 
-							    	'li-articulo',
-							    	'li-leer',
-							    	'li-editar',
-							    	'li-discusion')" href="javascript:noarticulo();">Ver Historial
+							    <li id="li-articulo" name="li-articulo" class="active" >
+							    	<a href="#reportar-articulo" data-toggle="tab" onClick="">Página especial
 							    	</a>
 							    </li>
 							</ul>
 						</div>
-						
 						
 						<!--Barra de busqueda-->
 						<div class="col-xs-11 col-sm-11 col-md-3">
@@ -185,26 +142,28 @@
 								</button>
 						      </span>
 						    </div>
-						</div><br><br><br><br><br><br><br><br>
-						<!--formulario de reporte-->
-						<div class="container">
-						<h1>Reporta un Articulo</h1>
-							<form action="">
-								<label for="">
-									Escriba su usuario:
-									<input type="text" name="txt-nombre-usuario" id="txt-nombre-usuario" placeholder="Ingrese su usuario de la plataforma">	
-							    </label>
-							    <label for="">
-									Link de articulo a reportar:
-									<input type="email" name="txt-link-articulo-reportar" id="txt-link-articulo-reportar" placeholder="Copie el link aqui">	
-							    </label>
-							    <label for="">
-									Detalle el problema:
-									<textarea name="txtArea-descripcion" id="txtArea-descripcion" placeholder=""></textarea>	
-								</label>
-								<input type="submit" name="Enviar_datos_articulo" value="Enviar" class="btn btn-primary">
-							</form>
 						</div>
+						<div class="tab-content" id="">
+							<!--Div que muestra actualmente al presionar el boton Pagina especial-->
+							<div class="tab-pane fade col-xs-12 col-lg-12 in active well" id="reportar-articulo">						
+							<!--formulario de reporte-->
+							<h1>Reporta un Articulo</h1>
+								<form action="">
+									<label for="">
+										Escriba su usuario:
+										<input type="text" name="txt-nombre-usuario" id="txt-nombre-usuario" placeholder="Ingrese su usuario de la plataforma">	
+								    </label>
+								    <label for="">
+										Link de articulo a reportar:
+										<input type="email" name="txt-link-articulo-reportar" id="txt-link-articulo-reportar" placeholder="Copie el link aqui">	
+								    </label>
+								    <label for="">
+										Detalle el problema:
+										<textarea name="txtArea-descripcion" id="txtArea-descripcion" placeholder=""></textarea>	
+									</label>
+									<input type="submit" name="Enviar_datos_articulo" value="Enviar" class="btn btn-primary">
+								</form>
+							</div>
 					</div>
 				</div>
 				</div>

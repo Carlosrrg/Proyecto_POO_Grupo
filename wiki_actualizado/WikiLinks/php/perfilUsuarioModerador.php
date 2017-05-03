@@ -19,9 +19,10 @@
 			<div class="main row">
 
 				<div class="col-xs-12 co-sm-2 col-md-2 col-lg-2 hidden-xs hidden-sm">
-					<img src="../img/wiki.png" width="145" alt="Logo de Wikilinks">
+					<img src="../img/wiki.png" width="135" alt="Logo de Wikilinks">
+					<br><br>
 					<a href="../index.html"><img src="../img/Wikilinkslanding.png" width="145"></a>
-					
+					<br><br>
 					<!--Menu lateral izquierdo-->
 					
 					<div class="">            
@@ -104,7 +105,6 @@
 							    <ul class="nav navbar-nav">
 							      <li class=><a href="login.php">Crear una cuenta</a></li>
 							      <li><a href="#">Ayuda</a></li>
-							      <li><a href="../Feedback.html">Feedback</a></li>
 							    </ul>
 							  </div>
 							</nav>
@@ -118,60 +118,17 @@
 								<span class="glyphicon glyphicon-user"></span>
 									<a href="login.php">Acceder</a>&nbsp;&nbsp;
 									<a href="registroUsuario.php">Crear una cuenta</a>&nbsp;&nbsp;
-									<a href="../retroAlimentacion.html">Feedback</a>&nbsp;&nbsp;
 
 								</h6>
 							</div>
 						</div>
 						
-						<div class="col-sm-4 col-md-5 hidden-xs hidden-sm">
+						<div class="col-sm-9 col-md-9 hidden-xs hidden-sm">
 							<ul class="nav nav-tabs">
-							    <li id="li-articulo" name="li-articulo" class="">
-							    	<a href="javascript:articulo();">	Articulo
+							    <li id="li-articulo" name="li-articulo" class="active" >
+							    	<a href="#usuario-moderador" data-toggle="tab" onClick="">Página especial
 							    	</a>
 							    </li>
-							    <li id="li-discusion" name="li-discusion" class="">
-							    	<a onClick="loadPages('Articulos/Discusion.html', 
-							    	'li-discusion', 
-							    	'li-articulo',
-							    	'li-leer',
-							    	'li-editar',
-							    	'li-ver-historial')" href="javascript:noarticulo();">Discusion
-							    	</a>
-							    </li>
-							   
-							</ul>
-						</div>
-						<div class="col-sm-4 col-md-4 col- hidden-xs hidden-sm">
-							<ul class="nav nav-tabs">
-							    <li name="li-leer" id="li-leer" class="">
-							    	<a onClick="loadPages('Articulos/Unah.html',
-							    	'li-leer', 
-							    	'li-articulo',
-							    	'li-editar',
-							    	'li-discusion',
-							    	'li-ver-historial')" href="javascript:noarticulo();">	Leer
-							    	</a>
-							    </li>
-							    <li name="li-editar" id="li-editar" class="">
-							    	<a onClick="loadPages('EditorTexto/Editor.html',
-							    	'li-editar', 
-							    	'li-articulo',
-							    	'li-leer',
-							    	'li-discusion',
-							    	'li-ver-historial')" href="javascript:noarticulo();">Editar
-							    	</a>
-							    </li>
-							    <li name="li-ver-historial" id="li-ver-historial" class="">
-							    	<a onClick="loadPages('Articulos/Historial.html',
-							    	'li-ver-historial', 
-							    	'li-articulo',
-							    	'li-leer',
-							    	'li-editar',
-							    	'li-discusion')" href="javascript:noarticulo();">Ver Historial
-							    	</a>
-							    </li>
-			
 							</ul>
 						</div>
 						
@@ -186,60 +143,65 @@
 								</button>
 						      </span>
 						    </div>
-						</div><br><br><br><br><br><br><br>
-						<div class="container">
-							<h2>Datos personales de #NOMBRE DE USUARIO DEL MODERADOR#</h2><br>
-							<div class="col-lg-4 col-md-4 col-sm-12">
-								<div class="input-group">
-									<img src="" id="imagen" width="200" height="200"><br>
-									<button class="btn btn-default" id="btn-camara-moderador">Capturar</button>
-									<button class="btn btn-default" id="btn-guardar-moderador">Seleccionar del PC</button>
-									<video id="video"></video>
-									<canvas id="canvas"></canvas>
+						</div>
+						
+						<div class="tab-content" id="">
+							<!--Div que muestra actualmente al presionar el boton Pagina especial-->
+							<div class="tab-pane fade col-xs-12 col-lg-12 in active well" id="usuario-moderador">
+							
+								<h2>Datos personales de #NOMBRE DE USUARIO DEL MODERADOR#</h2><br>
+								<div class="col-lg-4 col-md-4 col-sm-12">
+									<div class="input-group">
+										<img src="" id="imagen" width="200" height="200"><br>
+										<button class="btn btn-default" id="btn-camara-moderador">Capturar</button>
+										<button class="btn btn-default" id="btn-guardar-moderador">Seleccionar del PC</button>
+										<video id="video"></video>
+										<canvas id="canvas"></canvas>
+									</div>
 								</div>
-							</div>
-							<div class="col-lg-8 col-md-8 col-sm-12">
-								<div style="width: 55%;">
-									<form action="#">
-										<table class="table">
-											<tr><a href="#">Editar</a></tr>
-											<tr>
-												<td>Nombre completo:</td>
-												<td><input type="text" name="txt-nombre-moderador" id="txt-nombre-moderador" value="Carlos Roberto Ramos Garcia" size="50px" disabled></td>
-											</tr>
-											<tr>
-												<td>Correo:</td>
-												<td><input type="text" name="txt-correo-moderador" id="txt-correo-moderador" value="carlos06@gmail.com" size="50px" disabled></td>
-											</tr>
-											<tr>
-												<td>Fecha de nacimiento:</td>
-												<td><input type="date" name="txt-date-moderador" id="txt-date-moderador" value="2012-10-10" size="50px" disabled></td>
-											</tr>
-											<tr>
-												<td>Usuario:</td>
-												<td><input type="text" name="txt-usuario-moderador" id="txt-usuario-moderador" value="carlos067" size="50px" disabled></td>
-											</tr>
-											<tr>
-												<td>Contrasena:</td>
-												<td><input type="password" name="txt-contrasena-moderador" id="txt-contrasena-moderador" value="carlos123456" size="50px" disabled></td>
-											</tr>
-											<tr>
-												<td>Especialidad:</td>
-												<td><input type="text" name="txt-especialidad-moderador" id="txt-especialidad-moderador" value="Programacion" size="50px" disabled></td>
-											</tr>
-											<tr>
-												<td>Categoria preferida:</td>
-												<td><select name="slc-categoria-moderador" id="slc-categoria-moderador" disabled value="categoria 1">
-													<option>categoria 1</option>
-												</select></td>
-											</tr>
-										</table>
-										<button class="btn btn-primary" disabled>Aceptar</button>
-										<button class="btn btn-danger">Solicitud de renuncia</button>
-									</form>
+								<div class="col-lg-8 col-md-8 col-sm-12">
+									<div style="width: 55%;">
+										<form action="#">
+											<table class="table">
+												<tr><a href="#">Editar</a></tr>
+												<tr>
+													<td>Nombre completo:</td>
+													<td><input type="text" name="txt-nombre-moderador" id="txt-nombre-moderador" value="Carlos Roberto Ramos Garcia" size="50px" disabled></td>
+												</tr>
+												<tr>
+													<td>Correo:</td>
+													<td><input type="text" name="txt-correo-moderador" id="txt-correo-moderador" value="carlos06@gmail.com" size="50px" disabled></td>
+												</tr>
+												<tr>
+													<td>Fecha de nacimiento:</td>
+													<td><input type="date" name="txt-date-moderador" id="txt-date-moderador" value="2012-10-10" size="50px" disabled></td>
+												</tr>
+												<tr>
+													<td>Usuario:</td>
+													<td><input type="text" name="txt-usuario-moderador" id="txt-usuario-moderador" value="carlos067" size="50px" disabled></td>
+												</tr>
+												<tr>
+													<td>Contrasena:</td>
+													<td><input type="password" name="txt-contrasena-moderador" id="txt-contrasena-moderador" value="carlos123456" size="50px" disabled></td>
+												</tr>
+												<tr>
+													<td>Especialidad:</td>
+													<td><input type="text" name="txt-especialidad-moderador" id="txt-especialidad-moderador" value="Programacion" size="50px" disabled></td>
+												</tr>
+												<tr>
+													<td>Categoria preferida:</td>
+													<td><select name="slc-categoria-moderador" id="slc-categoria-moderador" disabled value="categoria 1">
+														<option>categoria 1</option>
+													</select></td>
+												</tr>
+											</table>
+											<button class="btn btn-primary" disabled>Aceptar</button>
+											<button class="btn btn-danger">Solicitud de renuncia</button>
+										</form>
+									</div>
 								</div>
-							</div>
-						</div>	
+							</div>	
+						</div>
 					</div>
 				</div>
 				</div>

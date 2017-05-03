@@ -18,9 +18,10 @@
 		<div class="div1 container-fluid ">
 			<div class="main row">
 				<div class="col-xs-12 co-sm-2 col-md-2 col-lg-2 hidden-xs hidden-sm">
-					<img src="../img/wiki.png" width="145" alt="Logo de Wikilinks">
+					<img src="../img/wiki.png" width="135" alt="Logo de Wikilinks">
+					<br><br>
 					<a href="index.html"><img src="../img/Wikilinkslanding.png" width="145"></a>
-					
+					<br><br>
 					<!--Menu lateral izquierdo-->
 					
 					<div class="">            
@@ -103,7 +104,6 @@
 							    <ul class="nav navbar-nav">
 							      <li class=><a href="../php/login.php">Crear una cuenta</a></li>
 							      <li><a href="../php/registroUsuario.php">Ayuda</a></li>
-							      <li><a href="../Feedback.html">Feedback</a></li>
 							    </ul>
 							 
 							  </div>
@@ -118,54 +118,19 @@
 								<span class="glyphicon glyphicon-user"></span>
 									<a href="login.php">Acceder</a>&nbsp;&nbsp;
 									<a href="registroUsuario.php">Crear una cuenta</a>&nbsp;&nbsp;
-									<a href="../retroAlimentacion.html">Feedback</a>&nbsp;&nbsp;
 
 								</h6>
 							</div>
 						</div>
 						
-						<div class="col-sm-4 col-md-5 hidden-xs hidden-sm">
+						<div class="col-sm-9 col-md-9 hidden-xs hidden-sm">
 							<ul class="nav nav-tabs">
-							    <li id="li-articulo" name="li-articulo" class="">
-							    	<a href="javascript:articulo();">Pagina especial
-							    	</a>
-							    </li>
-							   
-							   
-							</ul>
-						</div>
-						<div class="col-sm-4 col-md-4 col- hidden-xs hidden-sm">
-							<ul class="nav nav-tabs">
-							    <li name="li-leer" id="li-leer" class="">
-							    	<a onClick="loadPages('Articulos/Unah.html',
-							    	'li-leer', 
-							    	'li-articulo',
-							    	'li-editar',
-							    	'li-discusion',
-							    	'li-ver-historial')" href="javascript:noarticulo();">	Leer
-							    	</a>
-							    </li>
-							    <!--li name="li-editar" id="li-editar" class="">
-							    	<a onClick="loadPages('EditorTexto/Editor.html',
-							    	'li-editar', 
-							    	'li-articulo',
-							    	'li-leer',
-							    	'li-discusion',
-							    	'li-ver-historial')" href="javascript:noarticulo();">Editar
-							    	</a>
-							    </li-->
-							    <li name="li-ver-historial" id="li-ver-historial" class="">
-							    	<a onClick="loadPages('Articulos/Historial.html',
-							    	'li-ver-historial', 
-							    	'li-articulo',
-							    	'li-leer',
-							    	'li-editar',
-							    	'li-discusion')" href="javascript:noarticulo();">Ver Historial
+							    <li id="li-articulo" name="li-articulo" class="active" >
+							    	<a href="#log-in" data-toggle="tab" onClick="">Página especial
 							    	</a>
 							    </li>
 							</ul>
 						</div>
-						
 						
 						<!--Barra de busqueda-->
 						<div class="col-xs-11 col-sm-11 col-md-3">
@@ -177,24 +142,30 @@
 								</button>
 						      </span>
 						    </div>
-						</div><br><br><br><br>
+						</div>
+
+						<div class="tab-content" id="">
+							<!--Div que muestra actualmente al presionar el boton Articulo o Leer-->
+							<div class="tab-pane fade col-xs-12 col-lg-12 in active well" id="log-in">
 						<!--registro-->
 								<h1>Ingresar</h1>
-								<span>necesitas tener cookies permisos para poder registrarte en wikilinks </span>
+								<span>Necesitas tener cookies activos para poder registrarte en Wikilinks. </span>
 								<form style="width: 400px; padding-left: px;">
-										  <div class="form-group">
-											    <label for="text">nombre</label>
-											    <input type="text" class="form-control" id="txt-nombre">
-										  </div>
-										  <div class="form-group">
-											    <label for="pwd">Contrasena:</label>
-											    <input type="password" class="form-control" id="txt-contrasena">
-										  </div>
-										  <div class="checkbox">
-										    <label><input type="checkbox" align="left"> mantener mi sesion iniciada </label>
-										  </div>
-										  <button type="submit" class="btn btn-primary">acceder</button>
+								  	<div class="form-group">
+									    <label for="text">Nombre</label>
+									    <input type="text" class="form-control" id="txt-nombre">
+									  </div>
+								  	<div class="form-group">
+									    <label for="pwd">Contraseña</label>
+									    <input type="password" class="form-control" id="txt-contrasena">
+								 	</div>
+								 	<div class="checkbox">
+								    	<label><input type="checkbox" align="left">Mantener sesión iniciada</label> 
+								  	</div>
+								  	
+								  	<button type="submit" class="btn btn-primary">acceder</button>
 								</form>
+							</div>
 													
 													
 					
@@ -203,9 +174,13 @@
 					
 				</div>
 			</div>
-			<br><br><br>
-			<footer >©CopyRigth 2017 Proyecto de POO</footer>
-			<br>
+			<br><br>
+			<hr class="divi">
+			<div class="row">
+    			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    				<p style="text-align: center;"><strong>©Copyrigth 2017 - Proyecto de POO</strong></p>
+    			</div>
+    		</div>
 		</div>
 		<script src="../js/jquery.min.js"></script>
 		<script src="../js/bootstrap.min.js"></script>

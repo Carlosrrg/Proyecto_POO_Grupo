@@ -3,7 +3,7 @@
 <head>
 	<title>WikiLinks</title>
 	<meta charset="UTF-8">
-	<link rel="icon" type="image/png" href="img/favicon.ico" />
+	<link rel="icon" type="image/png" href="../img/favicon.ico" />
 
 	<link rel="stylesheet" type="text/css" href="../css/style-marco.css">
 
@@ -22,8 +22,9 @@
 
 				<div class="col-xs-12 co-sm-2 col-md-2 col-lg-2 hidden-xs hidden-sm">
 					<img src="../img/wiki.png" width="145" alt="Logo de Wikilinks">
+					<br><br>
 					<a href="../index.html"><img src="../img/Wikilinkslanding.png" width="145"></a>
-					
+					<br><br>
 					<!--Menu lateral izquierdo-->
 					
 					<div class="">            
@@ -106,7 +107,6 @@
 							    <ul class="nav navbar-nav">
 							      <li class=><a href="login.php">Crear una cuenta</a></li>
 							      <li><a href="registroUsuario.php">Ayuda</a></li>
-							      <li><a href="../Feedback.html">Feedback</a></li>
 							    </ul>
 							  </div>
 							</nav>
@@ -120,60 +120,17 @@
 								<span class="glyphicon glyphicon-user"></span>
 									<a href="login.php">Acceder</a>&nbsp;&nbsp;
 									<a href="registroUsuario.php">Crear una cuenta</a>&nbsp;&nbsp;
-									<a href="../retroAlimentacion.html">Feedback</a>&nbsp;&nbsp;
 
 								</h6>
 							</div>
 						</div>
 						
-						<div class="col-sm-4 col-md-5 hidden-xs hidden-sm">
+						<div class="col-sm-9 col-md-9 hidden-xs hidden-sm">
 							<ul class="nav nav-tabs">
-							    <li id="li-articulo" name="li-articulo" class="">
-							    	<a href="javascript:articulo();">	Articulo
+							    <li id="li-articulo" name="li-articulo" class="active" >
+							    	<a href="#reporte-moderador" data-toggle="tab" onClick="">Página especial
 							    	</a>
-							    </li>
-							    <li id="li-discusion" name="li-discusion" class="">
-							    	<a onClick="loadPages('Articulos/Discusion.html', 
-							    	'li-discusion', 
-							    	'li-articulo',
-							    	'li-leer',
-							    	'li-editar',
-							    	'li-ver-historial')" href="javascript:noarticulo();">Discusion
-							    	</a>
-							    </li>
-							   
-							</ul>
-						</div>
-						<div class="col-sm-4 col-md-4 col- hidden-xs hidden-sm">
-							<ul class="nav nav-tabs">
-							    <li name="li-leer" id="li-leer" class="">
-							    	<a onClick="loadPages('Articulos/Unah.html',
-							    	'li-leer', 
-							    	'li-articulo',
-							    	'li-editar',
-							    	'li-discusion',
-							    	'li-ver-historial')" href="javascript:noarticulo();">	Leer
-							    	</a>
-							    </li>
-							    <li name="li-editar" id="li-editar" class="">
-							    	<a onClick="loadPages('EditorTexto/Editor.html',
-							    	'li-editar', 
-							    	'li-articulo',
-							    	'li-leer',
-							    	'li-discusion',
-							    	'li-ver-historial')" href="javascript:noarticulo();">Editar
-							    	</a>
-							    </li>
-							    <li name="li-ver-historial" id="li-ver-historial" class="">
-							    	<a onClick="loadPages('Articulos/Historial.html',
-							    	'li-ver-historial', 
-							    	'li-articulo',
-							    	'li-leer',
-							    	'li-editar',
-							    	'li-discusion')" href="javascript:noarticulo();">Ver Historial
-							    	</a>
-							    </li>
-			
+							    </li>	   
 							</ul>
 						</div>
 						
@@ -188,60 +145,63 @@
 								</button>
 						      </span>
 						    </div>
-						</div><br><br><br><br><br><br><br><br>
-						<div class="container">
-							<h1>Articulos Reportados</h1><br>
-								<form action="">
-					           		<table class="table table-hover" style="width: 70%">
-										<tr>
-										  <th scope="col">Articulo</th>
-										  <th scope="col">Usuario de articulo</th>
-										  <th scope="col">N. Reportes</th>
-										  <th scope="col">Accion</th>
-										</tr>
-									 
-										<tr>
-											<td><a href="#">Nombre articulo 1</a></td>
-										    <td><a href="#">Nombre usuario 1</a></td>
-										    <td><a href="listaReportesPorUsuarios.php">45</a></td>
-										    <td>
-										    	<button class="btn btn-warning" id="btn-cancelar" name="btn-cancelar">Solicitar cancelar cuenta de usuario</button>
-										    </td>
-										</tr>
-										<tr>
-											<td><a href="#">Nombre articulo 2</a></td>
-										    <td><a href="#">Nombre usuario 2</a></td>
-										    <td><a href="listaReportesPorUsuarios.php">95</a></td>
-										    <td>
-										    	<button class="btn btn-warning" id="btn-cancelar" name="btn-cancelar">Solicitar cancelar cuenta de usuario</button>
-										    </td>
-										</tr>
-										<tr>
-											<td><a href="#">Nombre articulo 3</a></td>
-										    <td><a href="#">Nombre usuario 3</a></td>
-										    <td><a href="listaReportesPorUsuarios.php">10</a></td>
-										    <td>
-										    	<button class="btn btn-warning" id="btn-cancelar" name="btn-cancelar">Solicitar cancelar cuenta de usuario</button>
-										    </td>
-										</tr>
-										<tr>
-											<td><a href="#">Nombre articulo 4</a></td>
-										    <td><a href="#">Nombre usuario 4</a></td>
-										    <td><a href="listaReportesPorUsuarios.php">20</a></td>
-										    <td>
-										    	<button class="btn btn-warning" id="btn-cancelar" name="btn-cancelar">Solicitar cancelar cuenta de usuario</button>
-										    </td>
-										</tr>
-										<tr>
-											<td><a href="#">Nombre articulo 5</a></td>
-										    <td><a href="#">Nombre usuario 5</a></td>
-										    <td><a href="listaReportesPorUsuarios.php">15</a></td>
-										    <td>
-										    	<button class="btn btn-warning" id="btn-cancelar" name="btn-cancelar">Solicitar cancelar cuenta de usuario</button>
-										    </td>
-										</tr>
-									</table>
-						      	</form>
+						</div>
+						<div class="tab-content" id="">
+							<!--Div que muestra actualmente al presionar el boton Articulo o Leer-->
+							<div class="tab-pane fade col-xs-12 col-lg-12 in active well" id="reporte-moderador">
+								<h1>Articulos Reportados</h1><br>
+									<form action="">
+						           		<table class="table table-hover" style="width: 70%">
+											<tr>
+											  <th scope="col">Articulo</th>
+											  <th scope="col">Usuario de articulo</th>
+											  <th scope="col">N. Reportes</th>
+											  <th scope="col">Accion</th>
+											</tr>
+										 
+											<tr>
+												<td><a href="#">Nombre articulo 1</a></td>
+											    <td><a href="#">Nombre usuario 1</a></td>
+											    <td><a href="listaReportesPorUsuarios.php">45</a></td>
+											    <td>
+											    	<button class="btn btn-warning" id="btn-cancelar" name="btn-cancelar">Solicitar cancelar cuenta de usuario</button>
+											    </td>
+											</tr>
+											<tr>
+												<td><a href="#">Nombre articulo 2</a></td>
+											    <td><a href="#">Nombre usuario 2</a></td>
+											    <td><a href="listaReportesPorUsuarios.php">95</a></td>
+											    <td>
+											    	<button class="btn btn-warning" id="btn-cancelar" name="btn-cancelar">Solicitar cancelar cuenta de usuario</button>
+											    </td>
+											</tr>
+											<tr>
+												<td><a href="#">Nombre articulo 3</a></td>
+											    <td><a href="#">Nombre usuario 3</a></td>
+											    <td><a href="listaReportesPorUsuarios.php">10</a></td>
+											    <td>
+											    	<button class="btn btn-warning" id="btn-cancelar" name="btn-cancelar">Solicitar cancelar cuenta de usuario</button>
+											    </td>
+											</tr>
+											<tr>
+												<td><a href="#">Nombre articulo 4</a></td>
+											    <td><a href="#">Nombre usuario 4</a></td>
+											    <td><a href="listaReportesPorUsuarios.php">20</a></td>
+											    <td>
+											    	<button class="btn btn-warning" id="btn-cancelar" name="btn-cancelar">Solicitar cancelar cuenta de usuario</button>
+											    </td>
+											</tr>
+											<tr>
+												<td><a href="#">Nombre articulo 5</a></td>
+											    <td><a href="#">Nombre usuario 5</a></td>
+											    <td><a href="listaReportesPorUsuarios.php">15</a></td>
+											    <td>
+											    	<button class="btn btn-warning" id="btn-cancelar" name="btn-cancelar">Solicitar cancelar cuenta de usuario</button>
+											    </td>
+											</tr>
+										</table>
+							      	</form>
+							</div>
 						</div>	
 					</div>
 				</div>

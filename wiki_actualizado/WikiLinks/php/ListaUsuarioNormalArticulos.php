@@ -3,7 +3,7 @@
 <head>
 	<title>WikiLinks</title>
 	<meta charset="UTF-8">
-	<link rel="icon" type="image/png" href="img/favicon.ico" />
+	<link rel="icon" type="image/png" href="../img/favicon.ico" />
 
 	<link rel="stylesheet" type="text/css" href="../css/style-marco.css">
 
@@ -21,9 +21,10 @@
 			<div class="main row">
 
 				<div class="col-xs-12 co-sm-2 col-md-2 col-lg-2 hidden-xs hidden-sm">
-					<img src="../img/wiki.png" width="145" alt="Logo de Wikilinks">
+					<img src="../img/wiki.png" width="135" alt="Logo de Wikilinks">
+					<br><br>
 					<a href="../index.html"><img src="../img/Wikilinkslanding.png" width="145"></a>
-					
+					<br><br>
 					<!--Menu lateral izquierdo-->
 					
 					<div class="">            
@@ -105,13 +106,11 @@
 							    <ul class="nav navbar-nav">
 							      <li class=><a href="login.php">Crear una cuenta</a></li>
 							      <li><a href="registroUsuario.php">Ayuda</a></li>
-							      <li><a href="../Feedback.html">Feedback</a></li>
+							      
 							    </ul>
 							  </div>
 							</nav>
 						</div>
-
-
 						<div class="col-xs-12 col-lg-12 hidden-sm hidden-xs">
 							<div  align="right">
 								<!--Accesos para ventana media, grande-->
@@ -119,60 +118,18 @@
 								<span class="glyphicon glyphicon-user"></span>
 									<a href="login.php">Acceder</a>&nbsp;&nbsp;
 									<a href="registroUsuario.php">Crear una cuenta</a>&nbsp;&nbsp;
-									<a href="../retroAlimentacion.html">Feedback</a>&nbsp;&nbsp;
+									
 
 								</h6>
 							</div>
 						</div>
-						
-						<div class="col-sm-4 col-md-5 hidden-xs hidden-sm">
+
+						<div class="col-sm-9 col-md-9 hidden-xs hidden-sm">
 							<ul class="nav nav-tabs">
-							    <li id="li-articulo" name="li-articulo" class="">
-							    	<a href="javascript:articulo();">	Articulo
+							    <li id="li-articulo" name="li-articulo" class="active" >
+							    	<a href="#usuario-normal" data-toggle="tab" onClick="">Página especial
 							    	</a>
 							    </li>
-							    <li id="li-discusion" name="li-discusion" class="">
-							    	<a onClick="loadPages('Articulos/Discusion.html', 
-							    	'li-discusion', 
-							    	'li-articulo',
-							    	'li-leer',
-							    	'li-editar',
-							    	'li-ver-historial')" href="javascript:noarticulo();">Discusion
-							    	</a>
-							    </li>
-							   
-							</ul>
-						</div>
-						<div class="col-sm-4 col-md-4 col- hidden-xs hidden-sm">
-							<ul class="nav nav-tabs">
-							    <li name="li-leer" id="li-leer" class="">
-							    	<a onClick="loadPages('Articulos/Unah.html',
-							    	'li-leer', 
-							    	'li-articulo',
-							    	'li-editar',
-							    	'li-discusion',
-							    	'li-ver-historial')" href="javascript:noarticulo();">	Leer
-							    	</a>
-							    </li>
-							    <li name="li-editar" id="li-editar" class="">
-							    	<a onClick="loadPages('EditorTexto/Editor.html',
-							    	'li-editar', 
-							    	'li-articulo',
-							    	'li-leer',
-							    	'li-discusion',
-							    	'li-ver-historial')" href="javascript:noarticulo();">Editar
-							    	</a>
-							    </li>
-							    <li name="li-ver-historial" id="li-ver-historial" class="">
-							    	<a onClick="loadPages('Articulos/Historial.html',
-							    	'li-ver-historial', 
-							    	'li-articulo',
-							    	'li-leer',
-							    	'li-editar',
-							    	'li-discusion')" href="javascript:noarticulo();">Ver Historial
-							    	</a>
-							    </li>
-			
 							</ul>
 						</div>
 						
@@ -187,63 +144,66 @@
 								</button>
 						      </span>
 						    </div>
-						</div><br><br><br><br><br><br><br>
-						<div class="container">
-							<h1>Bienvenido(@), #NOMBRE DE USUARIO NORMAL#</h1><br>
+						</div>
+						<div class="tab-content" id="">
+							<!--Div que muestra actualmente al presionar el boton Articulo o Leer-->
+							<div class="tab-pane fade col-xs-12 col-lg-12 in active well" id="usuario-normal">
+								<h1>Bienvenido(@), #NOMBRE DE USUARIO NORMAL#</h1><br>
 
-							<h2>Mis articulos</h2>
-									<form id="val-admin" action="">
-						           		<table class="table table-hover">
-											<tr>
-											   <th scope="col">Nombre del Articulo</th>
-											   <th scope="col">Ultima edicion</th>
-											   <th scope="col">Estado de articulo</th>
-											   <th scope="col">Mensaje del Moderador</th>
-											   <th scope="col">Numero de comentarios</th>
-											   <th scope="col">Fecha de publicacion</th>
-											</tr> 
-											<tr>
-											    <td><a href="">Articulo 1</a></td>
-											    <td><p>2012-10-10</p></td>
-											    <td><p>aprobado</p></td>
-											    <td><p>Buen articulo pero citar fuentes.</p></td>
-											    <td><p>12</p></td>
-											    <td><p>2012-10-10</p></td>
-											</tr>
-											<tr>
-											    <td><a href="">Articulo 2</a></td>
-											    <td><p>2012-10-10</p></td>
-											    <td><p>aprobado</p></td>
-											    <td><p>Buen articulo pero citar fuentes.</p></td>
-											    <td><p>12</p></td>
-											    <td><p>2012-10-10</p></td>
-											</tr>
-											<tr>
-											    <td><a href="">Articulo 3</a></td>
-											    <td><p>2012-10-10</p></td>
-											    <td><p>reprobado</p></td>
-											    <td><p>Se nesesita mas informacion para el lector.</p></td>
-											    <td><p>0</p></td>
-											    <td><p>2012-10-10</p></td>
-											</tr>
-											<tr>
-											    <td><a href="">Articulo 4</a></td>
-											    <td><p>2012-10-10</p></td>
-											    <td><p>aprobado</p></td>
-											    <td><p>Buen articulo pero citar fuentes.</p></td>
-											    <td><p>12</p></td>
-											    <td><p>2012-10-10</p></td>
-											</tr>
-											<tr>
-											    <td><a href="">Articulo 5</a></td>
-											    <td><p>2012-10-10</p></td>
-											    <td><p>aprobado</p></td>
-											    <td><p>Buen articulo pero citar fuentes.</p></td>
-											    <td><p>12</p></td>
-											    <td><p>2012-10-10</p></td>
-											</tr>
-										</table>
-							      	</form>
+								<h2>Mis articulos</h2>
+										<form id="val-admin" action="">
+							           		<table class="table table-hover">
+												<tr>
+												   <th scope="col">Nombre del Articulo</th>
+												   <th scope="col">Ultima edicion</th>
+												   <th scope="col">Estado de articulo</th>
+												   <th scope="col">Mensaje del Moderador</th>
+												   <th scope="col">Numero de comentarios</th>
+												   <th scope="col">Fecha de publicacion</th>
+												</tr> 
+												<tr>
+												    <td><a href="">Articulo 1</a></td>
+												    <td><p>2012-10-10</p></td>
+												    <td><p>aprobado</p></td>
+												    <td><p>Buen articulo pero citar fuentes.</p></td>
+												    <td><p>12</p></td>
+												    <td><p>2012-10-10</p></td>
+												</tr>
+												<tr>
+												    <td><a href="">Articulo 2</a></td>
+												    <td><p>2012-10-10</p></td>
+												    <td><p>aprobado</p></td>
+												    <td><p>Buen articulo pero citar fuentes.</p></td>
+												    <td><p>12</p></td>
+												    <td><p>2012-10-10</p></td>
+												</tr>
+												<tr>
+												    <td><a href="">Articulo 3</a></td>
+												    <td><p>2012-10-10</p></td>
+												    <td><p>reprobado</p></td>
+												    <td><p>Se nesesita mas informacion para el lector.</p></td>
+												    <td><p>0</p></td>
+												    <td><p>2012-10-10</p></td>
+												</tr>
+												<tr>
+												    <td><a href="">Articulo 4</a></td>
+												    <td><p>2012-10-10</p></td>
+												    <td><p>aprobado</p></td>
+												    <td><p>Buen articulo pero citar fuentes.</p></td>
+												    <td><p>12</p></td>
+												    <td><p>2012-10-10</p></td>
+												</tr>
+												<tr>
+												    <td><a href="">Articulo 5</a></td>
+												    <td><p>2012-10-10</p></td>
+												    <td><p>aprobado</p></td>
+												    <td><p>Buen articulo pero citar fuentes.</p></td>
+												    <td><p>12</p></td>
+												    <td><p>2012-10-10</p></td>
+												</tr>
+											</table>
+								      	</form>
+							</div>
 						</div>	
 					</div>
 				</div>

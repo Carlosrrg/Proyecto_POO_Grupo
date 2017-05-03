@@ -19,8 +19,10 @@
 		<div class="div1 container-fluid ">
 			<div class="main row">
 				<div class="col-xs-12 co-sm-2 col-md-2 col-lg-2 hidden-xs hidden-sm">
-					<img src="../img/wiki.png" width="145" alt="Logo de Wikilinks">
+					<img src="../img/wiki.png" width="135" alt="Logo de Wikilinks">
+					<br><br>
 					<a href="index.html"><img src="../img/Wikilinkslanding.png" width="145"></a>
+					<br><br>
 					
 					<!--Menu lateral izquierdo-->
 					
@@ -104,7 +106,6 @@
 							    <ul class="nav navbar-nav">
 							      <li class=><a href="../php/login.php">Crear una cuenta</a></li>
 							      <li><a href="../php/registroUsuario.php">Ayuda</a></li>
-							      <li><a href="../Feedback.html">Feedback</a></li>
 							    </ul>
 							 
 							  </div>
@@ -119,54 +120,19 @@
 								<span class="glyphicon glyphicon-user"></span>
 									<a href="login.php">Acceder</a>&nbsp;&nbsp;
 									<a href="registroUsuario.php">Crear una cuenta</a>&nbsp;&nbsp;
-									<a href="../retroAlimentacion.html">Feedback</a>&nbsp;&nbsp;
 
 								</h6>
 							</div>
 						</div>
 						
-						<div class="col-sm-4 col-md-5 hidden-xs hidden-sm">
+						<div class="col-sm-9 col-md-9 hidden-xs hidden-sm">
 							<ul class="nav nav-tabs">
-							    <li id="li-articulo" name="li-articulo" class="">
-							    	<a href="javascript:articulo();">	Pagina especial
-							    	</a>
-							    </li>
-							
-							   
-							</ul>
-						</div>
-						<div class="col-sm-4 col-md-4 col- hidden-xs hidden-sm">
-							<ul class="nav nav-tabs">
-							    <li name="li-leer" id="li-leer" class="">
-							    	<a onClick="loadPages('Articulos/Unah.html',
-							    	'li-leer', 
-							    	'li-articulo',
-							    	'li-editar',
-							    	'li-discusion',
-							    	'li-ver-historial')" href="javascript:noarticulo();">	Leer
-							    	</a>
-							    </li>
-							    <!--li name="li-editar" id="li-editar" class="">
-							    	<a onClick="loadPages('EditorTexto/Editor.html',
-							    	'li-editar', 
-							    	'li-articulo',
-							    	'li-leer',
-							    	'li-discusion',
-							    	'li-ver-historial')" href="javascript:noarticulo();">Editar
-							    	</a>
-							    </li-->
-							    <li name="li-ver-historial" id="li-ver-historial" class="">
-							    	<a onClick="loadPages('Articulos/Historial.html',
-							    	'li-ver-historial', 
-							    	'li-articulo',
-							    	'li-leer',
-							    	'li-editar',
-							    	'li-discusion')" href="javascript:noarticulo();">Ver Historial
+							    <li id="li-articulo" name="li-articulo" class="active" >
+							    	<a href="#registro-usuario" data-toggle="tab" onClick="">Página especial
 							    	</a>
 							    </li>
 							</ul>
 						</div>
-						
 						
 						<!--Barra de busqueda-->
 						<div  class="col-xs-11 col-sm-11 col-md-3">
@@ -178,57 +144,67 @@
 								</button>
 						      </span>
 						    </div>
-						</div><br><br><br><br>
+						</div>
 						
 
 					</div >
-					<!--Registro usuarios -->
-					<div><h1>Crear una cuenta</h1></div>
-						
-					<div  class="row" style=" float: left; position: relative; 50%">
-						
-						
 
-						<div class="form-group" style="width: 80%" >
-							Nombre
-							<input type="text"    placeholder="Escriba un nombre de usuario" name="txt-nombre" autofocus required>
-						</div>
-						<div class="form-group">
-							Contrasena
-							<input type="password" style="width: 80%" name="contrasena" placeholder="Escriba una contrasena" required>
-						</div>
-						<div>
-							Confirmar contrasena
-							<input type="password" style="width: 80%" name="confirmar-contrasena" placeholder="Repita la contrasena" required>
-						</div>
-						<div>
-							Correo electronico (opcional)
-							<input type="email" name="correo" style="width: 80%" value="Escriba una direcion de Correo">
+					<div class="tab-content" id="">
+						<!--Div que muestra actualmente al presionar el boton Pagina especial-->
+						<div class="tab-pane fade col-xs-12 col-lg-12 in active well" id="registro-usuario">					
+							<!--Registro usuarios -->
+							<div><h1>Crear una cuenta</h1></div>
+								
+							<div  class="row" style=" float: left; position: relative; 50%">
+								
+								
+
+								<div class="form-group" style="width: 80%" >
+									Nombre
+									<input type="text"    placeholder="Escriba un nombre de usuario" name="txt-nombre" autofocus required>
+								</div>
+								<div class="form-group">
+									Contrasena
+									<input type="password" style="width: 80%" name="contrasena" placeholder="Escriba una contrasena" required>
+								</div>
+								<div>
+									Confirmar contrasena
+									<input type="password" style="width: 80%" name="confirmar-contrasena" placeholder="Repita la contrasena" required>
+								</div>
+								<div>
+									Correo electronico (opcional)
+									<input type="email" name="correo" style="width: 80%" value="Escriba una direcion de Correo">
+								</div>
+
+									<button style="width: 80%" class="btn btn-primary" alt="registrarse">Crear una cuenta</button>
+								
+							</div>
+							<div style=" width: 50%;  float: left; margin-left: 20px;" class="col-xs-11 ">
+								<center>
+										<h2>Personas como tú son las que construyen wikilinks.!</h2>
+						  				<h3>987,5464,8466</h3>
+						  				<label>ediciones</label>
+						  				<h3>5,646,546</h3>
+						  				<label>paginas</label>
+						  				<h3>335,156</h3>
+						  				<label>colaboradores recientes</label>
+						  		</center>
+						  				
+							</div>
 						</div>
 
-							<button style="width: 80%" class="btn btn-primary" alt="registrarse">Crear una cuenta</button>
-						
 					</div>
-					<div style=" width: 50%;  float: left; margin-left: 20px;" class="col-xs-11 ">
-						<center>
-								<h2>Personas como tú son las que construyen wikilinks.!</h2>
-				  				<h3>987,5464,8466</h3>
-				  				<label>ediciones</label>
-				  				<h3>5,646,546</h3>
-				  				<label>paginas</label>
-				  				<h3>335,156</h3>
-				  				<label>colaboradores recientes</label>
-				  		<center>
-				  				
-					</div>
-
-				
 				</div>
 
 			</div>
-			<br><br><br>
-			<footer >©CopyRigth 2017 Proyecto de POO</footer>
-			<br>
+			<br><br>
+			<hr class="divi">
+
+			<div class="row">
+    			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    				<p style="text-align: center;"><strong>©Copyrigth 2017 - Proyecto de POO</strong></p>
+    			</div>
+    		</div>
 		</div>
 		<script src="../js/jquery.min.js"></script>
 		<script src="../js/bootstrap.min.js"></script>

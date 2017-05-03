@@ -115,7 +115,7 @@
 							    <ul class="nav navbar-nav">
 							      <li class=><a href="login.php">Acceder</a></li>
 							      <li><a href="registroUsuario.php">Crear una cuenta</a></li>
-							      <li><a href="../Feedback.html">Feedback</a></li>
+							      
 							    </ul>
 							 
 							  </div>
@@ -130,7 +130,7 @@
 								<span class="glyphicon glyphicon-user"></span>
 									<a href="login.php">Acceder</a>&nbsp;&nbsp;
 									<a href="registroUsuario.php">Crear una cuenta</a>&nbsp;&nbsp;
-									<a href="../retroAlimentacion.html">Feedback</a>&nbsp;&nbsp;
+									
 
 								</h6>
 							</div>
