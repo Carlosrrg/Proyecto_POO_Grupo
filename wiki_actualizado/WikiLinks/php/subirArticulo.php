@@ -156,13 +156,12 @@
 						    </div>
 						</div>
 
-						<!--Insertar pagina externa dentro de esta pagina-->						
-						
+						<!--Insertar pagina externa dentro de esta pagina-->				
 						<div class="tab-content" id="">
 							<!--Ventana interna para editar articulo-->
 							
-							<div class="tab-pane fade col-xs-12 col-lg-12 in active well" id="editor">
-								<h2>Crear un nuevo artículo </h2>
+							<div class="tab-pane fade col-xs-12 col-lg-12 in active" id="editor">
+								<h1>Crear un nuevo articulo</h1>
 								<textarea id="area-editor">
 									<div id="div-editor">Crear nuevo articulo</div>
 								</textarea>
@@ -195,7 +194,19 @@
 
 		<script src="../tinymce/js/tinymce/tinymce.min.js"></script>
 		<script src="../tinymce/js/tinymce/langs/es.js"></script>
-		<script>tinymce.init({ selector:'#area-editor' });</script>
-
+		<script>
+			tinymce.init({
+			selector: '#area-editor',
+			height: 400,
+			menubar: false,
+		 	plugins: [
+		    'advlist autolink lists link image charmap print preview anchor',
+		    'searchreplace visualblocks code fullscreen',
+		    'insertdatetime media table contextmenu paste code'
+		  	],
+		  	toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+		  content_css: '//www.tinymce.com/css/codepen.min.css'
+		});
+		</script>
 	</body>
 </html>

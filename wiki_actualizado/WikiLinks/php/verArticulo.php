@@ -178,7 +178,6 @@
 						</div>
 
 						<!--Insertar pagina externa dentro de esta pagina-->						
-						
 						<div class="tab-content" id="">
 							<!--Div que muestra actualmente al presionar el boton Articulo o Leer-->
 							<div class="tab-pane fade col-xs-12 col-lg-12 in active" id="articulo">ArtículO</div>
@@ -214,20 +213,15 @@
 
 							<!--Ventana interna para editar articulo-->
 							<div class="tab-pane fade col-xs-12 col-lg-12" id="editar">
-								<!DOCTYPE html>
-								<html>
-								<head>
-								  <script src="../tinymce/js/tinymce/tinymce.min.js"></script>
-								  <script src="../tinymce/js/tinymce/langs/es.js"></script>
-								  <script>tinymce.init({ selector:'#area-editor' });</script>
+								
 
-								</head>
-								<body>
-								  <textarea id="area-editor">
-								  	<div id="div-editor">dgdfgdfg</div>
-								  </textarea>
-								</body>
-								</html>
+								<h2>Crear un nuevo artículo </h2>
+								<textarea id="area1-editor">
+									Crear nuevo articulo
+								</textarea>
+
+
+
 							</div>
 
 							<!--Ver historial de modificaciones-->
@@ -278,10 +272,27 @@
 		<script type="text/javascript" src="../js/jquery.min.js"></script>
 		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 
+		<script src="../tinymce/js/tinymce/tinymce.min.js"></script>
+		<script src="../tinymce/js/tinymce/langs/es.js"></script>
+
 		<script type="text/javascript" src="../js/manejodiv.js"></script>
 		<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="../js/descargarpdf.js"></script>
 		<script type="text/javascript" src="../js/jspdf.min.js"></script>
-
+		<!--js para personalizacion del editor-->
+		<script>
+			tinymce.init({
+			selector: '#area1-editor',
+			height: 400,
+			menubar: false,
+		 	plugins: [
+		    'advlist autolink lists link image charmap print preview anchor',
+		    'searchreplace visualblocks code fullscreen',
+		    'insertdatetime media table contextmenu paste code'
+		  	],
+		  	toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+		  content_css: '//www.tinymce.com/css/codepen.min.css'
+		});
+		</script>
 	</body>
-</html>
+</html>						
