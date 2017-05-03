@@ -35,7 +35,7 @@
 					  <table class="table table-hover">
 						<tr><td>
 							<ul class="list-group2">
-								<li><a href="../index.html">Portada</a></li>
+								<li><a href="noticias.php">Portada</a></li>
 								<li><a href="reportarArticulo.php">Reportar Articulo</a></li>
 								<li><a href="#">Moderadores</a></li>
 								<li><a href="subirArticulo.php">Crear Articulo</a></li>
@@ -106,7 +106,7 @@
 							       otro elemento que se pueda ocultar al minimizar la barra -->
 							  <div class="collapse navbar-collapse navbar-ex1-collapse">
 							    <ul class="nav navbar-nav">
-							      <li class=><a href="../noticias.html">Portada</a></li>
+							      <li class=><a href="noticias.php">Portada</a></li>
 							      <li><a href="reportarArticulo.php">Reportar articulo</a></li>
 							    </ul>
 							    <ul class="nav navbar-nav">
