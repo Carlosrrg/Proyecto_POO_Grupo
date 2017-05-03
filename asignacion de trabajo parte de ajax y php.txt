@@ -1,17 +1,5 @@
--carlos: darle funcionalidad al input de buscar del landing para q solicite a la base de datos la informacion y 
+-carlos: darle funcionalidad al input de buscar del landing y de todasla demas paginas para q solicite a la base de datos la informacion y 
 redireccione a verArticulo.html con la respuesta osea el articulo requerido.
-
-
--carlos:en articulos recientes vincular esos articulos a articulos ya existentes en la base de datos.
-
-
--luis: darle funcionalidad al registroUsuario.php para que pueda enviar los datos de cada campo a la base de 
-datos y que esta los guarde para futuras solicitudes.
-
-
--luis: darle funcionalidad al login.php de modo que al llenar los campos haga una solicitud a la base de datos 
-con la informacion obtenida y que esta regrese todos los datos relacionados a esta cuenta (ver ejemplo de login 
-que subio el ing. sobre registro de usuarios).
 
 
 -carlos: llenar las tablas de ListaUsuarioModerador.php con la informacion solicitada a la base de datos y poner 
@@ -26,20 +14,60 @@ el nombre despues de bienvenido para hacer referencia a ese usuario que esta reg
 de cada moderador.
 
 
+-luis: darle funcionalidad al registroUsuario.php para que pueda enviar los datos de cada campo a la base de 
+datos y que esta los guarde para futuras solicitudes.
+
+
+-luis: darle funcionalidad al login.php de modo que al llenar los campos haga una solicitud a la base de datos 
+con la informacion obtenida y que esta regrese todos los datos relacionados a esta cuenta (ver ejemplo de login 
+que subio el ing. sobre registro de usuarios) hacerlo en todas la paginas de la plataforma.
+
+
 -claudio: llenar las tablas de administrador.php con la informacion solicitada a la base de datos y dar 
 funcionalidad a los botones de aprobar cancelacion y posponer solicitud (nota: estas tablas estan ligadas 
-a la tabla de listaReportesArticulosModerador.php osea qu es el moderador que envia la solicitud de cancelacion 
+a la tabla de listaReportesArticulosModerador.php osea que es el moderador que envia la solicitud de cancelacion 
 al administrador).
 
 
 -claudio: llenar la tabla de listaReportesArticulosModerador.php con la informacion solicitada a la base de 
-datos y dar funcionalidad al boton de solicitar cancelar cuenta de usuario el cual es enviado a administrador 
-para su aprobacion (nota: fijate que al darle en el numero que esta en la columna de N. reportes este te 
+datos y dar funcionalidad al boton de solicitar cancelar cuenta de usuario el cual es enviado al administrador 
+para su aprobacion (nota: fijate que al darle click en el numero que esta en la columna de N. reportes este te 
 redirecciona a otra pagina el cual tiene cada reporte detallado).
 
 
 -claudio: llenar la tabla de listaReportesPorUsuario.php con la informacion solicitada a la base de datos 
-(nota: esta informacion es la recibida de reportaArticulo.php pero esta en la base de datos).
+(nota: esta informacion es la recibida de reportaArticulo.php pero esta en la base de datos almacenada, 
+cualquier cosa comunicate con alexis).
 
 
--
+-alexis: enviar todos los parametros de las cajas de texto en reportarArticulo.php a la base de datos (osea 
+insertar esos campos en la tabla correspondiente y con esto poder hacer futuros llamados tomando en cuenta 
+que el usuario que hiso el reporte tiene un codigo que es indispensable para los demas miembros del grupo).
+
+
+-alexis: crear el ayuda.php el cual mostrara una seccion de pequenas ayudas al usuario de las cuales son mas comunes 
+en nuestro sitio mirar el siguiente enlace (https://es.wikipedia.org/wiki/Ayuda:Contenidos) estas ayudas son estaticas 
+osea no llevan conexion con la base de datos. 
+
+
+-ikser: darle funcionalidad al verArticulo.php osea que muestre el articulo buscado en el buscador (comunicarse 
+con carlos).
+
+
+-ikser: hacer el creador de archivos para subirlos co la misma interfas del verArticulo.php.
+
+
+-ikser: darle funcionalidad a la seccion de discucion de verArticulo.php en la cual cada usuario podra 
+comentar algo del articulo y esto se almacenara en la base de datos al mismo tiempo que se mostrara.
+
+
+-ikser: darle funcionalidad a las secciones de editar y ver historial en verArticulo.php.
+
+
+-carlos ,alexis y claudio: hacer la solicitud de los campos de perfilUsuarioModerador.php a la base de datos y colocar la logica de subir foto 
+para el perfil de ese usuario, ademas que al darle click sobre editar pueda editar dicha informacion.
+
+
+-luis y claudio: hacer la solicitud de los campos de perfilUsuarioNormal.php a la base de datos y colocar la logica de subir foto 
+para el perfil de ese usuario, ademas que al darle click sobre editar pueda editar dicha informacion.
+
