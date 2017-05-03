@@ -23,6 +23,11 @@ con la informacion obtenida y que esta regrese todos los datos relacionados a es
 que subio el ing. sobre registro de usuarios) hacerlo en todas la paginas de la plataforma.
 
 
+-luis y claudio: hacer la solicitud de los campos de perfilUsuarioNormal.php a la base de datos y colocar la logica de subir foto 
+para el perfil de ese usuario, ademas que al darle click sobre editar pueda editar dicha informacion.
+
+
+
 -claudio: llenar las tablas de administrador.php con la informacion solicitada a la base de datos y dar 
 funcionalidad a los botones de aprobar cancelacion y posponer solicitud (nota: estas tablas estan ligadas 
 a la tabla de listaReportesArticulosModerador.php osea que es el moderador que envia la solicitud de cancelacion 
@@ -47,7 +52,11 @@ que el usuario que hiso el reporte tiene un codigo que es indispensable para los
 
 -alexis: crear el ayuda.php el cual mostrara una seccion de pequenas ayudas al usuario de las cuales son mas comunes 
 en nuestro sitio mirar el siguiente enlace (https://es.wikipedia.org/wiki/Ayuda:Contenidos) estas ayudas son estaticas 
-osea no llevan conexion con la base de datos. 
+osea no llevan conexion con la base de datos.
+
+
+-alexis: darle funcionalidad al de donaciones.php mandando esos datos a la base de datos, osea sacandolo de cada 
+caja de texto. 
 
 
 -ikser: darle funcionalidad al verArticulo.php osea que muestre el articulo buscado en el buscador (comunicarse 
@@ -64,10 +73,8 @@ comentar algo del articulo y esto se almacenara en la base de datos al mismo tie
 -ikser: darle funcionalidad a las secciones de editar y ver historial en verArticulo.php.
 
 
--carlos ,alexis y claudio: hacer la solicitud de los campos de perfilUsuarioModerador.php a la base de datos y colocar la logica de subir foto 
+-carlos y claudio: hacer la solicitud de los campos de perfilUsuarioModerador.php a la base de datos y colocar la logica de subir foto 
 para el perfil de ese usuario, ademas que al darle click sobre editar pueda editar dicha informacion.
 
 
--luis y claudio: hacer la solicitud de los campos de perfilUsuarioNormal.php a la base de datos y colocar la logica de subir foto 
-para el perfil de ese usuario, ademas que al darle click sobre editar pueda editar dicha informacion.
 
