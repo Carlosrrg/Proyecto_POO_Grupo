@@ -37,11 +37,9 @@
 							<ul class="list-group2">
 								<li><a href="../noticias.html">Portada</a></li>
 								<li><a href="reportarArticulo.php">Reportar Articulo</a></li>
-								<li><a href="usuarioModerador.php">Moderador</a></li>
-								<li><a href="subirArticulo.php">Crear paginas nuevas</a></li>
-								<li><a href="#">Pagina aleatoria</a></li>
-								<li><a>Ayuda</a></li>
-								<li><a href="#">Donaciones</a></li>
+								<li><a href="#">Moderador</a></li>
+								<li><a href="#">Ayuda</a></li>
+								<li><a href="../donaciones.html">Donaciones</a></li>
 								</ul>
 
 						</td></tr>
@@ -90,7 +88,7 @@
 							      <span class="icon-bar"></span>
 							    </button>
 							  	   
-							    <a class="navbar-brand" href="#">Wikilinks</a>
+							    <a class="navbar-brand" href="../index.html">Wikilinks</a>
 							  </div>
 
 							 
@@ -98,9 +96,8 @@
 							       otro elemento que se pueda ocultar al minimizar la barra -->
 							  <div class="collapse navbar-collapse navbar-ex1-collapse">
 							    <ul class="nav navbar-nav">
-							      <li class=><a href="../Index.html">Inicio</a></li>
-							      <li><a href="verArticulo.php">Aleatorio</a></li>
-							      <li><a href="#">Cercano</a></li>
+							      <li><a href="../noticias.html">Portada</a></li>
+							      <li><a href="reportarArticulo.php">Reportar Articulo</a></li>
 							    </ul>
 							    <ul class="nav navbar-nav">
 							      <li class=><a href="login.php">Acceder</a></li>

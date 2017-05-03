@@ -31,12 +31,12 @@
 					  <table class="table table-hover">
 						<tr><td>
 							<ul class="list-group2">
-								<li><a href="#">Portada</a></li>
+								<li><a href="../noticias.html">Portada</a></li>
 								<li><a href="perfilUsuarioModerador.php">Ver mi perfil</a></li>
 								<li><a href="ListaUsuarioModerador.php">Ver lista de articulos</a></li>
-								<li><a href="subirArticulo.php">Crear paginas nuevas</a></li>
-								<li><a>Ayuda</a></li>
-								<li><a href="#">Donaciones</a></li>
+								<li><a href="subirArticulo.php">Crear articulo</a></li>
+								<li><a href="#">Ayuda</a></li>
+								<li><a href="../donaciones.html">Donaciones</a></li>
 							</ul>
 						</td></tr>
 						
@@ -92,7 +92,7 @@
 							      <span class="icon-bar"></span>
 							    </button>
 							  	   
-							    <a class="navbar-brand" href="#">Wikilinks</a>
+							    <a class="navbar-brand" href="../index.html">Wikilinks</a>
 							  </div>
 
 							 
@@ -100,13 +100,14 @@
 							       otro elemento que se pueda ocultar al minimizar la barra -->
 							  <div class="collapse navbar-collapse navbar-ex1-collapse">
 							 	<ul class="nav navbar-nav">
-							      <li class=><a href="../Index.html">Crear una nueva pagina</a></li>
-							      <li><a href="../Principal.html">Moderadores de Articulos</a></li>
-							      <li><a href="#">Acceder</a></li>
+							      <li class=><a href="../noticias.html">Portada</a></li>
+							      <li><a href="perfilUsuarioModerador.php">Ver perfil</a></li>
+							      <li><a href="ListaUsuarioModerador.php">Ver lista de articulos</a></li>
+							      <li><a href="login.php">Acceder</a></li>
 							    </ul>
 							    <ul class="nav navbar-nav">
-							      <li class=><a href="login.php">Crear una cuenta</a></li>
-							      <li><a href="registroUsuario.php">Ayuda</a></li>
+							      <li class=><a href="registroUsuario.php">Crear una cuenta</a></li>
+							      <li><a href="../donaciones.html">Donaciones</a></li>
 							    </ul>
 							  </div>
 							</nav>
