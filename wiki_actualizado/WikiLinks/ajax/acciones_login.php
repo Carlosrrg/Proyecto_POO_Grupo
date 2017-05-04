@@ -14,7 +14,7 @@
 			echo json_encode($respuesta);
 			break;
 		case '2':
-		//crea un usuario y llama al metodo guardar regristo que recie una conexion como para mettro
+		//crea un usuario y llama al metodo guardar regristo que recie una conexion como parametros
 			include_once("../class/class_conexion.php");
 			include_once("../class/class_usuario");
 			//primero comprueba si las contrasenas coinciden
