@@ -1,31 +1,15 @@
 ﻿<?php 
-
-
-$codigo= $_SESSION['codigo_usuario'];
-		
-
-
-				include_once("../class/class_conexion.php");
+	include_once("../class/class_conexion.php");
 				$conexion = new Conexion();
 				$conexion->establecerConexion();
-				$usuario=$conexion->ejecutarInstruccion("SELECT NOMBRE , CORREO_ELECTRONICO , FECHA_NACIMIENTO, USERNAME ,Urlperfil FROM tbl_usuarios WHERE CODIGO_USUARIO=$codigo ");
-					$fila = $conexion->obtenerFila($usuario);
 
-				$conexion->cerrarConexion();
+if (isset($_SESSION['codigo_usuario'])) {
+		$codigo= $_SESSION['codigo_usuario'];
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+		$usuario=$conexion->ejecutarInstruccion("SELECT NOMBRE , CORREO_ELECTRONICO , FECHA_NACIMIENTO, USERNAME ,Urlperfil FROM tbl_usuarios WHERE CODIGO_USUARIO=$codigo ");
+			$fila = $conexion->obtenerFila($usuario);
+}
+				
 
 
 
@@ -182,7 +166,11 @@ $codigo= $_SESSION['codigo_usuario'];
 						<div class="tab-content">
 							<!--Div que muestra actualmente al presionar el boton Articulo o Leer-->
 							<div class="tab-pane fade col-xs-12 col-lg-12 in active well" id="admin">
-								<h1>Bienvenido(@), <?php  echo $fila['NOMBRE']; ?></h1><br>
+								<h1>Bienvenido(@), <?php  
+														if (isset($fila['NOMBRE'])) {
+															echo $fila['NOMBRE'];
+														}
+													 ?></h1><br>
 								<h2>Notificaciones de moderadores articulos pendientes </h2>
 									
 
@@ -223,3 +211,6 @@ $codigo= $_SESSION['codigo_usuario'];
 		<script type="text/javascript" src="../js/administrador.js"></script>
 	</body>
 </html>
+<?php
+$conexion->cerrarConexion();
+?>

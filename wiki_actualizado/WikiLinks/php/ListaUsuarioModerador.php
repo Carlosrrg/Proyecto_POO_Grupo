@@ -4,17 +4,6 @@
 	echo $conexion->establecerConexion();
 
 	//consulta a la tbtl_usuarios
-	/*
-		SELECT 	a.CODIGO_USUARIO, 
-		 	a.CODIGO_TIPO_USUARIO, 
-			a.CODIGO_ARTICULO_USUARIO,
-            a.NOMBRE,
-			a.USERNAME,
-            b.NOMBRE_ARTICULO NOMBRE_articulo
-			FROM tbl_usuarios a
-			LEFT JOIN tbl_articulos b
-			ON (a.CODIGO_ARTICULO_USUARIO=b.CODIGO_ARTICULO)
-	*/
 
 	$sql=" SELECT 	a.CODIGO_USUARIO, 
 				 	a.CODIGO_TIPO_USUARIO, 
