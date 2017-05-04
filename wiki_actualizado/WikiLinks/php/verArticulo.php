@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿<?php
+	$articulo='';
+?>
+
+
+
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Wikilinks</title>
@@ -9,9 +15,6 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
-	
-
-
 
 </head>
 	<body>
@@ -181,7 +184,16 @@
 						<div class="tab-content" id="">
 							
 							<!--Div que muestra actualmente al presionar el boton Articulo o Leer-->
-							<div class="tab-pane fade col-xs-12 col-lg-12 in active" id="articulo">ArtículO</div>
+							<div class="tab-pane fade col-xs-12 col-lg-12 in active" id="articulo">
+							<!--Imprimir contenido del articulo-->
+							<?php
+								$articulo = '<h2>Aqui se muestra el articulo</h1>
+									<p>El articulo se compone de una cadena de texto html</p>';
+								
+								echo $articulo;
+							?>
+
+							</div>
 
 							<!--Formulario de discucion del articulo-->
 							<div class="tab-pane fade col-xs-12 col-lg-12" id="discusion">
@@ -215,18 +227,28 @@
 							<!--Ventana interna para editar articulo-->
 							<div class="tab-pane fade col-xs-12 col-lg-12 well" id="editar">								
 								<form method="POST">	
-									<h1>Crea un nuevo artículo</h1>
+									<table class="table">
+										<tr>
+									        <td>
+									        	<h5 class="text-right" ><strong>Describa la modificación:</strong></h5>
+									        </td>
+									        <td>
+									        	<input type="text" class="form-control" id="descripcion-modificacion" name="descripcion-modificacion">
+									        </td>
+									        <td>
 									        	<input type="submit" class="btn btn-default" value="Guardar edición">
+									        </td>
+									    </tr>
+									</table>
 									<textarea id="area-editor" name="area-editor">
 										<?php
 											
-												echo '<h3>Articulo</h3>' ;
+												echo $articulo ;
 										?>
 									</textarea>
-									
 								</form>
-
 							</div>
+
 
 							<!--Ver historial de modificaciones-->
 							<div class="tab-pane fade col-xs-12 col-lg-12" id="historial">
@@ -248,7 +270,7 @@
 									      <tr>
 									        <td>John M.</td>
 									        <td>12/01/17</td>
-									        <td>Nuevo rector agregado</td>
+									        <td>Descripcion de la modificacion</td>
 									      </tr>';} 
 									  ?>
 								    </tbody>
