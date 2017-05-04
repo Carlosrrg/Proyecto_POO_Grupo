@@ -13,6 +13,19 @@
 			$_SESSION["codigo_tipo_usuario"] = $respuesta["codigo_tipo_usuario"];
 			echo json_encode($respuesta);
 			break;
+		case '2':
+			include_once("../class/class_conexion.php");
+			include_once("../class/class_usuario");
+			//primero comprueba si las contrasenas coinciden
+			//crea la conexion el resultado es un arreglo 
+			$conexion =new Conexion();
+			$conexion->estrablecerConexion();
+			$usuario=new Usuario($_POST["txt-usuario"], $_POST["contrasena"],$_POST["correo"]);
+			$resultado=$usuario->guardarRegistro($conexion);
+			echo json_encode($resultado);
+		
+			
+
 	default:
 			# code...
 			break;
