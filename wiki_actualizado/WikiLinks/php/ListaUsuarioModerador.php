@@ -197,7 +197,6 @@
 										           				echo '<td>';
 											           				echo '<button class="btn btn-success" id="btn-aprobar'.$ib.'">Aprobar</button>&nbsp;';
 											           				echo '<button class="btn btn-danger" id="btn-eliminar'.$ib.'">Eliminar</button>&nbsp;';
-											           				echo '<button class="btn btn-warning" id="btn-enviar'.$ib.'">Enviar Mensaje</button>&nbsp;';
 											           				$ib++;
 										           				echo '</td>';
 								           					echo "</tr>";		

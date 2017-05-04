@@ -1,4 +1,13 @@
-﻿<!DOCTYPE html>
+﻿<?php
+	include_once("../class/class_conexion.php");
+	$conexion=new Conexion();
+	echo $conexion->establecerConexion();
+
+	//consulta a la tbtl_usuarios
+	$sql="";
+
+?>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>WikiLinks</title>
@@ -150,7 +159,6 @@
 								<h1>Bienvenido(@), #NOMBRE DE USUARIO NORMAL#</h1><br>
 
 								<h2>Mis articulos</h2>
-										<form id="val-admin" action="">
 							           		<table class="table table-hover">
 												<tr>
 												   <th scope="col">Nombre del Articulo</th>
@@ -168,40 +176,7 @@
 												    <td><p>12</p></td>
 												    <td><p>2012-10-10</p></td>
 												</tr>
-												<tr>
-												    <td><a href="">Articulo 2</a></td>
-												    <td><p>2012-10-10</p></td>
-												    <td><p>aprobado</p></td>
-												    <td><p>Buen articulo pero citar fuentes.</p></td>
-												    <td><p>12</p></td>
-												    <td><p>2012-10-10</p></td>
-												</tr>
-												<tr>
-												    <td><a href="">Articulo 3</a></td>
-												    <td><p>2012-10-10</p></td>
-												    <td><p>reprobado</p></td>
-												    <td><p>Se nesesita mas informacion para el lector.</p></td>
-												    <td><p>0</p></td>
-												    <td><p>2012-10-10</p></td>
-												</tr>
-												<tr>
-												    <td><a href="">Articulo 4</a></td>
-												    <td><p>2012-10-10</p></td>
-												    <td><p>aprobado</p></td>
-												    <td><p>Buen articulo pero citar fuentes.</p></td>
-												    <td><p>12</p></td>
-												    <td><p>2012-10-10</p></td>
-												</tr>
-												<tr>
-												    <td><a href="">Articulo 5</a></td>
-												    <td><p>2012-10-10</p></td>
-												    <td><p>aprobado</p></td>
-												    <td><p>Buen articulo pero citar fuentes.</p></td>
-												    <td><p>12</p></td>
-												    <td><p>2012-10-10</p></td>
-												</tr>
 											</table>
-								      	</form>
 							</div>
 						</div>	
 					</div>
@@ -226,3 +201,6 @@
 		<script type="text/javascript" src="../js/jspdf.min.js"></script>
 	</body>
 </html>
+<?php
+	$conexion->cerrarConexion();
+?>

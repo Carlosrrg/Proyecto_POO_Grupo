@@ -4,11 +4,8 @@
 	echo $conexion->establecerConexion();
 	
 	//consulta a la tbtl_usuarios
-	$sql="SELECT CODIGO_USUARIO, CODIGO_GENERO, CODIGO_LUGAR_NACIMIENTO, CODIGO_TIPO_USUARIO, USERNAME, CONCAT(NOMBRE,' ',APELLIDO) nombre, CORREO_ELECTRONICO, CONTRASEÑA, FECHA_NACIMIENTO FROM tbl_usuarios";
-	$arregloUsuariosModeradores=$conexion->ejecutarInstruccion($sql);
-	while ($linea=$conexion->obtenerFila($arregloUsuariosModeradores)) {
-		echo linea["CORREO_ELECTRONICO"].", ";
-	}
+	$sql="SELECT CODIGO_USUARIO, CODIGO_GENERO, CODIGO_LUGAR_NACIMIENTO, CODIGO_TIPO_USUARIO, USERNAME, CONCAT(NOMBRE,' ',APELLIDO) nombre, CORREO_ELECTRONICO, CONTRASENA, FECHA_NACIMIENTO FROM tbl_usuarios";
+	$arregloUsuarios=$conexion->ejecutarInstruccion($sql);
 ?>
 <!DOCTYPE html>
 <html>
@@ -164,29 +161,47 @@
 										  	<tr>
 											    <th scope="col">codigo del moderador</th>
 											    <th scope="col">Nombre del moderador</th>
-											    <th scope="col">Fecha de nacimiento</th>
 											    <th scope="col">Sexo</th>
-											    <th scope="col">Pais de procedencia</th>
-											    <th scope="col">Especializacion</th>
+											    <th scope="col">Lugar de nacimiento</th>
+											    <th scope="col">Fecha de nacimiento</th>
+											    <th scope="col">Usuario de la plataforma</th>
+											    <th scope="col">Correo</th>
 										  	</tr>
 										  	<?php
-										  		/*while ($linea=$conexion->obtenerFila($arregloUsuarios)) {
+										  		while ($linea=$conexion->obtenerFila($arregloUsuarios)) {
 										  			echo "<tr>";
-										  				if ($linea["CODIGO_TIPO_USUARIO"]==2) {
+										  				if ($linea["CODIGO_TIPO_USUARIO"]==1) {
 										  					echo '<td>'.$linea["CODIGO_USUARIO"].'</td>';
+										  					echo '<td>'.$linea["nombre"].'</td>';
+										  					echo '<td>';
+										  						if ($linea["CODIGO_GENERO"]==1) {
+										  							echo "M";
+										  						}
+										  						else{
+										  							echo "F";
+										  						}
+										  					echo '</td>';
+										  					echo '<td>';
+										  						if ($linea["CODIGO_LUGAR_NACIMIENTO"]==2) {
+										  							echo "Estados Unidos";										  						}
+										  						if ($linea["CODIGO_LUGAR_NACIMIENTO"]==3) {
+										  							echo "Mexico";
+										  						}
+										  						if ($linea["CODIGO_LUGAR_NACIMIENTO"]==4) {
+										  							echo "Canada";
+										  						}
+										  						if ($linea["CODIGO_LUGAR_NACIMIENTO"]==5) {
+										  							echo "Honduras";
+										  						}
+										  					echo '</td>';
+										  					echo '<td>'.$linea["FECHA_NACIMIENTO"].'</td>';
+										  					echo '<td>'.$linea["USERNAME"].'</td>';
+										  					echo '<td>'.$linea["CORREO_ELECTRONICO"].'</td>';
 										  				}
 										  				
 										  			echo "</tr>";
-										  		}*/
+										  		}
 										  	?> 
-										  	<tr>
-											    
-											    <td><a href="#">Petronilo gutierrez</a></td>
-											    <td>1990-10-10</td>
-											    <td>masculino</td>
-											    <td>Canada</td>
-											    <td>Ingeniero en software</td>
-											</tr>
 										</table>
 							</div>
 						</div>
