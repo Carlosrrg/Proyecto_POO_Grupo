@@ -1,4 +1,18 @@
-﻿<!DOCTYPE html>
+<?php 
+		$codigo= $_SESSION['CODIGO_USUARIO'];
+		
+
+
+				include_once("../class/class_conexion.php");
+				$conexion = new Conexion();
+				$conexion->establecerConexion();
+				$usuario=$conexion->ejecutarInstruccion("SELECT NOMBRE , CORREO_ELECTRONICO , FECHA_NACIMIENTO, USERNAME ,Urlperfil FROM tbl_usuarios WHERE CODIGO_USUARIO=$codigo ");
+					$fila = $conexion->obtenerFila($usuario);
+
+				$conexion->cerrarConexion();
+
+	?>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>WikiLinks</title>
@@ -7,7 +21,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/style-marco.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../css/funcion.css">
+	
 </head>
 	<body>
 		<header>
@@ -146,40 +160,68 @@
 						<div class="tab-content" id="">
 							<!--Div que muestra actualmente al presionar el boton Pagina especial-->
 							<div class="tab-pane fade col-xs-12 col-lg-12 in active well" id="usuario-normal">
-								<h2>Datos personales de #NOMBRE DE USUARIO DEL NORMAL#</h2><br>
+								<h2>Datos personales de <?php  echo $fila["NOMBRE"]?></h2><br>
 								<div class="col-lg-4 col-md-4 col-sm-12">
+									
+
+
+
 									<div class="input-group">
-										<img src="" id="imagen" width="200" height="200"><br>
-										<button class="btn btn-default" id="btn-camara-moderador">Capturar</button>
-										<button class="btn btn-default" id="btn-guardar-moderador">Seleccionar del PC</button>
-										<video id="video"></video>
-										<canvas id="canvas"></canvas>
+
+
+											<img src="<?php  echo $fila["Urlperfil"]?>" id="imagenPerfil" width="320" height="240" > 
+											<img src="" id="imagen" width="320" height="240" > 
+										    <video id="video"></video>
+											<canvas id="canvas"></canvas>
+											<div id="subirimagen"></div>
+										
+
+
+										<div>
+											<button class="btn btn-default"  id="camara"  onClick="foto();" >Tomar foto</button>
+											<form class="btn btn-default" method="post" id="formulario" enctype="multipart/form-data" >
+    											 <input class="btn btn-default" type="file" name="file">
+ 													</form>
+											<button class="btn btn-default" id="tomarfoto" onClick="ocultar();">Fotografiar</button>
+											<button class="btn btn-default" id="guardar" onClick="guardar(<?php echo $codigo;?>);"()>Guardar</button>
+										</div>
+
+										<!--son varios botones para hacer lo de la camara-->
 									</div>
+
+
+
+
+
+
+
+
+
 								</div>
 								<div class="col-lg-8 col-md-8 col-sm-12">
 									<div style="width: 55%;">
 										<form action="#">
 											<table class="table">
-												<tr><a href="#">Editar</a></tr>
+												<tr><a href="#" onclick="habilitar();">Editar</a></tr>
 												<tr>
 													<td>Nombre completo:</td>
-													<td><input type="text" name="txt-nombre-moderador" id="txt-nombre-moderador" value="Carlos Roberto Ramos Garcia" size="50px" disabled></td>
+													<td><input type="text" name="txt-nombre-moderador" id="txt-nombre-moderador" value="<?php  echo $fila["NOMBRE"]?>" size="50px" disabled></td>
 												</tr>
 												<tr>
 													<td>Correo:</td>
-													<td><input type="text" name="txt-correo-moderador" id="txt-correo-moderador" value="carlos06@gmail.com" size="50px" disabled></td>
+													<td><input type="text" name="txt-correo-moderador" id="txt-correo-moderador" value="<?php  echo $fila["CORREO_ELECTRONICO"]?>" size="50px" disabled></td>
 												</tr>
 												<tr>
 													<td>Fecha de nacimiento:</td>
-													<td><input type="date" name="txt-date-moderador" id="txt-date-moderador" value="2012-10-10" size="50px" disabled></td>
+													<td><input type="date" name="txt-date-moderador" id="txt-date-moderador" value="<?php  echo $fila["FECHA_NACIMIENTO"]?>" size="50px" disabled></td>
 												</tr>
 												<tr>
 													<td>Usuario:</td>
-													<td><input type="text" name="txt-usuario-moderador" id="txt-usuario-moderador" value="carlos067" size="50px" disabled></td>
+													<td><input type="text" name="txt-usuario-moderador" id="txt-usuario-moderador" value="<?php  echo $fila["USERNAME"]?>" size="50px" disabled></td>
 												</tr>
 												<tr>
 													<td>Contrasena:</td>
-													<td><input type="password" name="txt-contrasena-moderador" id="txt-contrasena-moderador" value="carlos123456" size="50px" disabled></td>
+													<td><input type="password" name="txt-contrasena-moderador" id="txt-contrasena-moderador" value="NOMESALE LA CONTRASENA" size="50px" disabled></td>
 												</tr>
 												<tr>
 													<td>Especialidad:</td>
@@ -192,8 +234,9 @@
 													</select></td>
 												</tr>
 											</table>
-											<button class="btn btn-primary" disabled>Aceptar</button>
-											<button class="btn btn-danger">Cancelar Cuenta</button>
+											<button class="btn btn-primary" id="btn-aceptar" disabled onClick="editar(<?php echo $codigo;?>);">Aceptar</button>
+											<button class="btn btn-success" id="btn-no-aceptar" disabled onClick="deshabilitar();" >No editar</button>
+											<button class="btn btn-danger" onClick="BorrarCuenta();">Cancelar Cuenta</button>
 										</form>
 									</div>
 								</div>
@@ -214,8 +257,8 @@
 		</div>
 		<script src="../js/jquery.min.js"></script>
 		<script src="../js/bootstrap.min.js"></script>
-		<script src="../js/script-marco.js"></script>
-		<script type="text/javascript" src="../js/funciones.js"></script>
+	
+		<script type="text/javascript" src="../js/funcionesPerfilUsuarioNormal.js"></script>
 		<script type="text/javascript" src="../js/manejodiv.js"></script>
 		<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="../js/descargarpdf.js"></script>
