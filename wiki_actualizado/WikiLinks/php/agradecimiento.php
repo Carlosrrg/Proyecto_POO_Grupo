@@ -1,6 +1,6 @@
 <?php
-	include_once("class_conexion.php");
-	include_once("class-donacion.php");
+	include_once("../class/class_conexion.php");
+	include_once("../class/class-donacion.php");
 	$conexion = new Conexion();
 	$conexion->establecerConexion();
 

@@ -1,4 +1,24 @@
-﻿<!DOCTYPE html>
+﻿<?php
+	include_once("../class/class_conexion.php");
+	include_once("../class/class-reportar.php");
+	
+
+	if (isset($_POST['txt-tipo-falta'])) {
+		$conexion = new Conexion();
+		$conexion->establecerConexion();
+
+		$reporte = new Reporte($_POST['txt-tipo-falta'], $_POST['txt-nombre-usuario'], $_POST['txt-link-articulo-reportar'], $_POST['txtArea-descripcion']);
+
+		$respuesta = $reporte->guardarReporte($conexion);
+		
+ 		
+	}
+
+		
+	
+?>
+
+<!DOCTYPE html>
 <html>
 <head>
 	<title>WikiLinks</title>
@@ -18,9 +38,8 @@
 		<div class="div1 container-fluid ">
 			<div class="main row">
 				<div class="col-xs-12 co-sm-2 col-md-2 col-lg-2 hidden-xs hidden-sm">
-					<img src="../img/wiki.png" width="135" alt="Logo de Wikilinks">
-					<br><br>
-					<a href="../index.html"><img src="../img/Wikilinkslanding.png" width="145"></a>
+					<img src="../img/wiki.png" width="145" alt="Logo de Wikilinks">
+					<a href="index.html"><img src="../img/Wikilinkslanding.png" width="145"></a>
 					
 					<!--Menu lateral izquierdo-->
 					
@@ -28,11 +47,11 @@
 					  <table class="table table-hover">
 						<tr><td>
 							<ul class="list-group2">
-								<li><a href="noticias.php">Portada</a></li>
-								<li><a href="#">Moderadores</a></li>
-								<li><a href="subirArticulo.php">Crear articulo</a></li>
-								<li><a href="#">Ayuda</a></li>
-								<li><a href="../donaciones.html">Donaciones</a></li>
+								<li><a href="#">Portada</a></li>
+								<li><a href="usuarioModerador.php">Moderadores de articulos</a></li>
+								<li><a href="subirArticulo.php">Crear una nueva pagina</a></li>
+								<li><a>Ayuda</a></li>
+								<li><a href="#">Donaciones</a></li>
 								</ul>
 
 						</td></tr>
@@ -89,7 +108,7 @@
 							      <span class="icon-bar"></span>
 							    </button>
 							  	   
-							    <a class="navbar-brand" href="../index.html">Wikilinks</a>
+							    <a class="navbar-brand" href="#">Wikilinks</a>
 							  </div>
 
 							 
@@ -97,13 +116,14 @@
 							       otro elemento que se pueda ocultar al minimizar la barra -->
 							  <div class="collapse navbar-collapse navbar-ex1-collapse">
 							    <ul class="nav navbar-nav">
-							      <li><a href="noticias.php">Portada</a></li>
-							      <li><a href="subirArticulo.php">Crear articulo</a></li>
-							      <li><a href="login.php">Acceder</a></li>
+							      <li class=><a href="../Index.html">Crear una nueva pagina</a></li>
+							      <li><a href="../Principal.html">Moderadores de Articulos</a></li>
+							      <li><a href="#">Acceder</a></li>
 							    </ul>
 							    <ul class="nav navbar-nav">
-							      <li class=><a href="registroUsuario.php">Crear una cuenta</a></li>
-							      <li><a href="../donaciones.html">Donaciones</a></li>
+							      <li class=><a href="../php/login.php">Crear una cuenta</a></li>
+							      <li><a href="../php/registroUsuario.php">Ayuda</a></li>
+							      <li><a href="../Feedback.html">Feedback</a></li>
 							    </ul>
 							 
 							  </div>
@@ -118,19 +138,62 @@
 								<span class="glyphicon glyphicon-user"></span>
 									<a href="login.php">Acceder</a>&nbsp;&nbsp;
 									<a href="registroUsuario.php">Crear una cuenta</a>&nbsp;&nbsp;
+									<a href="../retroAlimentacion.html">Feedback</a>&nbsp;&nbsp;
 
 								</h6>
 							</div>
 						</div>
 						
-						<div class="col-sm-9 col-md-9 hidden-xs hidden-sm">
+						<div class="col-sm-4 col-md-5 hidden-xs hidden-sm">
 							<ul class="nav nav-tabs">
-							    <li id="li-articulo" name="li-articulo" class="active" >
-							    	<a href="#reportar-articulo" data-toggle="tab" onClick="">Página especial
+							    <li id="li-articulo" name="li-articulo" class="">
+							    	<a href="javascript:articulo();">	Articulo
+							    	</a>
+							    </li>
+							    <li id="li-discusion" name="li-discusion" class="">
+							    	<a onClick="loadPages('', 
+							    	'li-discusion', 
+							    	'li-articulo',
+							    	'li-leer',
+							    	'li-editar',
+							    	'li-ver-historial')" href="javascript:noarticulo();">Discusion
+							    	</a>
+							    </li>
+							   
+							</ul>
+						</div>
+						<div class="col-sm-4 col-md-4 col- hidden-xs hidden-sm">
+							<ul class="nav nav-tabs">
+							    <li name="li-leer" id="li-leer" class="">
+							    	<a onClick="loadPages('Articulos/Unah.html',
+							    	'li-leer', 
+							    	'li-articulo',
+							    	'li-editar',
+							    	'li-discusion',
+							    	'li-ver-historial')" href="javascript:noarticulo();">	Leer
+							    	</a>
+							    </li>
+							    <!--li name="li-editar" id="li-editar" class="">
+							    	<a onClick="loadPages('EditorTexto/Editor.html',
+							    	'li-editar', 
+							    	'li-articulo',
+							    	'li-leer',
+							    	'li-discusion',
+							    	'li-ver-historial')" href="javascript:noarticulo();">Editar
+							    	</a>
+							    </li-->
+							    <li name="li-ver-historial" id="li-ver-historial" class="">
+							    	<a onClick="loadPages('Articulos/Historial.html',
+							    	'li-ver-historial', 
+							    	'li-articulo',
+							    	'li-leer',
+							    	'li-editar',
+							    	'li-discusion')" href="javascript:noarticulo();">Ver Historial
 							    	</a>
 							    </li>
 							</ul>
 						</div>
+						
 						
 						<!--Barra de busqueda-->
 						<div class="col-xs-11 col-sm-11 col-md-3">
@@ -142,28 +205,36 @@
 								</button>
 						      </span>
 						    </div>
+						</div><br><br><br><br><br><br><br><br>
+						<!--formulario de reporte-->
+						<div class="container">
+						<h1>Reporta un Articulo</h1>
+							<form action="reportarArticulo.php" method="POST">
+								<label for="">
+									Escriba su usuario:
+									<input type="text" name="txt-nombre-usuario" id="txt-nombre-usuario" placeholder="Ingrese su usuario de la plataforma">	
+							    </label>
+							    <label for="">
+									Link de articulo a reportar:
+									<input type="text" name="txt-link-articulo-reportar" id="txt-link-articulo-reportar" placeholder="Copie el link aqui">	
+							    </label>
+							     <label for="">
+									Tipo de falta:
+									<input type="text" name="txt-tipo-falta" id="txt-tipo-falta" placeholder="Ingresa tu numero de identidad">	
+							    </label>
+							    <label for="">
+									Detalle el problema:
+									<textarea name="txtArea-descripcion" id="txtArea-descripcion" placeholder=""></textarea>	
+								</label>
+								<input type="submit" name="Enviar_datos_articulo" value="Enviar" class="btn btn-primary">
+							</form>
+
+							<?php
+								echo $respuesta;
+								
+							$conexion->cerrarConexion();
+							?>
 						</div>
-						<div class="tab-content" id="">
-							<!--Div que muestra actualmente al presionar el boton Pagina especial-->
-							<div class="tab-pane fade col-xs-12 col-lg-12 in active well" id="reportar-articulo">						
-							<!--formulario de reporte-->
-							<h1>Reporta un Articulo</h1>
-								<form action="">
-									<label for="">
-										Escriba su usuario:
-										<input type="text" name="txt-nombre-usuario" id="txt-nombre-usuario" placeholder="Ingrese su usuario de la plataforma">	
-								    </label>
-								    <label for="">
-										Link de articulo a reportar:
-										<input type="email" name="txt-link-articulo-reportar" id="txt-link-articulo-reportar" placeholder="Copie el link aqui">	
-								    </label>
-								    <label for="">
-										Detalle el problema:
-										<textarea name="txtArea-descripcion" id="txtArea-descripcion" placeholder=""></textarea>	
-									</label>
-									<input type="submit" name="Enviar_datos_articulo" value="Enviar" class="btn btn-primary">
-								</form>
-							</div>
 					</div>
 				</div>
 				</div>
