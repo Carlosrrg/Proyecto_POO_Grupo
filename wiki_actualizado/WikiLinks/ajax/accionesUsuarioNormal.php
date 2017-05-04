@@ -86,6 +86,9 @@ file_put_contents($filepath, $data);
 				$codigoUsario=$_POST['codigo_Usuario'];
 					$conexion = new Conexion();
 					$conexion->establecerConexion();
+					$conexion->ejecutarInstruccion("DELETE FROM tbl_reporte_errores WHERE CODIGO_USER_REPORTA =$codigoUsario ");
+					$conexion->ejecutarInstruccion("DELETE FROM tbl_historial_faltas WHERE CODIGO_USUARIO =$codigoUsario ");
+					$conexion->ejecutarInstruccion("DELETE FROM tbl_notificaciones WHERE CODIGO_USUARIO_EMISOR =$codigoUsario ");
 					$conexion->ejecutarInstruccion("DELETE FROM tbl_usuarios WHERE CODIGO_USUARIO =$codigoUsario ");
 
 
