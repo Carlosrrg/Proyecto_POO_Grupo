@@ -1,6 +1,8 @@
 <?php
 	switch ($_GET["accion"]) {
+
 		case '1':
+		include_once("../class/class_conexion.php");
 		if (isset($_FILES["file"]))
 {
     $file = $_FILES["file"];
@@ -28,10 +30,16 @@
     echo "No hay archivo";
 }
 
-				//Pendiente lo de subir imagen para meterla en la base 
+				
+	
+				
+				$conexion = new Conexion();
+				$conexion->establecerConexion();
+
+				$conexion->ejecutarInstruccion("UPDATE tbl_usuarios Set Urlperfil='../img/".$nombre."'   Where codigo_usuario=8 ");
 
 
-
+				$conexion->cerrarConexion();
 			
 			break;
 		case '2':

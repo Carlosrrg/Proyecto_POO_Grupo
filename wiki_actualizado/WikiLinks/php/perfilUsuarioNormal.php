@@ -1,5 +1,5 @@
 <?php 
-		$codigo= $_SESSION['CODIGO_USUARIO'];
+		$codigo= "8";
 		
 
 

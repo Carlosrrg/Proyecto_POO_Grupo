@@ -24,13 +24,15 @@ $(document).ready(function()
                 data: formData,
                 contentType: false,
                 processData: false,
-                success: function()
+                success: function(e)
                 {
                     
-                    
+                      	 
                 }
             });
+             location.reload(true);
         });
+       
      });
 
 
