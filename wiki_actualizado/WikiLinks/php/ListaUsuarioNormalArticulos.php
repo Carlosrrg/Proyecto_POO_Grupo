@@ -4,8 +4,24 @@
 	echo $conexion->establecerConexion();
 
 	//consulta a la tbtl_usuarios
-	$sql="";
-
+	$sql="	SELECT 	a.CODIGO_USUARIO,
+					a.CODIGO_ARTICULO,
+					a.FECHA_AGREGADO,
+					a.CODIGO_CUENTA,
+					b.NOMBRE nombre,
+					b.NUMERO_FALTAS,
+					c.NUMERO_EDICIONES,
+					c.FECHA_REGISTRO,
+					d.NOMBRE_ARTICULO,
+					d.ESTADO_ARTICULO
+					FROM tbl_listas_seguimiento a
+					LEFT JOIN tbl_usuarios b
+					ON (a.CODIGO_USUARIO=b.CODIGO_USUARIO)
+					LEFT JOIN tbl_cuentas c
+					ON (a.CODIGO_CUENTA=c.CODIGO_CUENTA)
+					LEFT JOIN tbl_articulos d
+					ON (a.CODIGO_ARTICULO=d.CODIGO_ARTICULO)";
+	$arregloArticulo=$conexion->ejecutarInstruccion($sql);
 ?>
 <!DOCTYPE html>
 <html>
@@ -163,19 +179,21 @@
 												<tr>
 												   <th scope="col">Nombre del Articulo</th>
 												   <th scope="col">Ultima edicion</th>
+												   <th scope="col">Numero de ediciones</th>
 												   <th scope="col">Estado de articulo</th>
-												   <th scope="col">Mensaje del Moderador</th>
-												   <th scope="col">Numero de comentarios</th>
 												   <th scope="col">Fecha de publicacion</th>
-												</tr> 
-												<tr>
-												    <td><a href="">Articulo 1</a></td>
-												    <td><p>2012-10-10</p></td>
-												    <td><p>aprobado</p></td>
-												    <td><p>Buen articulo pero citar fuentes.</p></td>
-												    <td><p>12</p></td>
-												    <td><p>2012-10-10</p></td>
 												</tr>
+												<?php
+													while ($linea=$conexion->obtenerFila($arregloArticulo)) {
+														echo "<tr>";
+															echo '<td>'.$linea["NOMBRE_ARTICULO"].'</td>';
+															echo '<td>'.$linea["FECHA_REGISTRO"].'</td>';
+															echo '<td>'.$linea["NUMERO_EDICIONES"].'</td>';
+															echo '<td>'.$linea["ESTADO_ARTICULO"].'</td>';
+															echo '<td>'.$linea["FECHA_AGREGADO"].'</td>';
+														echo "</tr>";			
+													}	
+												?>
 											</table>
 							</div>
 						</div>	

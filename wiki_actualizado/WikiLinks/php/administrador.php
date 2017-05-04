@@ -1,4 +1,20 @@
-﻿<!DOCTYPE html>
+﻿<?php 
+	include_once("../class/class_conexion.php");
+				$conexion = new Conexion();
+				$conexion->establecerConexion();
+
+if (isset($_SESSION['codigo_usuario'])) {
+		$codigo= $_SESSION['codigo_usuario'];
+
+		$usuario=$conexion->ejecutarInstruccion("SELECT NOMBRE , CORREO_ELECTRONICO , FECHA_NACIMIENTO, USERNAME ,Urlperfil FROM tbl_usuarios WHERE CODIGO_USUARIO=$codigo ");
+			$fila = $conexion->obtenerFila($usuario);
+}
+				
+
+
+
+ ?>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>WikiLinks</title>
@@ -150,124 +166,26 @@
 						<div class="tab-content">
 							<!--Div que muestra actualmente al presionar el boton Articulo o Leer-->
 							<div class="tab-pane fade col-xs-12 col-lg-12 in active well" id="admin">
-								<h1>Bienvenido(@), #NOMBRE DEL ADMINISTRADOR#</h1><br>
-								<h2>Notificaciones de moderadores pendientes</h2>
-									<form id="val-admin" action="">
-						           		<table class="table table-hover">
-										  	<tr>
-											    <th scope="col">N. Notificacion</th>
-											    <th scope="col">Nombre del moderador</th>
-											    <th scope="col">Solicitud</th>
-											    <th scope="col">Descripcion</th>
-											    <th scope="col">Accion</th>
-										  	</tr> 
-										  	<tr>
-											    <td>1</td>
-											    <td><a href="#">Ramon perez</a></td>
-											    <td>Cancelar Cuenta de Usuario</td>
-											    <td>Problemas con muchos reportes de otro usuarios.</td>
-											    <td>
-											    	<button class="btn btn-danger">Aprobar cancelacion</button>&nbsp;
-											    	<br><br><!--Poner saltos de linea para evitar botones pegados-->
-											    	<button class="btn btn-warning">Posponer solicitud</button>&nbsp;
-											    </td>
-											</tr>
-											<tr>
-											    <td>2</td>
-											    <td><a href="#">Ramon perez</a></td>
-											    <td>Cancelar Cuenta de Usuario</td>
-											    <td>Problemas con muchos reportes de otro usuarios.</td>
-											    <td>
-											    	<button class="btn btn-danger">Aprobar cancelacion</button>&nbsp;
-											    	<br><br>
-											    	<button class="btn btn-warning">Posponer solicitud</button>&nbsp;
-											    </td>
-											</tr>
-											<tr>
-											    <td>3</td>
-											    <td><a href="#">Ramon perez</a></td>
-											    <td>Cancelar Cuenta de Usuario</td>
-											    <td>Problemas con muchos reportes de otro usuarios.</td>
-											    <td>
-											    	<button class="btn btn-danger">Aprobar cancelacion</button>&nbsp;
-											    	<br><br>
-											    	<button class="btn btn-warning">Posponer solicitud</button>&nbsp;
-											    </td>
-											</tr>
-										</table>
-							      	</form><br>
-							    <h2>Solicitudes aplasadas</h2>
-							    	<form id="val-admin" action="">
-						           		<table class="table table-hover">
-										  	<tr>
-											    <th scope="col">N. Notificacion</th>
-											    <th scope="col">Nombre del moderador</th>
-											    <th scope="col">Solicitud</th>
-											    <th scope="col">Descripcion</th>
-											    <th scope="col">Accion</th>
-										  	</tr> 
-										  	<tr>
-											    <td>1</td>
-											    <td><a href="#">Ramon perez</a></td>
-											    <td>Cancelar Cuenta de Usuario</td>
-											    <td>Problemas con muchos reportes de otro usuarios.</td>
-											    <td>
-											    	<button class="btn btn-danger">Aprobar cancelacion</button>&nbsp;
-											    </td>
-											</tr>
-											<tr>
-											    <td>2</td>
-											    <td><a href="#">Ramon perez</a></td>
-											    <td>Cancelar Cuenta de Usuario</td>
-											    <td>Problemas con muchos reportes de otro usuarios.</td>
-											    <td>
-											    	<button class="btn btn-danger">Aprobar cancelacion</button>&nbsp;
-											    </td>
-											</tr>
-											<tr>
-											    <td>3</td>
-											    <td><a href="#">Ramon perez</a></td>
-											    <td>Cancelar Cuenta de Usuario</td>
-											    <td>Problemas con muchos reportes de otro usuarios.</td>
-											    <td>
-											    	<button class="btn btn-danger">Aprobar cancelacion</button>&nbsp;
-											    </td>
-											</tr>
-										</table>
-							      	</form><br>
-							    <h2>Historial de cuentas canceladas</h2>
-							    	<form id="val-admin" action="">
-						           		<table class="table table-hover">
-										  	<tr>
-											    <th scope="col">N. Notificacion</th>
-											    <th scope="col">Nombre del moderador</th>
-											    <th scope="col">Solicitud</th>
-											    <th scope="col">Descripcion</th>
-											    <th scope="col">Usuario que se cancelo</th>
-										  	</tr> 
-										  	<tr>
-											    <td>1</td>
-											    <td><a href="#">Ramon perez</a></td>
-											    <td>Cancelar Cuenta de Usuario</td>
-											    <td>Problemas con muchos reportes de otro usuarios.</td>
-											    <td>Peres145</td>
-											</tr>
-											<tr>
-											    <td>2</td>
-											    <td><a href="#">Ramon perez</a></td>
-											    <td>Cancelar Cuenta de Usuario</td>
-											    <td>Problemas con muchos reportes de otro usuarios.</td>
-											    <td>Peres145</td>
-											</tr>
-											<tr>
-											    <td>3</td>
-											    <td><a href="#">Ramon perez</a></td>
-											    <td>Cancelar Cuenta de Usuario</td>
-											    <td>Problemas con muchos reportes de otro usuarios.</td>
-											    <td>Peres145</td>
-											</tr>
-										</table>
-							      	</form><br>  		
+								<h1>Bienvenido(@), <?php  
+														if (isset($fila['NOMBRE'])) {
+															echo $fila['NOMBRE'];
+														}
+													 ?></h1><br>
+								<h2>Notificaciones de moderadores articulos pendientes </h2>
+									
+
+
+									<div id="Notificaciones-moderadores">
+									
+
+
+							      	</div>
+
+
+							      	<br>
+							    
+							      
+							   <br>  		
 							</div>
 						</div>	
 					</div>
@@ -285,10 +203,14 @@
 		</div>
 		<script src="../js/jquery.min.js"></script>
 		<script src="../js/bootstrap.min.js"></script>
-		<script src="../js/script-marco.js"></script>
+	
 		<script type="text/javascript" src="../js/manejodiv.js"></script>
 		<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="../js/descargarpdf.js"></script>
 		<script type="text/javascript" src="../js/jspdf.min.js"></script>
+		<script type="text/javascript" src="../js/administrador.js"></script>
 	</body>
 </html>
+<?php
+$conexion->cerrarConexion();
+?>

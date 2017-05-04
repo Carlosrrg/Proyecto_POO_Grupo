@@ -4,7 +4,29 @@
 	echo $conexion->establecerConexion();
 	
 	//consulta a la tbtl_usuarios
-	$sql="SELECT CODIGO_USUARIO, CODIGO_GENERO, CODIGO_LUGAR_NACIMIENTO, CODIGO_TIPO_USUARIO, USERNAME, CONCAT(NOMBRE,' ',APELLIDO) nombre, CORREO_ELECTRONICO, CONTRASENA, FECHA_NACIMIENTO FROM tbl_usuarios";
+	$sql="SELECT 	a.CODIGO_USUARIO,
+					a.CODIGO_GENERO,
+					a.CODIGO_LUGAR_RESIDENCIA,
+					a.CODIGO_LUGAR_NACIMIENTO,
+					a.CODIGO_TIPO_USUARIO,
+					a.CODIGO_ARTICULO_USUARIO,
+					a.CODIGO_HUSO_HORARIO,
+					a.USERNAME,
+					a.NOMBRE,
+					a.APELLIDO,
+					CONCAT(NOMBRE,' ',APELLIDO) nombre,
+					a.CORREO_ELECTRONICO,
+					a.CONTRASENA,
+					a.FECHA_NACIMIENTO,
+					a.NUMERO_FALTAS,
+					a.URLPERFIL,
+					b.NOMBRE_GENERO,
+					c.NOMBRE_LUGAR
+					FROM tbl_usuarios a
+					LEFT JOIN tbl_generos b
+					ON (a.CODIGO_GENERO=b.CODIGO_GENERO)
+					LEFT JOIN tbl_lugares c
+					ON (a.CODIGO_LUGAR_NACIMIENTO=c.CODIGO_LUGAR)";
 	$arregloUsuarios=$conexion->ejecutarInstruccion($sql);
 ?>
 <!DOCTYPE html>
@@ -173,27 +195,8 @@
 										  				if ($linea["CODIGO_TIPO_USUARIO"]==1) {
 										  					echo '<td>'.$linea["CODIGO_USUARIO"].'</td>';
 										  					echo '<td>'.$linea["nombre"].'</td>';
-										  					echo '<td>';
-										  						if ($linea["CODIGO_GENERO"]==1) {
-										  							echo "M";
-										  						}
-										  						else{
-										  							echo "F";
-										  						}
-										  					echo '</td>';
-										  					echo '<td>';
-										  						if ($linea["CODIGO_LUGAR_NACIMIENTO"]==2) {
-										  							echo "Estados Unidos";										  						}
-										  						if ($linea["CODIGO_LUGAR_NACIMIENTO"]==3) {
-										  							echo "Mexico";
-										  						}
-										  						if ($linea["CODIGO_LUGAR_NACIMIENTO"]==4) {
-										  							echo "Canada";
-										  						}
-										  						if ($linea["CODIGO_LUGAR_NACIMIENTO"]==5) {
-										  							echo "Honduras";
-										  						}
-										  					echo '</td>';
+										  					echo '<td>'.$linea["NOMBRE_GENERO"].'</td>';
+										  					echo '<td>'.$linea["NOMBRE_LUGAR"].'</td>';
 										  					echo '<td>'.$linea["FECHA_NACIMIENTO"].'</td>';
 										  					echo '<td>'.$linea["USERNAME"].'</td>';
 										  					echo '<td>'.$linea["CORREO_ELECTRONICO"].'</td>';
