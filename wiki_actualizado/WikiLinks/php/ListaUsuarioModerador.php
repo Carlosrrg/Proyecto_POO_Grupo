@@ -180,10 +180,8 @@
 								           			while ($linea=$conexion->obtenerFila($arregloUsuarios)) {
 								           				if ($linea["CODIGO_TIPO_USUARIO"]==2) {
 								           					echo "<tr>";
-										           				echo '<td><span id="lbl-nombre-articulo'.$ib.'">';
-										           					echo $linea["NOMBRE_articulo"];
-										           				echo '</span></td>';
-										           				echo '<td><span id="lbl-usuario-articulo'.$ib.'">'.$linea["USERNAME"].'</span></td>';
+										           				echo '<td>'.$linea["NOMBRE_articulo"].'</td>';
+										           				echo '<td>'.$linea["USERNAME"].'</td>';
 										           				echo '<td>';
 											           				echo "<button class='btn btn-success' id='btn-aprobar' 
 											           				onclick='codigoUsuario('".$linea["CODIGO_USUARIO"]."')'>Aprobar</button>&nbsp;";
@@ -233,7 +231,6 @@
 		</div>
 		<script src="../js/jquery.min.js"></script>
 		<script src="../js/bootstrap.min.js"></script>
-		<script src="../js/script-marco.js"></script>
 		<script type="text/javascript" src="../js/manejodiv.js"></script>
 		<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="../js/descargarpdf.js"></script>
