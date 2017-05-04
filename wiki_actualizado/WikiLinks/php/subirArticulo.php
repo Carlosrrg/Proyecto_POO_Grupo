@@ -10,6 +10,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
 	
+<?php
+	$recibo_area=$_POST['area-editor'] ;
+	echo $recibo_area;
+?>
 
 
 
@@ -160,11 +164,35 @@
 						<div class="tab-content" id="">
 							<!--Ventana interna para editar articulo-->
 							
-							<div class="tab-pane fade col-xs-12 col-lg-12 in active" id="editor">
-								<h1>Crear un nuevo articulo</h1>
-								<textarea id="area-editor">
-									<div id="div-editor">Crear nuevo articulo</div>
-								</textarea>
+							<div class="tab-pane fade col-xs-12 col-lg-12 in active well" id="editor">
+								
+								<form method="POST">	
+									<h1>Crea un nuevo artículo</h1>
+									<table class="table">
+										<tr>
+									        <td>
+									        	<h5 class="text-right" ><strong>Nombre del articulo:</strong></h5>
+									        </td>
+									        <td>
+									        	<input type="text" class="form-control" id="nombre-articulo" name="nombre-articulo">
+									        </td>
+									        <td>
+									        	<input type="submit" class="btn btn-default" value="Guardar edición">
+									        </td>
+									    </tr>
+									</table>
+									
+  									
+									
+									<textarea id="area-editor" name="area-editor">
+										<?php
+											
+												echo '<h3>Comienza a editar tu artículo con las herramientas que Wikilinks te ofrece.</h3>' ;
+										?>
+									</textarea>
+									
+								</form>
+
 							</div>
 						</div>
 
@@ -196,17 +224,27 @@
 		<script src="../tinymce/js/tinymce/langs/es.js"></script>
 		<script>
 			tinymce.init({
-			selector: '#area-editor',
-			height: 400,
-			menubar: false,
-		 	plugins: [
-		    'advlist autolink lists link image charmap print preview anchor',
-		    'searchreplace visualblocks code fullscreen',
-		    'insertdatetime media table contextmenu paste code'
-		  	],
-		  	toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-		  content_css: '//www.tinymce.com/css/codepen.min.css'
-		});
+			  selector: 'textarea',
+			  height: 400,
+			  theme: 'modern',
+			  plugins: [
+			    'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+			    'searchreplace wordcount visualblocks visualchars code fullscreen',
+			    'insertdatetime media nonbreaking save table contextmenu directionality',
+			    'emoticons template paste textcolor colorpicker textpattern imagetools codesample toc'
+			  ],
+			  toolbar1: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+			  toolbar2: 'print preview media | forecolor backcolor emoticons | codesample',
+			  image_advtab: true,
+			  templates: [
+			    { title: 'Test template 1', content: 'Test 1' },
+			    { title: 'Test template 2', content: 'Test 2' }
+			  ],
+			  content_css: [
+			    '../tinymce/js/tinymce/skins/lightgray/css.css',
+			    '../tinymce/js/tinymce/skins/lightgray/codepen.min.css'
+			  ]
+			 });			
 		</script>
 	</body>
 </html>

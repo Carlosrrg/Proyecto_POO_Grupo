@@ -179,6 +179,7 @@
 
 						<!--Insertar pagina externa dentro de esta pagina-->						
 						<div class="tab-content" id="">
+							
 							<!--Div que muestra actualmente al presionar el boton Articulo o Leer-->
 							<div class="tab-pane fade col-xs-12 col-lg-12 in active" id="articulo">ArtículO</div>
 
@@ -212,15 +213,18 @@
 							</div>
 
 							<!--Ventana interna para editar articulo-->
-							<div class="tab-pane fade col-xs-12 col-lg-12" id="editar">
-								
-
-								<h2>Crear un nuevo artículo </h2>
-								<textarea id="area1-editor">
-									Crear nuevo articulo
-								</textarea>
-
-
+							<div class="tab-pane fade col-xs-12 col-lg-12 well" id="editar">								
+								<form method="POST">	
+									<h1>Crea un nuevo artículo</h1>
+									        	<input type="submit" class="btn btn-default" value="Guardar edición">
+									<textarea id="area-editor" name="area-editor">
+										<?php
+											
+												echo '<h3>Articulo</h3>' ;
+										?>
+									</textarea>
+									
+								</form>
 
 							</div>
 
@@ -245,7 +249,8 @@
 									        <td>John M.</td>
 									        <td>12/01/17</td>
 									        <td>Nuevo rector agregado</td>
-									      </tr>';} ?>
+									      </tr>';} 
+									  ?>
 								    </tbody>
 								  </table>
 								</div>
@@ -274,25 +279,36 @@
 
 		<script src="../tinymce/js/tinymce/tinymce.min.js"></script>
 		<script src="../tinymce/js/tinymce/langs/es.js"></script>
-
+		<!-- Importa archivo html a div
 		<script type="text/javascript" src="../js/manejodiv.js"></script>
+		-->
 		<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="../js/descargarpdf.js"></script>
 		<script type="text/javascript" src="../js/jspdf.min.js"></script>
 		<!--js para personalizacion del editor-->
 		<script>
 			tinymce.init({
-			selector: '#area1-editor',
-			height: 400,
-			menubar: false,
-		 	plugins: [
-		    'advlist autolink lists link image charmap print preview anchor',
-		    'searchreplace visualblocks code fullscreen',
-		    'insertdatetime media table contextmenu paste code'
-		  	],
-		  	toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-		  content_css: '//www.tinymce.com/css/codepen.min.css'
-		});
+			  selector: '#area-editor',
+			  height: 400,
+			  theme: 'modern',
+			  plugins: [
+			    'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+			    'searchreplace wordcount visualblocks visualchars code fullscreen',
+			    'insertdatetime media nonbreaking save table contextmenu directionality',
+			    'emoticons template paste textcolor colorpicker textpattern imagetools codesample toc'
+			  ],
+			  toolbar1: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+			  toolbar2: 'print preview media | forecolor backcolor emoticons | codesample',
+			  image_advtab: true,
+			  templates: [
+			    { title: 'Test template 1', content: 'Test 1' },
+			    { title: 'Test template 2', content: 'Test 2' }
+			  ],
+			  content_css: [
+			    '../tinymce/js/tinymce/skins/lightgray/css.css',
+			    '../tinymce/js/tinymce/skins/lightgray/codepen.min.css'
+			  ]
+			 });
 		</script>
 	</body>
 </html>						
