@@ -1,4 +1,30 @@
-﻿<!DOCTYPE html>
+﻿<?php
+	include_once("../class/class_conexion.php");
+	$conexion=new Conexion();
+	echo $conexion->establecerConexion();
+
+	//$sql="SELECT CODIGO_USUARIO, CODIGO_TIPO_USUARIO, CODIGO_ARTICULO_USUARIO, USERNAME FROM tbl_usuarios";
+	//consulta a la tbtl_usuarios
+	$sql=" 	SELECT 	a.CODIGO_USUARIO, 
+		 	a.CODIGO_TIPO_USUARIO, 
+			a.CODIGO_ARTICULO_USUARIO, 
+			a.USERNAME 
+			FROM tbl_usuarios a
+			LEFT JOIN tbl_articulos b
+			ON (a.CODIGO_ARTICULO_USUARIO=b.CODIGO_ARTICULO)";
+	$arregloUsuarios=$conexion->ejecutarInstruccion($sql);
+
+	//consulta a la tbl_articulos
+	$sql="SELECT CODIGO_ARTICULO, CODIGO_TIPO_PROTECCION, CODIGO_TIPO_ARTICULO, NOMBRE_ARTICULO FROM tbl_articulos";
+	$arregloArticulos=$conexion->ejecutarInstruccion($sql);
+	$arregloCodigoArticulo=array();
+	$i=0;
+	while ($linea=$conexion->obtenerFila($arregloArticulos)) {
+		$arregloCodigoArticulo[$i]=$linea["NOMBRE_ARTICULO"];
+		$i++;
+	}
+?>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>WikiLinks</title>
@@ -14,7 +40,6 @@
 	<body>
 		<header>
 	
-
 		</header>
 		<br>
 		<div class="div1 container-fluid ">
@@ -152,91 +177,55 @@
 								<h1>Bienvenido(@), #NOMBRE DE USUARIO MODERADOR#</h1><br>
 
 								<h2>Articulos por revisar</h2>
-										<form id="val-admin" action="">
 							           		<table class="table table-hover">
-											  <tr>
-											    <th scope="col">Nombre del Articulo</th>
-											    <th scope="col">Usuario</th>
-											    <th></th>
-											  </tr> 
-											<tr>
-											    <td><a href="">Nombre Articulo 1</a></td>
-											    <td><a href="">Usuario que subio articulo</a></td>
-											    <td>
-											    	<button class="btn btn-success">aprobar</button>&nbsp;
-											    	<button class="btn btn-danger">Eliminar</button>&nbsp;
-											    	<button class="btn btn-warning">Enviar Mensaje</button>
-											    </td>
-											</tr>
-											<tr>
-											    <td><a href="">Nombre Articulo 2</a></td>
-											    <td><a href="">Usuario que subio articulo</a></td>
-											    <td>
-											    	<button class="btn btn-success">aprobar</button>&nbsp;
-											    	<button class="btn btn-danger">Eliminar</button>&nbsp;
-											    	<button class="btn btn-warning">Enviar Mensaje</button>
-											    </td>
-											</tr>
-											<tr>
-											    <td><a href="">Nombre Articulo 3</a></td>
-											    <td><a href="">Usuario que subio articulo</a></td>
-											    <td>
-											    	<button class="btn btn-success">aprobar</button>&nbsp;
-											    	<button class="btn btn-danger">Eliminar</button>&nbsp;
-											    	<button class="btn btn-warning">Enviar Mensaje</button>
-											    </td>
-											</tr>
-											<tr>
-											    <td><a href="">Nombre Articulo 4</a></td>
-											    <td><a href="">Usuario que subio articulo</a></td>
-											    <td>
-											    	<button class="btn btn-success">aprobar</button>&nbsp;
-											    	<button class="btn btn-danger">Eliminar</button>&nbsp;
-											    	<button class="btn btn-warning">Enviar Mensaje</button>
-											    </td>
-											</tr>
-											<tr>
-											    <td><a href="">Nombre Articulo 5</a></td>
-											    <td><a href="">Usuario que subio articulo</a></td>
-											    <td>
-											    	<button class="btn btn-success">aprobar</button>&nbsp;
-											    	<button class="btn btn-danger">Eliminar</button>&nbsp;
-											    	<button class="btn btn-warning">Enviar Mensaje</button>
-											    </td>
-											</tr>
+												<tr>
+												    <th scope="col">Nombre del Articulo</th>
+												    <th scope="col">Usuario</th>
+												    <th></th>
+												</tr> 
+								           		<?php
+								           			$im=0;
+								           			$ib=1;
+								           			while ($linea=$conexion->obtenerFila($arregloUsuarios)) {
+								           				if ($linea["CODIGO_TIPO_USUARIO"]==2) {
+								           					echo "<tr>";
+										           				echo '<td><label id="lbl-nombre-articulo'.$ib.'">';
+										           					echo $arregloCodigoArticulo[$im];
+										           					$im++;
+										           				echo '</lable></td>';
+										           				echo '<td><label id="lbl-usuario-articulo'.$ib.'">'.$linea["USERNAME"].'</label></td>';
+										           				echo '<td>';
+											           				echo '<button class="btn btn-success" id="btn-aprobar'.$ib.'">Aprobar</button>&nbsp;';
+											           				echo '<button class="btn btn-danger" id="btn-eliminar'.$ib.'">Eliminar</button>&nbsp;';
+											           				echo '<button class="btn btn-warning" id="btn-enviar'.$ib.'">Enviar Mensaje</button>&nbsp;';
+											           				$ib++;
+										           				echo '</td>';
+								           					echo "</tr>";		
+								           				}
+								           			}
+								           		?>
 											</table>
-								      	</form>
 								<h2>Articulos aprobados</h2>
-										<form id="val-admin" action="">
 							           		<table class="table table-hover">
-											  <tr>
-											    <th scope="col">Nombre del Articulo</th>
-											    <th scope="col">Usuario</th>
-											  </tr>
-											<tr>
-											    <td><a href="">Nombre Articulo 1</a></td>
-											    <td><a href="">Usuario que subio articulo</a></td>
-											</tr>
+												<tr>
+												    <th scope="col">Nombre del Articulo</th>
+												   	<th scope="col">Usuario</th>
+												</tr>
+												<tr>
+												    <td><a href="">Nombre Articulo 1</a></td>
+												    <td><a href="">Usuario que subio articulo</a></td>
+												</tr>
 
-											<tr>
-											    <td><a href="">Nombre Articulo 2</a></td>
-											    <td><a href="">Usuario que subio articulo</a></td>
-											</tr>
+												<tr>
+												    <td><a href="">Nombre Articulo 2</a></td>
+												    <td><a href="">Usuario que subio articulo</a></td>
+												</tr>
 
-											<tr>
-											    <td><a href="">Nombre Articulo 3</a></td>
-											    <td><a href="">Usuario que subio articulo</a></td>
-											</tr>
-											<tr>
-											    <td><a href="">Nombre Articulo 4</a></td>
-											    <td><a href="">Usuario que subio articulo</a></td>
-											</tr>
-											<tr>
-											    <td><a href="">Nombre Articulo 5</a></td>
-											    <td><a href="">Usuario que subio articulo</a></td>
-											</tr>
+												<tr>
+												    <td><a href="">Nombre Articulo 3</a></td>
+												    <td><a href="">Usuario que subio articulo</a></td>
+												</tr>
 											</table>
-								      	</form>
 							</div>
 						</div>	
 					</div>
@@ -261,3 +250,6 @@
 		<script type="text/javascript" src="../js/jspdf.min.js"></script>
 	</body>
 </html>
+<?php
+	$conexion->cerrarConexion();
+?>

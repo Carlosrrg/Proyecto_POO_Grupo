@@ -1,4 +1,16 @@
-﻿<!DOCTYPE html>
+﻿<?php
+	include_once("../class/class_conexion.php");
+	$conexion=new Conexion();
+	echo $conexion->establecerConexion();
+	
+	//consulta a la tbtl_usuarios
+	$sql="SELECT CODIGO_USUARIO, CODIGO_GENERO, CODIGO_LUGAR_NACIMIENTO, CODIGO_TIPO_USUARIO, USERNAME, CONCAT(NOMBRE,' ',APELLIDO) nombre, CORREO_ELECTRONICO, CONTRASEÑA, FECHA_NACIMIENTO FROM tbl_usuarios";
+	$arregloUsuariosModeradores=$conexion->ejecutarInstruccion($sql);
+	while ($linea=$conexion->obtenerFila($arregloUsuariosModeradores)) {
+		echo linea["CORREO_ELECTRONICO"].", ";
+	}
+?>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>WikiLinks</title>
@@ -148,7 +160,6 @@
 							<!--Div que muestra actualmente al presionar el boton Articulo o Leer-->
 							<div class="tab-pane fade col-xs-12 col-lg-12 in active well" id="admin-moderador">
 								<h2>Moderadores de Wikilinks</h2>
-									<form id="val-admin" action="">
 						           		<table class="table table-hover">
 										  	<tr>
 											    <th scope="col">codigo del moderador</th>
@@ -157,41 +168,19 @@
 											    <th scope="col">Sexo</th>
 											    <th scope="col">Pais de procedencia</th>
 											    <th scope="col">Especializacion</th>
-										  	</tr> 
+										  	</tr>
+										  	<?php
+										  		/*while ($linea=$conexion->obtenerFila($arregloUsuarios)) {
+										  			echo "<tr>";
+										  				if ($linea["CODIGO_TIPO_USUARIO"]==2) {
+										  					echo '<td>'.$linea["CODIGO_USUARIO"].'</td>';
+										  				}
+										  				
+										  			echo "</tr>";
+										  		}*/
+										  	?> 
 										  	<tr>
-											    <td>1</td>
-											    <td><a href="#">Petronilo gutierrez</a></td>
-											    <td>1990-10-10</td>
-											    <td>masculino</td>
-											    <td>Canada</td>
-											    <td>Ingeniero en software</td>
-											</tr>
-											<tr>
-											    <td>2</td>
-											    <td><a href="#">Petronilo gutierrez</a></td>
-											    <td>1990-10-10</td>
-											    <td>masculino</td>
-											    <td>Canada</td>
-											    <td>Ingeniero en software</td>
-											</tr>
-											<tr>
-											    <td>3</td>
-											    <td><a href="#">Petronilo gutierrez</a></td>
-											    <td>1990-10-10</td>
-											    <td>masculino</td>
-											    <td>Canada</td>
-											    <td>Ingeniero en software</td>
-											</tr>
-											<tr>
-											    <td>4</td>
-											    <td><a href="#">Petronilo gutierrez</a></td>
-											    <td>1990-10-10</td>
-											    <td>masculino</td>
-											    <td>Canada</td>
-											    <td>Ingeniero en software</td>
-											</tr>
-											<tr>
-											    <td>5</td>
+											    
 											    <td><a href="#">Petronilo gutierrez</a></td>
 											    <td>1990-10-10</td>
 											    <td>masculino</td>
@@ -199,7 +188,6 @@
 											    <td>Ingeniero en software</td>
 											</tr>
 										</table>
-							      	</form><br>
 							</div>
 						</div>
 						<div class="container">
@@ -227,3 +215,6 @@
 		<script type="text/javascript" src="../js/jspdf.min.js"></script>
 	</body>
 </html>
+<?php
+	$conexion->cerrarConexion();
+?>
