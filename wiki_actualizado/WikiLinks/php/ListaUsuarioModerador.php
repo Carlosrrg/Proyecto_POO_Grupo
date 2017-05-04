@@ -3,26 +3,29 @@
 	$conexion=new Conexion();
 	echo $conexion->establecerConexion();
 
-	//$sql="SELECT CODIGO_USUARIO, CODIGO_TIPO_USUARIO, CODIGO_ARTICULO_USUARIO, USERNAME FROM tbl_usuarios";
 	//consulta a la tbtl_usuarios
-	$sql=" 	SELECT 	a.CODIGO_USUARIO, 
+	/*
+		SELECT 	a.CODIGO_USUARIO, 
 		 	a.CODIGO_TIPO_USUARIO, 
-			a.CODIGO_ARTICULO_USUARIO, 
-			a.USERNAME 
+			a.CODIGO_ARTICULO_USUARIO,
+            a.NOMBRE,
+			a.USERNAME,
+            b.NOMBRE_ARTICULO NOMBRE_articulo
 			FROM tbl_usuarios a
 			LEFT JOIN tbl_articulos b
-			ON (a.CODIGO_ARTICULO_USUARIO=b.CODIGO_ARTICULO)";
-	$arregloUsuarios=$conexion->ejecutarInstruccion($sql);
+			ON (a.CODIGO_ARTICULO_USUARIO=b.CODIGO_ARTICULO)
+	*/
 
-	//consulta a la tbl_articulos
-	$sql="SELECT CODIGO_ARTICULO, CODIGO_TIPO_PROTECCION, CODIGO_TIPO_ARTICULO, NOMBRE_ARTICULO FROM tbl_articulos";
-	$arregloArticulos=$conexion->ejecutarInstruccion($sql);
-	$arregloCodigoArticulo=array();
-	$i=0;
-	while ($linea=$conexion->obtenerFila($arregloArticulos)) {
-		$arregloCodigoArticulo[$i]=$linea["NOMBRE_ARTICULO"];
-		$i++;
-	}
+	$sql=" SELECT 	a.CODIGO_USUARIO, 
+				 	a.CODIGO_TIPO_USUARIO, 
+					a.CODIGO_ARTICULO_USUARIO,
+		            a.NOMBRE,
+					a.USERNAME,
+		            b.NOMBRE_ARTICULO NOMBRE_articulo
+					FROM tbl_usuarios a
+					LEFT JOIN tbl_articulos b
+					ON (a.CODIGO_ARTICULO_USUARIO=b.CODIGO_ARTICULO)";
+	$arregloUsuarios=$conexion->ejecutarInstruccion($sql);
 ?>
 <!DOCTYPE html>
 <html>
@@ -184,18 +187,17 @@
 												    <th></th>
 												</tr> 
 								           		<?php
-								           			$im=0;
 								           			$ib=1;
 								           			while ($linea=$conexion->obtenerFila($arregloUsuarios)) {
 								           				if ($linea["CODIGO_TIPO_USUARIO"]==2) {
 								           					echo "<tr>";
-										           				echo '<td><label id="lbl-nombre-articulo'.$ib.'">';
-										           					echo $arregloCodigoArticulo[$im];
-										           					$im++;
-										           				echo '</lable></td>';
-										           				echo '<td><label id="lbl-usuario-articulo'.$ib.'">'.$linea["USERNAME"].'</label></td>';
+										           				echo '<td><span id="lbl-nombre-articulo'.$ib.'">';
+										           					echo $linea["NOMBRE_articulo"];
+										           				echo '</span></td>';
+										           				echo '<td><span id="lbl-usuario-articulo'.$ib.'">'.$linea["USERNAME"].'</span></td>';
 										           				echo '<td>';
-											           				echo '<button class="btn btn-success" id="btn-aprobar'.$ib.'">Aprobar</button>&nbsp;';
+											           				echo "<button class='btn btn-success' id='btn-aprobar' 
+											           				onclick='codigoUsuario('".$linea["CODIGO_USUARIO"]."')'>Aprobar</button>&nbsp;";
 											           				echo '<button class="btn btn-danger" id="btn-eliminar'.$ib.'">Eliminar</button>&nbsp;';
 											           				$ib++;
 										           				echo '</td>';
@@ -247,6 +249,7 @@
 		<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="../js/descargarpdf.js"></script>
 		<script type="text/javascript" src="../js/jspdf.min.js"></script>
+		<script type="text/javascript" src="../js/llenarTablaUsuarioModerador.js"></script>
 	</body>
 </html>
 <?php
