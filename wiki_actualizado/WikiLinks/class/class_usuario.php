@@ -81,5 +81,41 @@
 				}
 				return $respuesta;
 		}
+		//esta clase se guarda los registros del usuario 
+		public function guardarRegistro($conexion){
+
+			$sql=sprintf("INSERT INTO tbl_usuarios(
+				CODIGO_USUARIO, 
+				CODIGO_GENERO,
+				CODIGO_LUGAR_RESIDENCIA,
+				CODIGO_LUGAR_NACIMIENTO,
+				CODIGO_TIPO_USUARIO,
+				CODIGO_ARTICULO_USUARIO,
+				CODIGO_HUSO_HORARIO,
+				USERNAME,
+				NOMBRE,
+				APELLIDO,
+				CORREO_ELECTRONICO,
+				CONTRASEÑA,
+				FECHA_NACIMIENTO,
+				DIRECCION_IP,
+				NUMERO_FALTAS
+				)VALUES('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s'
+				)", NULL, NULL, NULL, NULL, NULL, NULL,NULL, $this->nombreUsuario, $this->nombreUsuario,NULL, $this->correo, $this->contrasena, NULL, NULL, NULL, NULL
+
+			);
+			$resultadoInser=$conexion->ejecutarInstruccion($sql);
+			$resultado=array();
+			if ($resultadoInser==TRUE) {
+				$resultado["codigo"]=1;
+				$resultado["mensaje"]="Exito el registro fue almacenado";
+
+			}else{
+				$resultado["codigo"]=0;
+				$resultado["mensaje"]="Error: " . $sql . "<br>" . $conexion->getEnlace()->error;
+
+			}
+			return $resultado
+
 	}
 ?>
