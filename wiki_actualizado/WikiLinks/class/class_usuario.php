@@ -58,7 +58,7 @@
 		}
 
 		public static function verificarUsuario($conexion, $nombre,$contrasena){
-				$resultado = $conexion->ejecutarInstruccion(sprintf("SELECT `CODIGO_USUARIO` `NOMBRE``CODIGO_TIPO_USUARIO`  FROM `tbl_usuarios` WHERE NOMBRE='%s' AND CONTRASENA=sha1('%s')",
+				$resultado = $conexion->ejecutarInstruccion(sprintf("SELECT CODIGO_USUARIO, NOMBRE, CODIGO_TIPO_USUARIO,  FROM tbl_usuarios WHERE NOMBRE='%s' AND CONTRASENA='%s'",
 					stripslashes($nombre),
 					stripslashes($contrasena)
 				));
@@ -98,7 +98,7 @@
 				DIRECCION_IP,
 				NUMERO_FALTAS
 				)VALUES('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s'
-				)", NULL, NULL, NULL, NULL, NULL, NULL,NULL, $this->nombreUsuario, $this->nombreUsuario,NULL, $this->correo, $this->contrasena, NULL, NULL, NULL, NULL
+				)",  NULL, NULL, NULL, NULL, NULL,NULL, $this->nombreUsuario, $this->nombreUsuario,NULL, $this->correo, $this->contrasena, NULL, NULL, NULL, NULL
 
 			);
 			$resultadoInser=$conexion->ejecutarInstruccion($sql);
