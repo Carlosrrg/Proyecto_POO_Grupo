@@ -1,7 +1,17 @@
 ﻿<?php
-	$articulo='';
-?>
+	include_once("../class/class_conexion.php");
+	include_once("../class/class-buscar.php");
+	$conexion = new Conexion();
+	$conexion->establecerConexion();
 
+	if (isset($_POST['text-buscador'])) {
+		$buscador = $_POST['text-buscador'];
+
+		$buscar = new Buscador($buscador);
+
+		$fila = $buscar->buscar($conexion);
+	}
+?>
 
 
 <!DOCTYPE html>
@@ -15,7 +25,7 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
-
+	
 </head>
 	<body>
 		<header>
@@ -40,7 +50,7 @@
 							<ul class="list-group2">
 								<li><a href="noticias.php">Portada</a></li>
 								<li><a href="reportarArticulo.php">Reportar Articulo</a></li>
-								<li><a href="#">Moderadores</a></li>
+								<li><a href="listaReportesPorUsuarios.php">Moderadores</a></li>
 								<li><a href="subirArticulo.php">Crear Articulo</a></li>
 								<li><a href="#">Ayuda</a></li>
 								<li><a href="donaciones.php">Donaciones</a></li>
@@ -169,30 +179,34 @@
 						
 						
 						<!--Barra de busqueda-->
-						<div class="col-xs-11 col-sm-11 col-md-3">
+						<form action="verArticulo.php" method="POST">
+							<div class="col-xs-11 col-sm-11 col-md-3">
 							<div class="input-group">
-						      <input type="search" placeholder="Buscar en Wikilinks" class="form-control">
+						      <input name="text-buscador" id="text-buscador" type="text" placeholder="Buscar en Wikilinks" class="form-control">
 						      <span class="input-group-btn">
-						        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search">
+						        <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search">
 									</span>
 								</button>
 						      </span>
 						    </div>
 						</div>
+						</form>
+							
 
 						<!--Insertar pagina externa dentro de esta pagina-->						
 						<div class="tab-content" id="">
 							
 							<!--Div que muestra actualmente al presionar el boton Articulo o Leer-->
 							<div class="tab-pane fade col-xs-12 col-lg-12 in active" id="articulo">
-							<!--Imprimir contenido del articulo-->
 							<?php
-								$articulo = '<h2>Aqui se muestra el articulo</h1>
-									<p>El articulo se compone de una cadena de texto html</p>';
-								
-								echo $articulo;
-							?>
 
+									if (isset($fila)) {
+										echo "<h2>".$fila['NOMBRE_ARTICULO']."</h2>";
+										echo "<p>".$fila['CONTENIDO']."</p>";
+									}
+							$conexion->cerrarConexion();
+						
+							?>
 							</div>
 
 							<!--Formulario de discucion del articulo-->
@@ -208,8 +222,10 @@
 								    <button type="button" class="btn btn-default">Publicar</button>
 								  </div>
 								  
-								  <?php for ($i=0; $i < 10; $i++) { 
-								  	echo '<div class="well">
+								  <?php 
+
+								  	
+								  		echo '<div class="well">
 										    <table class="table table-hover">
 										      <thead>  
 										        <tr>
@@ -220,35 +236,27 @@
 										    </table>
 										    <p>Muy bien redactado, me parece muy interesante la informacion publicada.</p>
 										  </div>';
-								  } ?>
+								  	
+								  	
+									?>
 								   
 							</div>
 
 							<!--Ventana interna para editar articulo-->
 							<div class="tab-pane fade col-xs-12 col-lg-12 well" id="editar">								
 								<form method="POST">	
-									<table class="table">
-										<tr>
-									        <td>
-									        	<h5 class="text-right" ><strong>Describa la modificación:</strong></h5>
-									        </td>
-									        <td>
-									        	<input type="text" class="form-control" id="descripcion-modificacion" name="descripcion-modificacion">
-									        </td>
-									        <td>
+									<h1>Crea un nuevo artículo</h1>
 									        	<input type="submit" class="btn btn-default" value="Guardar edición">
-									        </td>
-									    </tr>
-									</table>
 									<textarea id="area-editor" name="area-editor">
 										<?php
 											
-												echo $articulo ;
+												echo '<h3>Articulo</h3>' ;
 										?>
 									</textarea>
+									
 								</form>
-							</div>
 
+							</div>
 
 							<!--Ver historial de modificaciones-->
 							<div class="tab-pane fade col-xs-12 col-lg-12" id="historial">
@@ -270,7 +278,7 @@
 									      <tr>
 									        <td>John M.</td>
 									        <td>12/01/17</td>
-									        <td>Descripcion de la modificacion</td>
+									        <td>Nuevo rector agregado</td>
 									      </tr>';} 
 									  ?>
 								    </tbody>
