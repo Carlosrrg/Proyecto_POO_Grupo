@@ -57,12 +57,9 @@
 				" CodigoTipoUsuario: " . $this->codigoTipoUsuario;
 		}
 
-		public static function verificarUsuario($conexion, $correo,$contrasena){
-				$resultado = $conexion->ejecutarInstruccion(
-					sprintf("SELECT codigo_usuario, nombre_usuario, correo, contrasena, codigo_tipo_usuario FROM tbl_usuarios 
-					WHERE correo = '%s'
-					AND contrasena = sha1('%s')",
-					stripslashes($correo),
+		public static function verificarUsuario($conexion, $nombre,$contrasena){
+				$resultado = $conexion->ejecutarInstruccion(sprintf("SELECT `CODIGO_USUARIO` `NOMBRE``CODIGO_TIPO_USUARIO`  FROM `tbl_usuarios` WHERE NOMBRE='%s' AND CONTRASENA=sha1('%s')",
+					stripslashes($nombre),
 					stripslashes($contrasena)
 				));
 				$respuesta = array();
@@ -71,9 +68,9 @@
 					$fila = $conexion->obtenerFila($resultado);
 					$respuesta["codigo_resultado"] = 1;
 					$respuesta["resultado"] = "Usuario Existe";
-					$respuesta["codigo_usuario"] = $fila["codigo_usuario"];
-					$respuesta["nombre_usuario"] = $fila["nombre_usuario"];
-					$respuesta["codigo_tipo_usuario"] = $fila["codigo_tipo_usuario"];
+					$respuesta["codigo_usuario"] = $fila["CODIGO_USUARIO"];
+					$respuesta["nombre_usuario"] = $fila["NOMBRE"];
+					$respuesta["codigo_tipo_usuario"] = $fila["CODIGO_TIPO_USUARIO"];
 				}
 				else {
 					$respuesta["codigo_resultado"] = 0;

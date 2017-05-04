@@ -165,7 +165,7 @@
 									  </div>
 								  	<div class="form-group">
 									    <label for="pwd">Contraseña</label>
-									    <input type="password" class="form-control" name="txt-contrasena"id="txt-contrasena">
+									    <input type="password" class="form-control" name="txt-contrasena" id="txt-contrasena">
 								 	</div>
 								 	 <div class="checkbox form-group row">
 										  	<div class="form-group">
@@ -198,10 +198,11 @@
 		</div>
 		<script src="../js/jquery.min.js"></script>
 		<script src="../js/bootstrap.min.js"></script>
-		<script src="../js/script-marco.js"></script>
+		
 		<script type="text/javascript" src="../js/manejodiv.js"></script>
 		<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="../js/descargarpdf.js"></script>
 		<script type="text/javascript" src="../js/jspdf.min.js"></script>
+		<script type="text/javascript" src="../js/controlador.js"></script>
 	</body>
 </html>

@@ -7,17 +7,20 @@ $(document).ready(function(){
 				url:"ajax/acciones_login.php?accion=1",
 				method: "POST",
 				data: parametros,
-				dataType: 'json	',
+				dataType: 'json',
 				success:function(respuesta){
+					alert("ahora estoy aqui");
 					
 					$("#resultado").html(respuesta.resultado + "Tipo Usuario: " + respuesta.codigo_tipo_usuario);
 					if(respuesta.codigo_tipo_usuario =='1')
-						window.location="../perfilUsuarioNormal.php";
+						window.location="../perfilUsuarioModerador.php";
 					else if(respuesta.codigo_tipo_usuario =='2')
-						window.location="pagina_admin.php";
+						window.location="../perfilUsuarioNormal.php";
 				},
 
-				error:function(){
+				error:function(e){
+					alert(e.error);
+					alert(respuesta);
 
 				}
 		});
