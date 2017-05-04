@@ -40,7 +40,7 @@
 								<li><a href="#">Moderadores</a></li>
 								<li><a href="subirArticulo.php">Crear Articulo</a></li>
 								<li><a href="#">Ayuda</a></li>
-								<li><a href="../donaciones.html">Donaciones</a></li>
+								<li><a href="donaciones.php">Donaciones</a></li>
 								</ul>
 
 						</td></tr>
