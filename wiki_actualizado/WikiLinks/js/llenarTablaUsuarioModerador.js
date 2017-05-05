@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	$.ajax({
-		url:"ajax/mostrarListaUusarioModerador.php?accion=1",
+		url:"../ajax/mostrarListaUusarioModerador.php?accion=1",
 		method:"POST",
 		success:function(resultado){
 			$("#mostrar-tabla").html(resultado);
@@ -9,7 +9,14 @@ $(document).ready(function(){
 });
 
 function codigoUsuario(codigo){
-	var codigo2=3;
-	alert("codigo: ")+codigo;
-	$("#txt-prueba").val(codigo2);
+	//alert("codigo: "+codigo);
+	var parametro="codigo="+codigo;
+	$.ajax({
+		url:"../ajax/mostrarListaUusarioModerador.php?accion=2",
+		data:parametro,
+		method:"POST",
+		success:function(resultado){
+			$("#mostraropcion2").html(resultado);
+		}
+	});
 }
