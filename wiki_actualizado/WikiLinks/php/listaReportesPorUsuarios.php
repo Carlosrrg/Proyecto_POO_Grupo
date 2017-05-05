@@ -153,7 +153,17 @@
 								<h1>Reportes detallados de los usuarios que reportaron</h1><br>
 								<a href="listaReportesArticulosModerador.php" class="btn btn-default">Regresar a reportes</a>
 								<br><br>
-									<form action="">
+
+
+								<?php
+								include_once("../class/class_conexion.php");
+					$codigoarti=$_GET["codigo"];
+					$conexion = new Conexion();
+					$conexion->establecerConexion();
+					$resultadonotificaciones=$conexion->ejecutarInstruccion(" SELECT CODIGO_REPORTE_ERROR, CODIGO_USER_REPORTA, CODIGO_ARTICULO, NOMBRE_ERROR, DESCRIPCION , FECHA FROM tbl_reporte_errores  where CODIGO_ARTICULO=$codigoarti ");
+						?>
+
+							<form action="">
 						           		<table class="table table-hover" style="width: 70%">
 											<tr>
 												<th scope="col">N. de reporte</th>
@@ -162,54 +172,62 @@
 												<th scope="col">Descripcion</th>
 												<th scope="col">accion</th>
 											</tr>
-										 
-											<tr>
-												<td>1</td>
-												<td><a href="#">articulo 1</a></td>
-												<td>carlosrr09</td>
-												<td>Esta es la descripcion que se tomo en reportarArticulo.php</td>
+
+						<?php 
+						while($fila = $conexion->obtenerFila($resultadonotificaciones)){
+
+											$CODIGO=$fila['CODIGO_USER_REPORTA'];
+											$resultadonombre=$conexion->ejecutarInstruccion(" SELECT NOMBRE FROM tbl_usuarios where CODIGO_USUARIO=$CODIGO  ");
+											$fila2 = $conexion->obtenerFila($resultadonombre);
+
+
+											$codigoarticulo=$fila['CODIGO_ARTICULO'];
+											$resultadonombre=$conexion->ejecutarInstruccion(" SELECT NOMBRE_ARTICULO FROM tbl_articulos where CODIGO_ARTICULO=$codigoarticulo  ");
+											$fila3 = $conexion->obtenerFila($resultadonombre);
+						 ?>
+
+						 	<tr>
+												<td><?php echo $fila['CODIGO_REPORTE_ERROR']; ?></td>
+												<td><a href="#"><?php echo $fila3['NOMBRE_ARTICULO']; ?></a></td>
+												<td><?php echo $fila2['NOMBRE']; ?></td>
+												<td><?php echo $fila['DESCRIPCION']; ?></td>
 												<td>
 											    	<a href="#" class="btn btn-default" id="btn-enviar-mensaje" name="btn-enviar-mensaje">Enviar mensaje</a>
 											    </td>
 											</tr>
-											<tr>
-												<td>2</td>
-												<td><a href="#">articulo 1</a></td>
-												<td>carlosrr09</td>
-												<td>Esta es la descripcion que se tomo en reportarArticulo.php</td>
-												<td>
-											    	<a href="#" class="btn btn-default" id="btn-enviar-mensaje" name="btn-enviar-mensaje">Enviar mensaje</a>
-											    </td>
-											</tr>
-											<tr>
-												<td>3</td>
-												<td><a href="#">articulo 1</a></td>
-												<td>carlosrr09</td>
-												<td>Esta es la descripcion que se tomo en reportarArticulo.php</td>
-												<td>
-											    	<a href="#" class="btn btn-default" id="btn-enviar-mensaje" name="btn-enviar-mensaje">Enviar mensaje</a>
-											    </td>
-											</tr>
-											<tr>
-												<td>4</td>
-												<td><a href="#">articulo 1</a></td>
-												<td>carlosrr09</td>
-												<td>Esta es la descripcion que se tomo en reportarArticulo.php</td>
-												<td>
-											    	<a href="#" class="btn btn-default" id="btn-enviar-mensaje" name="btn-enviar-mensaje">Enviar mensaje</a>
-											    </td>
-											</tr>
-											<tr>
-												<td>5</td>
-												<td><a href="#">articulo 1</a></td>
-												<td>carlosrr09</td>
-												<td>Esta es la descripcion que se tomo en reportarArticulo.php</td>
-												<td>
-											    	<a href="#" class="btn btn-default" id="btn-enviar-mensaje" name="btn-enviar-mensaje">Enviar mensaje</a>
-											    </td>
-											</tr>
-										</table>
-							      	</form>
+
+
+
+
+						 	<?php 
+						 }
+
+
+
+
+
+						 	?>
+
+						 	
+						 	
+
+						 	</table>
+							</form>
+
+
+
+
+
+
+
+
+
+
+						 <?php
+
+					$conexion->cerrarConexion();
+					?>
+									
 							</div>	
 						</div>
 					</div>
@@ -227,7 +245,7 @@
 		</div>
 		<script src="../js/jquery.min.js"></script>
 		<script src="../js/bootstrap.min.js"></script>
-		<script src="../js/script-marco.js"></script>
+	
 		<script type="text/javascript" src="../js/manejodiv.js"></script>
 		<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="../js/descargarpdf.js"></script>
