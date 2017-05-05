@@ -1,4 +1,7 @@
 <?php
+	include_once("../class/class_conexion.php");
+	$conexion = new Conexion();
+	$conexion->establecerConexion();
 
 	class Articulo{
 
@@ -87,20 +90,18 @@
 		}
 	
 
-		public function guardarRegistro($conexion){
+		public function guardarRegistro(){
+			$contador=100;
 			$sql = sprintf(
-					"INSERT INTO tbl_articulos(
-						CODIGO_TIPO_PROTECCION,
-						CODIGO_TIPO_ARTICULO, 
-						NOMBRE_ARTICULO, 
-						CONTENIDO_ARTICULO
-					) VALUES (
-						'%s','%s','%s','%s'
-					)",
+					"INSERT INTO tbl_articulos(CODIGO_ARTICULO, CODIGO_TIPO_PROTECCION, CODIGO_TIPO_ARTICULO, NOMBRE_ARTICULO, ESTADO_ARTICULO, CONTENIDO_ARTICULO, TITULO) 
+						VALUES ('%s','%s','%s','%s','%s','%s','%s')",
+					$conexion->getEnlace()->real_escape_string(stripslashes( "$contador")),	
 					$conexion->getEnlace()->real_escape_string(stripslashes( $this->tipoProteccion)),
 					$conexion->getEnlace()->real_escape_string(stripslashes( $this->tipoArticulo)),
 					$conexion->getEnlace()->real_escape_string(stripslashes( $this->nombreArticulo)),
-					$conexion->getEnlace()->real_escape_string(stripslashes( $this->contenidoArticulo))
+					$conexion->getEnlace()->real_escape_string(stripslashes( "aprobado")),
+					$conexion->getEnlace()->real_escape_string(stripslashes( $this->contenidoArticulo)),
+					$conexion->getEnlace()->real_escape_string(stripslashes( $this->nombreArticulo))
 			);
 
 			$resultadoInsert = $conexion->ejecutarInstruccion($sql);
@@ -112,7 +113,9 @@
 				$resultado["codigo"]=0;
 				$resultado["mensaje"]="Error: " . $sql . "<br>" . $conexion->getEnlace()->error;
 			}
-			echo json_encode($resultado);
+			//echo json_encode($resultado);
+			$contador++;
 		}
-	}		
+	}
+	$conexion->cerrarConexion();		
 ?>
