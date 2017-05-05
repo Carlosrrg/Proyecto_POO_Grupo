@@ -30,7 +30,8 @@
            	 $fila = $conexion->obtenerFila($resultado);
            	 return $fila;
            }else{
-           	echo "nada";
+           	
+           	return;
            }       
 
 		}
