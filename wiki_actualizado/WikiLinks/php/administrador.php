@@ -9,9 +9,6 @@ if (isset($_SESSION['codigo_usuario'])) {
 		$usuario=$conexion->ejecutarInstruccion("SELECT NOMBRE , CORREO_ELECTRONICO , FECHA_NACIMIENTO, USERNAME ,Urlperfil FROM tbl_usuarios WHERE CODIGO_USUARIO=$codigo ");
 			$fila = $conexion->obtenerFila($usuario);
 }
-				
-
-
 
  ?>
 <!DOCTYPE html>

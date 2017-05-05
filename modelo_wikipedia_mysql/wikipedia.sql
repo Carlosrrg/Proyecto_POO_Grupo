@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-05-2017 a las 05:54:21
+-- Tiempo de generación: 05-05-2017 a las 00:10:14
 -- Versión del servidor: 5.7.14
 -- Versión de PHP: 5.6.25
 
@@ -85,18 +85,21 @@ CREATE TABLE `tbl_articulos` (
   `CODIGO_ARTICULO` int(11) NOT NULL,
   `CODIGO_TIPO_PROTECCION` int(11) NOT NULL,
   `CODIGO_TIPO_ARTICULO` int(11) NOT NULL,
-  `NOMBRE_ARTICULO` varchar(200) NOT NULL
+  `NOMBRE_ARTICULO` varchar(200) NOT NULL,
+  `ESTADO_ARTICULO` varchar(60) DEFAULT NULL,
+  `CONTENIDO_ARTICULO` varchar(10000) DEFAULT NULL,
+  `TITULO` varchar(70) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tbl_articulos`
 --
 
-INSERT INTO `tbl_articulos` (`CODIGO_ARTICULO`, `CODIGO_TIPO_PROTECCION`, `CODIGO_TIPO_ARTICULO`, `NOMBRE_ARTICULO`) VALUES
-(1, 1, 2, 'Unah'),
-(2, 3, 2, 'Que es Poo'),
-(3, 2, 3, 'Javascript'),
-(4, 2, 1, 'los Arboles');
+INSERT INTO `tbl_articulos` (`CODIGO_ARTICULO`, `CODIGO_TIPO_PROTECCION`, `CODIGO_TIPO_ARTICULO`, `NOMBRE_ARTICULO`, `ESTADO_ARTICULO`, `CONTENIDO_ARTICULO`, `TITULO`) VALUES
+(1, 1, 2, 'Unah', 'Aprobado', NULL, NULL),
+(2, 3, 2, 'Que es Poo', 'Aprobado', NULL, NULL),
+(3, 2, 3, 'Javascript', 'Aprobado', NULL, NULL),
+(4, 2, 1, 'los Arboles', 'Reprobado', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -211,7 +214,7 @@ CREATE TABLE `tbl_cuentas` (
   `CODIGO_CUENTA` int(11) NOT NULL,
   `CODIGO_USUARIO` int(11) NOT NULL,
   `NUMERO_EDICIONES` int(11) DEFAULT NULL,
-  `FECHA_REGISTRO` datetime NOT NULL
+  `FECHA_REGISTRO` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -219,8 +222,8 @@ CREATE TABLE `tbl_cuentas` (
 --
 
 INSERT INTO `tbl_cuentas` (`CODIGO_CUENTA`, `CODIGO_USUARIO`, `NUMERO_EDICIONES`, `FECHA_REGISTRO`) VALUES
-(1, 1, 25, '2016-10-10 00:00:00'),
-(2, 2, 69, '2016-10-10 00:00:00');
+(1, 1, 25, '2016-10-10'),
+(2, 2, 69, '2016-10-10');
 
 -- --------------------------------------------------------
 
@@ -313,13 +316,6 @@ CREATE TABLE `tbl_historial_faltas` (
   `CODIGO_SANCION` int(11) NOT NULL,
   `FECHA_FALTA` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `tbl_historial_faltas`
---
-
-INSERT INTO `tbl_historial_faltas` (`CODIGO_USUARIO`, `CODIGO_TIPO_FALTA`, `CODIGO_SANCION`, `FECHA_FALTA`) VALUES
-(1, 1, 2, '2016-10-10 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -415,7 +411,7 @@ INSERT INTO `tbl_instituciones` (`CODIGO_INSTITUCION`, `CODIGO_LUGAR`, `NOMBRE_I
 CREATE TABLE `tbl_listas_seguimiento` (
   `CODIGO_USUARIO` int(11) NOT NULL,
   `CODIGO_ARTICULO` int(11) NOT NULL,
-  `FECHA_AGREGADO` datetime NOT NULL,
+  `FECHA_AGREGADO` date NOT NULL,
   `CODIGO_CUENTA` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -424,8 +420,8 @@ CREATE TABLE `tbl_listas_seguimiento` (
 --
 
 INSERT INTO `tbl_listas_seguimiento` (`CODIGO_USUARIO`, `CODIGO_ARTICULO`, `FECHA_AGREGADO`, `CODIGO_CUENTA`) VALUES
-(2, 1, '2016-10-10 00:00:00', 2),
-(1, 3, '2016-10-10 00:00:00', 2);
+(2, 1, '2016-10-10', 2),
+(1, 3, '2016-10-10', 2);
 
 -- --------------------------------------------------------
 
@@ -542,7 +538,6 @@ CREATE TABLE `tbl_reporte_errores` (
 --
 
 INSERT INTO `tbl_reporte_errores` (`CODIGO_REPORTE_ERROR`, `CODIGO_USER_REPORTA`, `CODIGO_ARTICULO`, `NOMBRE_ERROR`, `DESCRIPCION`, `FECHA`) VALUES
-(1, 1, 1, 'No se puede editar', 'problemas al querer editar el articulo en ciertas zonas', '2016-10-10 00:00:00'),
 (2, 2, 3, 'no muestra nada', 'no me muestra el articulo que quiero editar', '2016-10-10 00:00:00');
 
 -- --------------------------------------------------------
@@ -780,8 +775,8 @@ CREATE TABLE `tbl_usuarios` (
 --
 
 INSERT INTO `tbl_usuarios` (`CODIGO_USUARIO`, `CODIGO_GENERO`, `CODIGO_LUGAR_RESIDENCIA`, `CODIGO_LUGAR_NACIMIENTO`, `CODIGO_TIPO_USUARIO`, `CODIGO_ARTICULO_USUARIO`, `CODIGO_HUSO_HORARIO`, `USERNAME`, `NOMBRE`, `APELLIDO`, `CORREO_ELECTRONICO`, `CONTRASENA`, `FECHA_NACIMIENTO`, `DIRECCION_IP`, `NUMERO_FALTAS`, `URLPERFIL`) VALUES
-(1, 2, 2, 2, 2, 2, 2, 'Batman', 'Burno', 'Diaz', 'yosoybatman@gmail.com', 'asd123', '1990-10-10', '192.168.1.2', 0, NULL),
-(2, 2, 3, 3, 2, 1, 2, 'Joker', 'Mariano', 'Gonzales', 'Joker@yahoo.com', 'asd456', '1991-10-10', '192.168.12.4', 5, NULL),
+(1, 1, 2, 2, 2, 2, 2, 'Batman', 'Burno', 'Diaz', 'yosoybatman@gmail.com', 'asd123', '1990-10-10', '192.168.1.2', 0, NULL),
+(2, 1, 3, 3, 2, 1, 2, 'Joker', 'Mariano', 'Gonzales', 'Joker@yahoo.com', 'asd456', '1991-10-10', '192.168.12.4', 5, NULL),
 (3, 1, 4, 4, 1, 3, 2, 'markk333', 'mark', 'Zuckember', 'mark@htmail.com', 'asd456', '1990-10-10', '192.168.10.25', 0, NULL),
 (4, 1, 3, 5, 1, 2, 3, 'carlosrrg', 'Carlos', 'Ramos', 'carlos@gmail.com', 'asd456', '1994-10-10', '192.168.1.23', 0, NULL),
 (5, 1, 3, 2, 2, 2, 2, 'ikser789', 'ikser', 'martinez', 'ikser@gmail.com', 'asd456', '1990-10-10', '192.168.1.26', 3, NULL);
