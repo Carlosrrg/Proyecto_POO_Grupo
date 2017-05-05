@@ -78,26 +78,8 @@
 		}
 		//esta clase se guarda los registros del usuario 
 		public function guardarRegistro($conexion){
-			$sql=sprintf("INSERT INTO `tbl_usuarios`(`CODIGO_USUARIO`, `CODIGO_GENERO`, `CODIGO_LUGAR_RESIDENCIA`, `CODIGO_LUGAR_NACIMIENTO`, `CODIGO_TIPO_USUARIO`, `CODIGO_ARTICULO_USUARIO`, `CODIGO_HUSO_HORARIO`, `USERNAME`, `NOMBRE`, `APELLIDO`, `CORREO_ELECTRONICO`, `CONTRASENA`, `FECHA_NACIMIENTO`, `DIRECCION_IP`, `NUMERO_FALTAS`, `URLPERFIL`) VALUES (1,1,1,1,1,2,2,'%s,'%s','%s','%s','%s',NULL,'192.168.0.1',12,1)",$this->nombreUsuario,$this->nombreUsuario,$this->nombreUsuario,$this->correo,$this->contrasena,);
+			$sql=sprintf("INSERT INTO tbl_usuarios(CODIGO_USUARIO, CODIGO_GENERO, CODIGO_LUGAR_RESIDENCIA, CODIGO_LUGAR_NACIMIENTO, CODIGO_TIPO_USUARIO, CODIGO_ARTICULO_USUARIO, CODIGO_HUSO_HORARIO, USERNAME, NOMBRE, APELLIDO, CORREO_ELECTRONICO, CONTRASENA, FECHA_NACIMIENTO, DIRECCION_IP, NUMERO_FALTAS, URLPERFIL) VALUES (1,1,1,1,1,2,2,'%s,'%s','%s','%s','%s',NULL,'192.168.0.1',12,1)",$this->nombreUsuario,$this->nombreUsuario,$this->nombreUsuario,$this->correo,$this->contrasena,);
 
-			/*$sql=sprintf("INSERT INTO tbl_usuarios(
-				CODIGO_USUARIO, 
-				CODIGO_GENERO,
-				CODIGO_LUGAR_RESIDENCIA,
-				CODIGO_LUGAR_NACIMIENTO,
-				CODIGO_TIPO_USUARIO,
-				CODIGO_ARTICULO_USUARIO,
-				CODIGO_HUSO_HORARIO,
-				USERNAME,
-				NOMBRE,
-				APELLIDO,
-				CORREO_ELECTRONICO,
-				CONTRASEÑA,
-				FECHA_NACIMIENTO,
-				DIRECCION_IP,
-				NUMERO_FALTAS
-				)VALUES('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s'
-				)",  1, 1, 1, 1, 1,1, $this->nombreUsuario, $this->nombreUsuario,NULL, $this->correo, $this->contrasena, 1, 1, 1, 1,NULL);*/
 			$resultadoInser=$conexion->ejecutarInstruccion($sql);
 			$resultado=array();
 			if ($resultadoInser==TRUE) {
