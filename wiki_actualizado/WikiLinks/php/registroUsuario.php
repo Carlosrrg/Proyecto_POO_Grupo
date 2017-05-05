@@ -161,19 +161,19 @@
 
 								<div class="form-group" style="width: 80%" >
 									Nombre
-									<input type="text"    placeholder="Escriba un nombre de usuario" name="txt-nombre" autofocus required>
+									<input type="text"  id="txt-nombre"  placeholder="Escriba un nombre de usuario" name="txt-nombre" autofocus required>
 								</div>
 								<div class="form-group">
 									Contrasena
-									<input type="password" style="width: 80%" name="contrasena" placeholder="Escriba una contrasena" required>
+									<input type="password" style="width: 80%" name="contrasena" id="contrasena" placeholder="Escriba una contrasena" required>
 								</div>
 								<div>
 									Confirmar contrasena
-									<input type="password" style="width: 80%" name="confirmar-contrasena" placeholder="Repita la contrasena" required>
+									<input type="password" style="width: 80%" name="confirmar-contrasena" id="confirmar-contrasena" placeholder="Repita la contrasena" required>
 								</div>
 								<div>
 									Correo electronico (opcional)
-									<input type="email" name="correo" style="width: 80%" placeholder="Escriba una direcion de Correo" required>
+									<input type="email" name="correo" style="width: 80%" id="correo" placeholder="Escriba una direcion de Correo" required>
 								</div>
 
 									<button style="width: 80%" class="btn btn-primary" type="submit"   id="registrarse" alt="registrarse">Crear una cuenta</button>
@@ -208,7 +208,7 @@
 		</div>
 		<script src="../js/jquery.min.js"></script>
 		<script src="../js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="controladorRegistro.js"></script>
+		<script type="text/javascript" src="../js/controladorRegistro.js"></script>
 		
 		<script type="text/javascript" src="../js/manejodiv.js"></script>
 		<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>

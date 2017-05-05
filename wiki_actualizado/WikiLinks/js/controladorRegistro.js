@@ -7,7 +7,7 @@ $(document).ready(function(){
 				"txt-correo="+$("#correo").val()+"&"+
 				"txt-contrasena"+$("#contrasena").val()+"&"+
 				"txt-confirmar-contrasena="+$("#confirmar-contrasena").val();
-	            //alert("parametros a enviar " + parametros);
+	            alert("parametros a enviar " + parametros);
 				$.ajax({
 						url:"../ajax/acciones_login.php?accion=2",
 						data:parametros,
