@@ -1,5 +1,7 @@
 $(document).ready(function(){
-	$("#btn-login").click(function(){
+	
+});
+$("#btn-login").click(function(){
 			var parametros = "txt-nombre=" +$("#txt-nombre").val() + 
 						"&txt-contrasena="+$("#txt-contrasena").val();
 			alert(parametros);
@@ -28,5 +30,4 @@ $(document).ready(function(){
 				}
 		});
 	});	
-});
 
