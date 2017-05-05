@@ -19,9 +19,8 @@ $(document).ready(function(){
 								}else{
 									alert(respuesta["mensaje"]);
 								}
-								
-								
-								
+								$("#ingresar").button("reset");
+
 							}
 						
 				});

@@ -10,7 +10,7 @@
 			$_SESSION["codigo_usuario"] = $respuesta["codigo_usuario"];
 			$_SESSION["nombre_usuario"] = $respuesta["nombre_usuario"];
 			$_SESSION["codigo_tipo_usuario"] = $respuesta["codigo_tipo_usuario"];
-			echo $respuesta;
+			echo json_encode($resultado);
 
 			break;
 		case '2':

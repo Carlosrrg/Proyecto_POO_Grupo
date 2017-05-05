@@ -61,7 +61,6 @@
 				$sql=sprintf("SELECT CODIGO_USUARIO, NOMBRE, CODIGO_TIPO_USUARIO,  FROM tbl_usuarios WHERE NOMBRE='%s' AND CONTRASENA='%s'",stripslashes($nombre),stripslashes($contrasena));
 				$resultado = $conexion->ejecutarInstruccion($sql);
 				$respuesta = array();
-
 				if($conexion->cantidadRegistros($resultado) >0){
 					$fila = $conexion->obtenerFila($resultado);
 					$respuesta["codigo_resultado"] = 1;
@@ -74,11 +73,11 @@
 					$respuesta["codigo_resultado"] = 0;
 					$respuesta["resultado"] = "Usuario no Existe";
 				}
-				return $respuesta;
+				return json_encode($respuesta);
 		}
 		//esta clase se guarda los registros del usuario 
 		public function guardarRegistro($conexion){
-			$sql=sprintf("INSERT INTO tbl_usuarios(CODIGO_USUARIO, CODIGO_GENERO, CODIGO_LUGAR_RESIDENCIA, CODIGO_LUGAR_NACIMIENTO, CODIGO_TIPO_USUARIO, CODIGO_ARTICULO_USUARIO, CODIGO_HUSO_HORARIO, USERNAME, NOMBRE, APELLIDO, CORREO_ELECTRONICO, CONTRASENA, FECHA_NACIMIENTO, DIRECCION_IP, NUMERO_FALTAS, URLPERFIL) VALUES (1,1,1,1,1,2,2,'%s,'%s','%s','%s','%s',NULL,'192.168.0.1',12,1)",$this->nombreUsuario,$this->nombreUsuario,$this->nombreUsuario,$this->correo,$this->contrasena,);
+			$sql=sprintf("INSERT INTO tbl_usuarios(CODIGO_USUARIO, CODIGO_GENERO, CODIGO_LUGAR_RESIDENCIA, CODIGO_LUGAR_NACIMIENTO, CODIGO_TIPO_USUARIO, CODIGO_ARTICULO_USUARIO, CODIGO_HUSO_HORARIO, USERNAME, NOMBRE, APELLIDO, CORREO_ELECTRONICO, CONTRASENA, FECHA_NACIMIENTO, DIRECCION_IP, NUMERO_FALTAS, URLPERFIL) VALUES (1,1,1,1,2,2,2,'%s,'%s','%s','%s','%s',NULL,'192.168.0.1',12,1)",$this->nombreUsuario,$this->nombreUsuario,$this->nombreUsuario,$this->correo,$this->contrasena,);
 
 			$resultadoInser=$conexion->ejecutarInstruccion($sql);
 			$resultado=array();
