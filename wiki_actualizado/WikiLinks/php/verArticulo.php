@@ -1,6 +1,10 @@
 ﻿<?php
 	include_once("../class/class_conexion.php");
 	include_once("../class/class-buscar.php");
+	include_once("../class/class-articulo.php");
+	include_once("../class/class-historial.php");
+	include_once("../class/class-comentario.php");
+	
 	$conexion = new Conexion();
 	$conexion->establecerConexion();
 	if (isset($_POST['text-buscador'])) {
