@@ -4,13 +4,22 @@
 	include_once("../class/class-articulo.php");
 	include_once("../class/class-historial.php");
 	include_once("../class/class-comentario.php");
-	
+
 	$conexion = new Conexion();
 	$conexion->establecerConexion();
 	if (isset($_POST['text-buscador'])) {
 		$buscador = $_POST['text-buscador'];
 		$buscar = new Buscador($buscador);
 		$fila = $buscar->buscar($conexion);
+	
+
+
+
+
+
+
+
+
 	}
 ?>
 
@@ -112,7 +121,7 @@
 							      <span class="icon-bar"></span>
 							    </button>
 							  	   
-							    <a class="navbar-brand" href="../index.html">Wikilinks</a>
+							    <a class="navbar-brand" href="#">Wikilinks</a>
 							  </div>
 
 							 
@@ -120,13 +129,13 @@
 							       otro elemento que se pueda ocultar al minimizar la barra -->
 							  <div class="collapse navbar-collapse navbar-ex1-collapse">
 							    <ul class="nav navbar-nav">
-							      <li class=><a href="noticias.php">Portada</a></li>
+							      <li class=><a href="../noticias.html">Portada</a></li>
 							      <li><a href="reportarArticulo.php">Reportar articulo</a></li>
 							    </ul>
 							    <ul class="nav navbar-nav">
 							      <li class=><a href="login.php">Acceder</a></li>
 							      <li><a href="registroUsuario.php">Crear una cuenta</a></li>
-							      <li><a href="donaciones.php">Donaciones</a></li>
+							      
 							    </ul>
 							 
 							  </div>

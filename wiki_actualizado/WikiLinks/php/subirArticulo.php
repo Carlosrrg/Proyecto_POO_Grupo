@@ -4,7 +4,9 @@
 	include_once("../class/class-articulo.php");
 	include_once("../class/class-historial.php");
 	$conexion = new Conexion();
-	$conexion->establecerConexion();/*
+	$conexion->establecerConexion();
+	session_start($conexion);
+	/*
 	if (isset($_POST['text-buscador'])) {
 		$buscador = $_POST['text-buscador'];
 		$buscar = new Buscador($buscador);
@@ -219,7 +221,8 @@
 							
 							<div class="tab-pane fade col-xs-12 col-lg-12 in active well" id="editor">
 									
-									<h1>Crea un nuevo artículo</h1>
+								<h1>Crea un nuevo artículo</h1>
+								<form action="insertar.php" method="post" name="form">
 									<table class="table">
 										<tr>
 									        <td>
@@ -242,7 +245,7 @@
 												echo '<h3>Comienza a editar tu artículo con las herramientas que Wikilinks te ofrece.</h3>' ;
 										?>
 									</textarea>
-
+								</form>
 							</div>
 						</div>
 
@@ -296,6 +299,8 @@
 			  ]
 			 });			
 		</script>
+		<!--
 		<script type="text/javascript" src="../js/subirArticulo.js"></script>>
+		-->
 	</body>
 </html>
