@@ -18,8 +18,7 @@
 			include_once("../class/class_conexion.php");
 			include_once("../class/class_usuario");
 			 
-			$conexion =new Conexion();
-			
+			$conexion =new Conexion();	
 			$usuario=new Usuario($_POST["txt-usuario"], $_POST["contrasena"],$_POST["correo"]);
 			$resultado=$usuario->guardarRegistro($conexion);
 			echo json_encode($resultado);

@@ -1,7 +1,7 @@
 	//procesa el formulario de registro de usuario
 $(document).ready(function(){
 
-	$("#ingresar").click(function(){
+	$("#registrarse").click(function(){
 		var parametros=
 				"txt-nombre="+$("#txt-nombre").val()+"&"+
 				"txt-correo="+$("#correo").val()+"&"+
