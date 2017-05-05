@@ -2,15 +2,15 @@
 <?php 
 		session_start(); 
 	if(!isset($_SESSION['codigo_usuario']))
-		header("Location: index.php");
+		header("Location: noticias.html");
 		
 
 
 				include_once("../class/class_conexion.php");
-=======
-<?php 	
+
+	
 	include_once("../class/class_conexion.php");
->>>>>>> origin/master
+
 				$conexion = new Conexion();
 				$conexion->establecerConexion();
 		$codigo="";		
@@ -248,6 +248,7 @@
 											<button class="btn btn-primary" id="btn-aceptar" disabled onClick="editar(<?php echo $codigo;?>);">Aceptar</button>
 											<button class="btn btn-success" id="btn-no-aceptar" disabled onClick="deshabilitar();" >No editar</button>
 											<button class="btn btn-danger" onClick="BorrarCuenta();">Cancelar Cuenta</button>
+											<a href="ListaUsuarioNormalArticulos.php">Mis articulos</a>
 										</form>
 									</div>
 								</div>

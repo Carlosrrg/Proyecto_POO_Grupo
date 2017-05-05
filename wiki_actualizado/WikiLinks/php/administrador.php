@@ -171,8 +171,9 @@ if (isset($_SESSION['codigo_usuario'])) {
 															echo $fila['NOMBRE'];
 														}
 													 ?></h1><br>
+													 	<a href="administradorVerModeradores.php">Moderadores</a>
 								<h2>Notificaciones de moderadores articulos pendientes </h2>
-									
+								
 
 
 									<div id="Notificaciones-moderadores">

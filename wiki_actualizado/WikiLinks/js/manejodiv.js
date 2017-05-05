@@ -14,6 +14,8 @@ $(document).ready(function(){
 						window.location="../php/perfilUsuarioNormal.php";
 					else if(respuesta.codigo_tipo_usuario =='2')
 						window.location="../php/perfilUsuarioModerador.php";
+					else if(respuesta.codigo_tipo_usuario =='2')
+						window.location="../php/admnistrador.php";
 				},
 
 				error:function(e){

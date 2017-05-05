@@ -210,8 +210,11 @@ session_start();
 										  		}
 										  	?> 
 										</table>
+											<a href="administrador.php">Perfil</a>
 							</div>
+
 						</div>
+
 						<div class="container">
 								
 						</div>	
@@ -219,6 +222,7 @@ session_start();
 				</div>
 				</div>
 			</div>
+
 			<br><br><br>
 			<hr class="divi">
 			<div class="row">

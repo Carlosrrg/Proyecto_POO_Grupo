@@ -195,6 +195,7 @@
 													}	
 												?>
 											</table>
+											<a href="perfilUsuarioNormal.php">Perfil</a>
 							</div>
 						</div>	
 					</div>

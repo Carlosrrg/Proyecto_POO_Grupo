@@ -50,7 +50,9 @@
 					?>
 
 									</table>
+									<a href="perfilUsuarioModerador.php"> Perfil</a>
 							      	</form>
+
 					<?php
 
 
