@@ -176,7 +176,7 @@
 									<input type="email" name="correo" style="width: 80%" placeholder="Escriba una direcion de Correo">
 								</div>
 
-									<button style="width: 80%" class="btn btn-primary" alt="registrarse">Crear una cuenta</button>
+									<button style="width: 80%" class="btn btn-primary" type="submit" alt="registrarse">Crear una cuenta</button>
 								
 							</div>
 							<div style=" width: 50%;  float: left; margin-left: 20px;" class="col-xs-11 ">
