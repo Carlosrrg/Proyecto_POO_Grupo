@@ -3,12 +3,9 @@
 	include_once("../class/class-buscar.php");
 	$conexion = new Conexion();
 	$conexion->establecerConexion();
-
 	if (isset($_POST['text-buscador'])) {
 		$buscador = $_POST['text-buscador'];
-
 		$buscar = new Buscador($buscador);
-
 		$fila = $buscar->buscar($conexion);
 	}
 ?>
@@ -199,7 +196,6 @@
 							<!--Div que muestra actualmente al presionar el boton Articulo o Leer-->
 							<div class="tab-pane fade col-xs-12 col-lg-12 in active" id="articulo">
 							<?php
-
 									if (isset($fila)) {
 										echo "<h2>".$fila['NOMBRE_ARTICULO']."</h2>";
 										echo "<p>".$fila['CONTENIDO']."</p>";
@@ -225,7 +221,6 @@
 								  </div>
 								  
 								  <?php 
-
 								  	
 								  		echo '<div class="well">
 										    <table class="table table-hover">
@@ -343,4 +338,4 @@
 			 });
 		</script>
 	</body>
-</html>						
+</html>	
