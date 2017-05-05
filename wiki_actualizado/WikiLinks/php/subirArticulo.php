@@ -222,24 +222,24 @@
 							<div class="tab-pane fade col-xs-12 col-lg-12 in active well" id="editor">
 									
 								<h1>Crea un nuevo artículo</h1>
-								<form action="insertar.php" method="post" name="form">
+								<form action="../class/insertar.php" method="post" name="form">
 									<table class="table">
 										<tr>
 									        <td>
 									        	<h5 class="text-right" ><strong>Nombre del articulo:</strong></h5>
 									        </td>
 									        <td>
-									        	<input type="text" class="form-control" id="nombre-articulo" name="nombre-articulo">
+									        	<input type="text" class="form-control" id="nombre_articulo" name="nombre-articulo">
 									        </td>
 									        <td>
-									        	<button class="btn btn-default" id="btn-guardar">Guardar edicion</button>
+									        	<button class="btn btn-default" id="btn_guardar">Guardar edicion</button>
 									        </td>
 									    </tr>
 									</table>
 									
   									
 									
-									<textarea id="area-editor" name="area-editor">
+									<textarea id="area_editor" name="area-editor">
 										<?php
 											
 												echo '<h3>Comienza a editar tu artículo con las herramientas que Wikilinks te ofrece.</h3>' ;
