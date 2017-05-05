@@ -1,22 +1,4 @@
-﻿<?php
-	include_once("../class/class_conexion.php");
-	$conexion=new Conexion();
-	echo $conexion->establecerConexion();
-
-	//consulta a la tbtl_usuarios
-
-	$sql=" SELECT 	a.CODIGO_USUARIO, 
-				 	a.CODIGO_TIPO_USUARIO, 
-					a.CODIGO_ARTICULO_USUARIO,
-		            a.NOMBRE,
-					a.USERNAME,
-		            b.NOMBRE_ARTICULO NOMBRE_articulo
-					FROM tbl_usuarios a
-					LEFT JOIN tbl_articulos b
-					ON (a.CODIGO_ARTICULO_USUARIO=b.CODIGO_ARTICULO)";
-	$arregloUsuarios=$conexion->ejecutarInstruccion($sql);
-?>
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<title>WikiLinks</title>
@@ -169,30 +151,7 @@
 								<h1>Bienvenido(@), #NOMBRE DE USUARIO MODERADOR#</h1><br>
 
 								<h2>Articulos por revisar</h2>
-							           		<table class="table table-hover">
-												<tr>
-												    <th scope="col">Nombre del Articulo</th>
-												    <th scope="col">Usuario</th>
-												    <th></th>
-												</tr> 
-								           		<?php
-								           			$ib=1;
-								           			while ($linea=$conexion->obtenerFila($arregloUsuarios)) {
-								           				if ($linea["CODIGO_TIPO_USUARIO"]==2) {
-								           					echo "<tr>";
-										           				echo '<td>'.$linea["NOMBRE_articulo"].'</td>';
-										           				echo '<td>'.$linea["USERNAME"].'</td>';
-										           				echo '<td>';
-											           				echo "<button class='btn btn-success' id='btn-aprobar' 
-											           				onclick='codigoUsuario('".$linea["CODIGO_USUARIO"]."')'>Aprobar</button>&nbsp;";
-											           				echo '<button class="btn btn-danger" id="btn-eliminar'.$ib.'">Eliminar</button>&nbsp;';
-											           				$ib++;
-										           				echo '</td>';
-								           					echo "</tr>";		
-								           				}
-								           			}
-								           		?>
-											</table>
+							           		<div id="mostrar-tabla"></div>
 								<h2>Articulos aprobados</h2>
 							           		<table class="table table-hover">
 												<tr>
@@ -214,6 +173,7 @@
 												    <td><a href="">Usuario que subio articulo</a></td>
 												</tr>
 											</table>
+											<div id="mostraropcion2"></div>
 							</div>
 						</div>	
 					</div>
@@ -232,12 +192,9 @@
 		<script src="../js/jquery.min.js"></script>
 		<script src="../js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../js/manejodiv.js"></script>
-		<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
 		<script type="text/javascript" src="../js/descargarpdf.js"></script>
 		<script type="text/javascript" src="../js/jspdf.min.js"></script>
 		<script type="text/javascript" src="../js/llenarTablaUsuarioModerador.js"></script>
 	</body>
 </html>
-<?php
-	$conexion->cerrarConexion();
-?>

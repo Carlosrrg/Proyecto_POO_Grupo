@@ -200,7 +200,8 @@
 		<script src="../js/bootstrap.min.js"></script>
 		
 		<script type="text/javascript" src="../js/manejodiv.js"></script>
-		<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+		
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
 		<script type="text/javascript" src="../js/descargarpdf.js"></script>
 		<script type="text/javascript" src="../js/jspdf.min.js"></script>
 		<script type="text/javascript" src="../js/controlador.js"></script>

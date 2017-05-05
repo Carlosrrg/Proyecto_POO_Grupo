@@ -173,7 +173,7 @@
 								</div>
 								<div>
 									Correo electronico (opcional)
-									<input type="email" name="correo" style="width: 80%" value="Escriba una direcion de Correo">
+									<input type="email" name="correo" style="width: 80%" placeholder="Escriba una direcion de Correo">
 								</div>
 
 									<button style="width: 80%" class="btn btn-primary" alt="registrarse">Crear una cuenta</button>
@@ -208,7 +208,7 @@
 		</div>
 		<script src="../js/jquery.min.js"></script>
 		<script src="../js/bootstrap.min.js"></script>
-		<script src="../js/script-marco.js"></script>
+		
 		<script type="text/javascript" src="../js/manejodiv.js"></script>
 		<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="../js/descargarpdf.js"></script>

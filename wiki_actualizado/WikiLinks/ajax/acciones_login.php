@@ -10,7 +10,8 @@
 			$_SESSION["codigo_usuario"] = $respuesta["codigo_usuario"];
 			$_SESSION["nombre_usuario"] = $respuesta["nombre_usuario"];
 			$_SESSION["codigo_tipo_usuario"] = $respuesta["codigo_tipo_usuario"];
-			echo json_encode($respuesta);
+			echo json_encode($resultado);
+
 			break;
 		case '2':
 		//crea un usuario y llama al metodo guardar regristo que recie una conexion como para mettro

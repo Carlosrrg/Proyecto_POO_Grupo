@@ -4,23 +4,26 @@ $(document).ready(function(){
 						"&txt-contrasena="+$("#txt-contrasena").val();
 			alert(parametros);
 			$.ajax({
-				url:"ajax/acciones_login.php?accion=1",
+				url:"../ajax/acciones_login.php?accion=1",
 				method: "POST",
 				data: parametros,
-				dataType: 'json',
+				dataType: 'html',
 				success:function(respuesta){
-					alert("ahora estoy aqui");
+					//alert("ahora estoy aqui");
+					//alert(respuesta);
+					
 					
 					$("#resultado").html(respuesta.resultado + "Tipo Usuario: " + respuesta.codigo_tipo_usuario);
 					if(respuesta.codigo_tipo_usuario =='1')
 						window.location="../perfilUsuarioModerador.php";
 					else if(respuesta.codigo_tipo_usuario =='2')
 						window.location="../perfilUsuarioNormal.php";
+					alert("recibio info");
 				},
 
 				error:function(e){
 					alert(e.error);
-					alert(respuesta);
+					//alert(respuesta);
 
 				}
 		});

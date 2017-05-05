@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-05-2017 a las 23:06:27
+-- Tiempo de generación: 05-05-2017 a las 00:10:14
 -- Versión del servidor: 5.7.14
 -- Versión de PHP: 5.6.25
 
@@ -87,18 +87,19 @@ CREATE TABLE `tbl_articulos` (
   `CODIGO_TIPO_ARTICULO` int(11) NOT NULL,
   `NOMBRE_ARTICULO` varchar(200) NOT NULL,
   `ESTADO_ARTICULO` varchar(60) DEFAULT NULL,
-  `CONTENIDO_ARTICULO` varchar(10000) DEFAULT NULL
+  `CONTENIDO_ARTICULO` varchar(10000) DEFAULT NULL,
+  `TITULO` varchar(70) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tbl_articulos`
 --
 
-INSERT INTO `tbl_articulos` (`CODIGO_ARTICULO`, `CODIGO_TIPO_PROTECCION`, `CODIGO_TIPO_ARTICULO`, `NOMBRE_ARTICULO`, `ESTADO_ARTICULO`, `CONTENIDO_ARTICULO`) VALUES
-(1, 1, 2, 'Unah', 'Aprobado', NULL),
-(2, 3, 2, 'Que es Poo', 'Aprobado', NULL),
-(3, 2, 3, 'Javascript', 'Aprobado', NULL),
-(4, 2, 1, 'los Arboles', 'Reprobado', NULL);
+INSERT INTO `tbl_articulos` (`CODIGO_ARTICULO`, `CODIGO_TIPO_PROTECCION`, `CODIGO_TIPO_ARTICULO`, `NOMBRE_ARTICULO`, `ESTADO_ARTICULO`, `CONTENIDO_ARTICULO`, `TITULO`) VALUES
+(1, 1, 2, 'Unah', 'Aprobado', NULL, NULL),
+(2, 3, 2, 'Que es Poo', 'Aprobado', NULL, NULL),
+(3, 2, 3, 'Javascript', 'Aprobado', NULL, NULL),
+(4, 2, 1, 'los Arboles', 'Reprobado', NULL, NULL);
 
 -- --------------------------------------------------------
 
