@@ -173,7 +173,7 @@
 								</div>
 								<div>
 									Correo electronico (opcional)
-									<input type="email" name="correo" style="width: 80%" value="Escriba una direcion de Correo">
+									<input type="email" name="correo" style="width: 80%" placeholder="Escriba una direcion de Correo">
 								</div>
 
 									<button style="width: 80%" class="btn btn-primary" alt="registrarse">Crear una cuenta</button>

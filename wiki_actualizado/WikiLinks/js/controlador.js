@@ -7,10 +7,11 @@ $(document).ready(function(){
 				url:"../ajax/acciones_login.php?accion=1",
 				method: "POST",
 				data: parametros,
-				dataType: 'json',
+				dataType: 'html',
 				success:function(respuesta){
 					//alert("ahora estoy aqui");
-					alert(respuesta.resultado);
+					alert(respuesta);
+					
 					
 					$("#resultado").html(respuesta.resultado + "Tipo Usuario: " + respuesta.codigo_tipo_usuario);
 					if(respuesta.codigo_tipo_usuario =='1')
