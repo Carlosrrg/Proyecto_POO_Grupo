@@ -4,7 +4,7 @@
 	include_once("../class/class-articulo.php");
 	include_once("../class/class-historial.php");
 	$conexion = new Conexion();
-	$conexion->establecerConexion();
+	$conexion->establecerConexion();/*
 	if (isset($_POST['text-buscador'])) {
 		$buscador = $_POST['text-buscador'];
 		$buscar = new Buscador($buscador);
@@ -16,40 +16,46 @@
     $m = $hoy['mon'];
     $y = $hoy['year'];
 
-    echo $d.'-'.$m.'-'.$y;
+    $fecha_creacion=$d.'-'.$m.'-'.$y;
 	
 	$historial= array();
 	$historial[] = new Historial($d.'-'.$m.'-'.$y,'Creacion del articulo.');
 
-	$recibo_contenido_area='';
-
-
-
-	$articulo= new Articulo(
-		'Unah',
-		$recibo_contenido_area,
-		'usuario1',
-		'fecha',
-		'$comentario[1]',
-		'historial',
-		'tipo',
-		'proteccion'
-
-	);
-
-
+	$recibo_area_contenido='';
+	$nombre="";
 	if(isset($_POST["nombre-articulo"])){
         $recibo_nombre=$_POST['nombre-articulo'] ;
-		echo '<strong>' .$recibo_nombre.'</strong>';
+		//echo '<strong>' .$recibo_nombre.'</strong>';
+		$nombre=$_POST["nombre-articulo"];
         }
 
 	
 	if(isset($_POST["area-editor"])){
-        $recibo_area=$_POST['area-editor'] ;
-		echo $recibo_area;
+        $recibo_area_contenido=$_POST['area-editor'] ;
+		//echo $recibo_area;
         }
 
-
+        /*
+        			$nombreArticulo,
+					$contenidoArticulo,
+					$usuario,
+					$fechaPublicacion,
+					$comentarios,
+					$historial,
+					$tipoArticulo,
+					$tipoProteccion
+        */
+	/*$articulo= new Articulo(
+		$nombre,
+		$recibo_area_contenido,
+		'usuario1',
+		$fecha_creacion,
+		'este es el comentario de este articulo',
+		'historial',
+		'1',
+		'1'
+	);
+*/
 ?>
 
 <!DOCTYPE html>
@@ -90,7 +96,7 @@
 								<li><a href="reportarArticulo.php">Reportar Articulo</a></li>
 								<li><a href="#">Moderador</a></li>
 								<li><a href="#">Ayuda</a></li>
-								<li><a href="../donaciones.html">Donaciones</a></li>
+								<li><a href="donaciones.php">Donaciones</a></li>
 								</ul>
 
 						</td></tr>
@@ -153,7 +159,7 @@
 							    <ul class="nav navbar-nav">
 							      <li class=><a href="login.php">Acceder</a></li>
 							      <li><a href="registroUsuario.php">Crear una cuenta</a></li>
-							      
+							      <li><a href="donaciones.php">Donaciones</a></li>
 							    </ul>
 							 
 							  </div>
@@ -212,8 +218,7 @@
 							<!--Ventana interna para editar articulo-->
 							
 							<div class="tab-pane fade col-xs-12 col-lg-12 in active well" id="editor">
-								
-								<form method="POST">	
+									
 									<h1>Crea un nuevo artículo</h1>
 									<table class="table">
 										<tr>
@@ -224,7 +229,7 @@
 									        	<input type="text" class="form-control" id="nombre-articulo" name="nombre-articulo">
 									        </td>
 									        <td>
-									        	<input type="submit" class="btn btn-default" value="Guardar edición">
+									        	<button class="btn btn-default" id="btn-guardar">Guardar edicion</button>
 									        </td>
 									    </tr>
 									</table>
@@ -237,8 +242,6 @@
 												echo '<h3>Comienza a editar tu artículo con las herramientas que Wikilinks te ofrece.</h3>' ;
 										?>
 									</textarea>
-									
-								</form>
 
 							</div>
 						</div>
@@ -293,5 +296,6 @@
 			  ]
 			 });			
 		</script>
+		<script type="text/javascript" src="../js/subirArticulo.js"></script>>
 	</body>
 </html>

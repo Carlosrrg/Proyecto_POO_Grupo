@@ -28,7 +28,7 @@
 
 				<div class="col-xs-12 co-sm-2 col-md-2 col-lg-2 hidden-xs hidden-sm">
 					<img src="../img/wiki.png" width="145" alt="Logo de Wikilinks">
-					<a href="index.html"><img src="../img/Wikilinkslanding.png" width="145"></a>
+					<a href="../noticias.html"><img src="../img/Wikilinkslanding.png" width="145"></a>
 					<br>
 					<br>	
 				</div>
@@ -36,15 +36,15 @@
 				<div class="col-md-10 ">
 					<div class="row " >
 						<div class="col-md-6 " >
-							<center><header><h3>Un mensaje del fundador de Wikipedia, Jimmy Wales</h3></header></center>
+							<center><header><h3>Un mensaje del fundador de WikiLinks, Ikser Sadan</h3></header></center>
 								<p>El comercio es bueno. La publicidad no es mala. Pero no es apropiada aquí. No en Wikipedia.
 								Wikipedia es algo especial. Es como una biblioteca o como un parque público. Es como un templo para la mente. Es un lugar al cual todos podemos ir para pensar, aprender, compartir nuestro conocimiento con otros.
 								Cuando fundé Wikipedia, pude haberla establecido como una compañía con fines de lucro con anuncios publicitarios, pero decidí hacer algo diferente. Hemos trabajado duro durante años para ser ahorrativos y frugales. Nosotros cumplimos nuestra misión, y dejamos el derroche para otros.
 								Si todo el que leyera ésto donara $5, solo tendríamos que recaudar fondos un día al año. Pero no todos pueden o quieren donar. Y no pasa nada. Cada año, suficientes personas deciden donar.
 								Este año, por favor considera donar $5, $10, $20 o lo que puedas contribuir para proteger y ayudar a Wikipedia.
 								Gracias,<br><br>
-								<strong>Jimmy Wales</strong><br>
-								Fundador de Wikipedia</p>
+								<strong>Ikser Sadan</strong><br>
+								Fundador de WikiLinks</p>
 						</div>
 						
 						<div class="col-md-5 panel panel-default " style="align-items: center;">								
@@ -134,7 +134,12 @@
 			</div>
 			<div id="mostrar"></div>
 			<br><br><br>
-			<footer >-Programacion Orientada a Objetos 1500-</footer>
+			<hr class="divi">
+			<div class="row">
+    			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    				<p style="text-align: center;"><strong>©Copyrigth 2017 - Proyecto de POO</strong></p>
+    			</div>
+    		</div>
 			<br>
 		</div>
 

@@ -1,6 +1,10 @@
 ﻿<?php
 	include_once("../class/class_conexion.php");
 	include_once("../class/class-buscar.php");
+	include_once("../class/class-articulo.php");
+	include_once("../class/class-historial.php");
+	include_once("../class/class-comentario.php");
+	
 	$conexion = new Conexion();
 	$conexion->establecerConexion();
 	if (isset($_POST['text-buscador'])) {
@@ -108,7 +112,7 @@
 							      <span class="icon-bar"></span>
 							    </button>
 							  	   
-							    <a class="navbar-brand" href="#">Wikilinks</a>
+							    <a class="navbar-brand" href="../index.html">Wikilinks</a>
 							  </div>
 
 							 
@@ -122,7 +126,7 @@
 							    <ul class="nav navbar-nav">
 							      <li class=><a href="login.php">Acceder</a></li>
 							      <li><a href="registroUsuario.php">Crear una cuenta</a></li>
-							      
+							      <li><a href="donaciones.php">Donaciones</a></li>
 							    </ul>
 							 
 							  </div>

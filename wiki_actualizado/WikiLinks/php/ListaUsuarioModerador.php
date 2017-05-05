@@ -34,7 +34,7 @@
 								<li><a href="perfilUsuarioModerador.php">Ver mi perfil</a></li>
 								<li><a href="subirArticulo.php">Crear Articulo</a></li>
 								<li><a href="#">Ayuda</a></li>
-								<li><a href="../donaciones.html">Donaciones</a></li>
+								<li><a href="donaciones.php">Donaciones</a></li>
 							</ul>
 						</td></tr>
 						
@@ -104,7 +104,7 @@
 							    </ul>
 							    <ul class="nav navbar-nav">
 							      <li class=><a href="registroUsuario.php">Crear una cuenta</a></li>
-							      <li><a href="../donaciones.html">Donaciones</a></li>
+							      <li><a href="donaciones.php">Donaciones</a></li>
 							    </ul>
 							  </div>
 							</nav>
@@ -159,18 +159,18 @@
 												   	<th scope="col">Usuario</th>
 												</tr>
 												<tr>
-												    <td><a href="">Nombre Articulo 1</a></td>
-												    <td><a href="">Usuario que subio articulo</a></td>
+												    <td><a href="">Programacion orientada a objetos</a></td>
+												    <td><a href="">carlosrrg06</a></td>
 												</tr>
 
 												<tr>
-												    <td><a href="">Nombre Articulo 2</a></td>
-												    <td><a href="">Usuario que subio articulo</a></td>
+												    <td><a href="">Los arboles</a></td>
+												    <td><a href="">ikser789</a></td>
 												</tr>
 
 												<tr>
-												    <td><a href="">Nombre Articulo 3</a></td>
-												    <td><a href="">Usuario que subio articulo</a></td>
+												    <td><a href="">PC gaming</a></td>
+												    <td><a href="">pedro1452</a></td>
 												</tr>
 											</table>
 											<div id="mostraropcion2"></div>
