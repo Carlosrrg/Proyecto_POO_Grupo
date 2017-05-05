@@ -1,6 +1,12 @@
-/*$(document).ready(function(){
-
-});*/
+$(document).ready(function(){
+	$.ajax({
+		url:"ajax/mostrarListaUusarioModerador.php?accion=1",
+		method:"POST",
+		success:function(resultado){
+			$("#mostrar-tabla").html(resultado);
+		}
+	});
+});
 
 function codigoUsuario(codigo){
 	var codigo2=3;

@@ -1,7 +1,7 @@
 ﻿<?php
 	include_once("../class/class_conexion.php");
 	$conexion=new Conexion();
-	echo $conexion->establecerConexion();
+	$conexion->establecerConexion();
 
 	//consulta a la tbtl_usuarios
 
@@ -169,6 +169,9 @@
 								<h1>Bienvenido(@), #NOMBRE DE USUARIO MODERADOR#</h1><br>
 
 								<h2>Articulos por revisar</h2>
+									<div id="mostrar-tabla">
+										
+									</div>
 							           		<table class="table table-hover">
 												<tr>
 												    <th scope="col">Nombre del Articulo</th>
@@ -176,17 +179,14 @@
 												    <th></th>
 												</tr> 
 								           		<?php
-								           			$ib=1;
 								           			while ($linea=$conexion->obtenerFila($arregloUsuarios)) {
 								           				if ($linea["CODIGO_TIPO_USUARIO"]==2) {
 								           					echo "<tr>";
 										           				echo '<td>'.$linea["NOMBRE_articulo"].'</td>';
 										           				echo '<td>'.$linea["USERNAME"].'</td>';
 										           				echo '<td>';
-											           				echo "<button class='btn btn-success' id='btn-aprobar' 
-											           				onclick='codigoUsuario('".$linea["CODIGO_USUARIO"]."')'>Aprobar</button>&nbsp;";
-											           				echo '<button class="btn btn-danger" id="btn-eliminar'.$ib.'">Eliminar</button>&nbsp;';
-											           				$ib++;
+											           				echo "<button class='btn btn-success' id='btn-aprobar' onclick='codigoUsuario('".$linea["CODIGO_USUARIO"]."')'>Aprobar</button>&nbsp;";
+											           				echo '<button class="btn btn-danger" id="btn-eliminar">Eliminar</button>&nbsp;';
 										           				echo '</td>';
 								           					echo "</tr>";		
 								           				}
@@ -232,7 +232,7 @@
 		<script src="../js/jquery.min.js"></script>
 		<script src="../js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../js/manejodiv.js"></script>
-		<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
 		<script type="text/javascript" src="../js/descargarpdf.js"></script>
 		<script type="text/javascript" src="../js/jspdf.min.js"></script>
 		<script type="text/javascript" src="../js/llenarTablaUsuarioModerador.js"></script>
