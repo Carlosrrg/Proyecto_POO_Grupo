@@ -10,7 +10,7 @@ $(document).ready(function(){
 				dataType: 'html',
 				success:function(respuesta){
 					//alert("ahora estoy aqui");
-					alert(respuesta);
+					//alert(respuesta);
 					
 					
 					$("#resultado").html(respuesta.resultado + "Tipo Usuario: " + respuesta.codigo_tipo_usuario);

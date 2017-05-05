@@ -208,7 +208,7 @@
 		</div>
 		<script src="../js/jquery.min.js"></script>
 		<script src="../js/bootstrap.min.js"></script>
-		<script src="../js/script-marco.js"></script>
+		
 		<script type="text/javascript" src="../js/manejodiv.js"></script>
 		<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="../js/descargarpdf.js"></script>
