@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 05-05-2017 a las 05:00:35
+-- Tiempo de generación: 05-05-2017 a las 05:30:33
 -- Versión del servidor: 5.5.24-log
 -- Versión de PHP: 5.4.3
 
@@ -129,7 +129,17 @@ INSERT INTO `tbl_articulos` (`CODIGO_ARTICULO`, `CODIGO_TIPO_PROTECCION`, `CODIG
 (12, 3, 2, 'PICHETE', 'APROBADO', '', NULL),
 (13, 2, 1, 'BOLSA', 'APROBADO', '', NULL),
 (14, 2, 2, 'TECLADO', 'APROBADO', NULL, NULL),
-(15, 2, 2, 'POR ERES ASI?', 'POKER FACE', NULL, NULL);
+(15, 2, 2, 'POR ERES ASI?', 'POKER FACE', NULL, NULL),
+(16, 2, 2, 'IIunidad master', 'aprobado', NULL, NULL),
+(17, 3, 2, 'clash ', 'perfecto', NULL, NULL),
+(18, 1, 1, 'qwerty', 'malo', NULL, NULL),
+(19, 3, 5, 'ingenieria en sitemas', 'aprobado', NULL, NULL),
+(20, 2, 4, 'laptop', 'nel', NULL, NULL),
+(21, 2, 2, 'perro', 'aprobado', NULL, NULL),
+(22, 2, 3, 'gato', 'mezquino', NULL, NULL),
+(23, 3, 2, 'UTH', 'MALO', NULL, NULL),
+(24, 3, 3, 'GORRO', 'ENTRAGADO', NULL, NULL),
+(25, 2, 3, 'SOMBRERO', 'IZI', NULL, NULL);
 
 -- --------------------------------------------------------
 
