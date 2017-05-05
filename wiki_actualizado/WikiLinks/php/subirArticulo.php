@@ -1,3 +1,35 @@
+<?php
+	include_once("../class/class_conexion.php");
+	include_once("../class/class-buscar.php");
+	$conexion = new Conexion();
+	$conexion->establecerConexion();
+	if (isset($_POST['text-buscador'])) {
+		$buscador = $_POST['text-buscador'];
+		$buscar = new Buscador($buscador);
+		$fila = $buscar->buscar($conexion);
+	}
+
+	
+	if(isset($_POST["nombre-articulo"])){
+        $recibo_nombre=$_POST['nombre-articulo'] ;
+		echo '<strong>' .$recibo_nombre.'</strong>';
+        }
+
+	
+	if(isset($_POST["area-editor"])){
+        $recibo_area=$_POST['area-editor'] ;
+		echo $recibo_area;
+        }
+
+    $hoy = getdate();
+	
+	$d = $hoy['mday'];
+    $m = $hoy['mon'];
+    $y = $hoy['year'];
+
+    echo $d.'-'.$m.'-'.$y;
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,22 +41,6 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
-<?php
-	
-	if(isset($_POST["nombre-articulo"])){
-        $recibo_nombre=$_POST['nombre-articulo'] ;
-		echo '<strong>' .$recibo_nombre.'</strong>';
-        }
-?>	
-<?php
-	
-	if(isset($_POST["area-editor"])){
-        $recibo_area=$_POST['area-editor'] ;
-		echo $recibo_area;
-        }
-?>
-
-
 
 </head>
 	<body>
