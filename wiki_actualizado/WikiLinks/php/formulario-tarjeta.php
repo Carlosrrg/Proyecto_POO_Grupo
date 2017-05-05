@@ -29,7 +29,7 @@
 
 				<div class="col-xs-12 co-sm-2 col-md-2 col-lg-2 hidden-xs hidden-sm">
 					<img src="../img/wiki.png" width="145" alt="Logo de Wikilinks">
-					<a href="../index.html"><img src="../img/Wikilinkslanding.png" width="145"></a>
+					<a href="../noticias.html"><img src="../img/Wikilinkslanding.png" width="145"></a>
 					<br>
 					<br>	
 				</div>
@@ -125,7 +125,12 @@
 			</div>
 			</div>
 			<br><br><br>
-			<footer >-Programacion Orientada a Objetos 1500-</footer>
+			<hr class="divi">
+			<div class="row">
+    			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    				<p style="text-align: center;"><strong>©Copyrigth 2017 - Proyecto de POO</strong></p>
+    			</div>
+    		</div>
 			<br>
 		</div>
 

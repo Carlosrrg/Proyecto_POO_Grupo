@@ -1,15 +1,15 @@
-<?php 
-		$codigo= $_SESSION['codigo_usuario'];
-		
-
-
-				include_once("../class/class_conexion.php");
+<?php 	
+	include_once("../class/class_conexion.php");
 				$conexion = new Conexion();
 				$conexion->establecerConexion();
-				$usuario=$conexion->ejecutarInstruccion("SELECT NOMBRE , CORREO_ELECTRONICO , FECHA_NACIMIENTO, USERNAME ,Urlperfil FROM tbl_usuarios WHERE CODIGO_USUARIO=$codigo ");
-					$fila = $conexion->obtenerFila($usuario);
-
-				$conexion->cerrarConexion();
+		$codigo="";		
+		if (isset($_SESSION['codigo_usuario'])) {
+			$codigo= $_SESSION['codigo_usuario'];
+		}
+		
+				
+		$usuario=$conexion->ejecutarInstruccion("SELECT NOMBRE , CORREO_ELECTRONICO , FECHA_NACIMIENTO, USERNAME ,Urlperfil FROM tbl_usuarios WHERE CODIGO_USUARIO=$codigo ");
+			$fila = $conexion->obtenerFila($usuario);
 
 	?>
 <!DOCTYPE html>
@@ -265,3 +265,6 @@
 		<script type="text/javascript" src="../js/jspdf.min.js"></script>
 	</body>
 </html>
+<?php
+	$conexion->cerrarConexion();
+?>

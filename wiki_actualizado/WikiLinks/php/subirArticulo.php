@@ -96,7 +96,7 @@
 								<li><a href="reportarArticulo.php">Reportar Articulo</a></li>
 								<li><a href="#">Moderador</a></li>
 								<li><a href="#">Ayuda</a></li>
-								<li><a href="../donaciones.html">Donaciones</a></li>
+								<li><a href="donaciones.php">Donaciones</a></li>
 								</ul>
 
 						</td></tr>
@@ -159,7 +159,7 @@
 							    <ul class="nav navbar-nav">
 							      <li class=><a href="login.php">Acceder</a></li>
 							      <li><a href="registroUsuario.php">Crear una cuenta</a></li>
-							      
+							      <li><a href="donaciones.php">Donaciones</a></li>
 							    </ul>
 							 
 							  </div>

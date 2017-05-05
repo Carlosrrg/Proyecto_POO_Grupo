@@ -1,21 +1,14 @@
 ﻿<?php
 	include_once("../class/class_conexion.php");
 	include_once("../class/class-reportar.php");
-	
+	$conexion = new Conexion();
+	$conexion->establecerConexion();
 
 	if (isset($_POST['txt-tipo-falta'])) {
-		$conexion = new Conexion();
-		$conexion->establecerConexion();
-
 		$reporte = new Reporte($_POST['txt-tipo-falta'], $_POST['txt-nombre-usuario'], $_POST['txt-link-articulo-reportar'], $_POST['txtArea-descripcion']);
 
 		$respuesta = $reporte->guardarReporte($conexion);
-		
- 		
 	}
-
-		
-	
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +32,7 @@
 			<div class="main row">
 				<div class="col-xs-12 co-sm-2 col-md-2 col-lg-2 hidden-xs hidden-sm">
 					<img src="../img/wiki.png" width="145" alt="Logo de Wikilinks">
-					<a href="index.html"><img src="../img/Wikilinkslanding.png" width="145"></a>
+					<a href="../index.html"><img src="../img/Wikilinkslanding.png" width="145"></a>
 					
 					<!--Menu lateral izquierdo-->
 					
@@ -47,11 +40,11 @@
 					  <table class="table table-hover">
 						<tr><td>
 							<ul class="list-group2">
-								<li><a href="#">Portada</a></li>
-								<li><a href="usuarioModerador.php">Moderadores de articulos</a></li>
-								<li><a href="subirArticulo.php">Crear una nueva pagina</a></li>
-								<li><a>Ayuda</a></li>
-								<li><a href="#">Donaciones</a></li>
+								<li><a href="../noticias.html">Portada</a></li>
+								<li><a href="#">Moderadores</a></li>
+								<li><a href="subirArticulo.php">Crear articulo</a></li>
+								<li><a href="#">Ayuda</a></li>
+								<li><a href="donaciones.php">Donaciones</a></li>
 								</ul>
 
 						</td></tr>
@@ -108,7 +101,7 @@
 							      <span class="icon-bar"></span>
 							    </button>
 							  	   
-							    <a class="navbar-brand" href="#">Wikilinks</a>
+							    <a class="navbar-brand" href="../index.html">Wikilinks</a>
 							  </div>
 
 							 
@@ -116,14 +109,15 @@
 							       otro elemento que se pueda ocultar al minimizar la barra -->
 							  <div class="collapse navbar-collapse navbar-ex1-collapse">
 							    <ul class="nav navbar-nav">
-							      <li class=><a href="../Index.html">Crear una nueva pagina</a></li>
-							      <li><a href="../Principal.html">Moderadores de Articulos</a></li>
-							      <li><a href="#">Acceder</a></li>
+							    <li><a href="../noticias.html">Portada</a></li>
+							     <li><a href="subirArticulo.php">Crear articulo</a></li>
+							      <li><a href="#">Moderadores</a></li>
+							      <li><a href="login.php">Acceder</a></li>
 							    </ul>
 							    <ul class="nav navbar-nav">
-							      <li class=><a href="../php/login.php">Crear una cuenta</a></li>
-							      <li><a href="../php/registroUsuario.php">Ayuda</a></li>
-							      <li><a href="../Feedback.html">Feedback</a></li>
+							      <li class=><a href="registroUsuario.php">Crear una cuenta</a></li>
+							      <li><a href="#">Ayuda</a></li>
+							      <li><a href="donaciones.php">Donaciones</a></li>
 							    </ul>
 							 
 							  </div>
@@ -230,9 +224,7 @@
 							</form>
 
 							<?php
-								echo $respuesta;
-								
-							$conexion->cerrarConexion();
+								//echo $respuesta;
 							?>
 						</div>
 					</div>
@@ -257,3 +249,6 @@
 		<script type="text/javascript" src="../js/jspdf.min.js"></script>
 	</body>
 </html>
+<?php
+	$conexion->cerrarConexion();
+?>

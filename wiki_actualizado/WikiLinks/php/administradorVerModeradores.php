@@ -66,7 +66,7 @@
 								<li><a href="administrador.php">Ver notificaciones</a></li>
 								<li><a href="subirArticulo.php">Crear articulo</a></li>
 								<li><a href="#">Ayuda</a></li>
-								<li><a href="../donaciones">Donaciones</a></li>
+								<li><a href="donaciones.php">Donaciones</a></li>
 							</ul>
 						</td></tr>
 						
@@ -136,7 +136,7 @@
 							    </ul>
 							    <ul class="nav navbar-nav">
 							      <li class=><a href="registroUsuario.php">Crear una cuenta</a></li>
-							      <li><a href="../donaciones.html">Donaciones</a></li>
+							      <li><a href="donaciones.php">Donaciones</a></li>
 							    </ul>
 							  </div>
 							</nav>

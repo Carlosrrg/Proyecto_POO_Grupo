@@ -112,7 +112,7 @@
 							      <span class="icon-bar"></span>
 							    </button>
 							  	   
-							    <a class="navbar-brand" href="#">Wikilinks</a>
+							    <a class="navbar-brand" href="../index.html">Wikilinks</a>
 							  </div>
 
 							 
@@ -126,7 +126,7 @@
 							    <ul class="nav navbar-nav">
 							      <li class=><a href="login.php">Acceder</a></li>
 							      <li><a href="registroUsuario.php">Crear una cuenta</a></li>
-							      
+							      <li><a href="donaciones.php">Donaciones</a></li>
 							    </ul>
 							 
 							  </div>
