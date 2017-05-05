@@ -151,57 +151,9 @@
 							<!--Div que muestra actualmente al presionar el boton Articulo o Leer-->
 							<div class="tab-pane fade col-xs-12 col-lg-12 in active well" id="reporte-moderador">
 								<h1>Articulos Reportados</h1><br>
-									<form action="">
-						           		<table class="table table-hover" style="width: 70%">
-											<tr>
-											  <th scope="col">Articulo</th>
-											  <th scope="col">Usuario de articulo</th>
-											  <th scope="col">N. Reportes</th>
-											  <th scope="col">Accion</th>
-											</tr>
-										 
-											<tr>
-												<td><a href="#">Nombre articulo 1</a></td>
-											    <td><a href="#">Nombre usuario 1</a></td>
-											    <td><a href="listaReportesPorUsuarios.php">45</a></td>
-											    <td>
-											    	<button class="btn btn-warning" id="btn-cancelar" name="btn-cancelar">Solicitar cancelar cuenta de usuario</button>
-											    </td>
-											</tr>
-											<tr>
-												<td><a href="#">Nombre articulo 2</a></td>
-											    <td><a href="#">Nombre usuario 2</a></td>
-											    <td><a href="listaReportesPorUsuarios.php">95</a></td>
-											    <td>
-											    	<button class="btn btn-warning" id="btn-cancelar" name="btn-cancelar">Solicitar cancelar cuenta de usuario</button>
-											    </td>
-											</tr>
-											<tr>
-												<td><a href="#">Nombre articulo 3</a></td>
-											    <td><a href="#">Nombre usuario 3</a></td>
-											    <td><a href="listaReportesPorUsuarios.php">10</a></td>
-											    <td>
-											    	<button class="btn btn-warning" id="btn-cancelar" name="btn-cancelar">Solicitar cancelar cuenta de usuario</button>
-											    </td>
-											</tr>
-											<tr>
-												<td><a href="#">Nombre articulo 4</a></td>
-											    <td><a href="#">Nombre usuario 4</a></td>
-											    <td><a href="listaReportesPorUsuarios.php">20</a></td>
-											    <td>
-											    	<button class="btn btn-warning" id="btn-cancelar" name="btn-cancelar">Solicitar cancelar cuenta de usuario</button>
-											    </td>
-											</tr>
-											<tr>
-												<td><a href="#">Nombre articulo 5</a></td>
-											    <td><a href="#">Nombre usuario 5</a></td>
-											    <td><a href="listaReportesPorUsuarios.php">15</a></td>
-											    <td>
-											    	<button class="btn btn-warning" id="btn-cancelar" name="btn-cancelar">Solicitar cancelar cuenta de usuario</button>
-											    </td>
-											</tr>
-										</table>
-							      	</form>
+
+								<div id="div-lista-aplicaciones"></div>
+									
 							</div>
 						</div>	
 					</div>
@@ -219,7 +171,7 @@
 		</div>
 		<script src="../js/jquery.min.js"></script>
 		<script src="../js/bootstrap.min.js"></script>
-		<script src="../js/script-marco.js"></script>
+		<script type="text/javascript" src="../js/listaReportesArticulos.js"></script>
 		<script type="text/javascript" src="../js/manejodiv.js"></script>
 		<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="../js/descargarpdf.js"></script>
