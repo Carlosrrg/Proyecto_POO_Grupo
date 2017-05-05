@@ -155,7 +155,10 @@
 							<div class="tab-pane fade col-xs-12 col-lg-12 in active well" id="reporte-moderador">
 								<h1>Articulos Reportados</h1><br>
 
-								<div id="div-lista-aplicaciones"></div>
+								<div id="div-lista-aplicaciones">
+									
+									
+								</div>
 									
 							</div>
 						</div>	

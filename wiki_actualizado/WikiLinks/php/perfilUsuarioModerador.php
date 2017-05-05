@@ -236,6 +236,8 @@
 											<button class="btn btn-primary" id="btn-aceptar" disabled onClick="editar(<?php echo $codigo;?>);">Aceptar</button>
 											<button class="btn btn-success" id="btn-no-aceptar" disabled onClick="deshabilitar();" >No editar</button>
 											<button class="btn btn-danger" onClick="BorrarCuenta();">Cancelar Cuenta</button>
+											<br>
+											<a href="listaReportesArticulosModerador.php">Lista de reportes</a>
 										</form>
 									</div>
 								</div>
