@@ -9,7 +9,7 @@ $("#btn-login").click(function(){
 				url:"../ajax/acciones_login.php?accion=1",
 				method: "POST",
 				data: parametros,
-				dataType: 'html',
+				dataType: 'json',
 				success:function(respuesta){
 					//alert("ahora estoy aqui");
 					//alert(respuesta);
