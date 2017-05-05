@@ -1,4 +1,7 @@
 ﻿<?php 
+
+session_start(); 
+	
 	include_once("../class/class_conexion.php");
 				$conexion = new Conexion();
 				$conexion->establecerConexion();

@@ -1,4 +1,9 @@
 <?php
+
+session_start(); 
+	if(!isset($_SESSION['codigo_usuario']))
+		header("Location: index.php");
+		
 	include_once("../class/class_conexion.php");
 	include_once("../class/class-donacion.php");
 	$conexion = new Conexion();

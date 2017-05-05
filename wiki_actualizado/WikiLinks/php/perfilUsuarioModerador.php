@@ -1,5 +1,10 @@
 ﻿<?php 
-		$codigo= "1";
+		
+	session_start(); 
+	if(!isset($_SESSION['codigo_usuario']))
+		header("Location: index.php");
+
+		$codigo= $_SESSION['codigo_usuario'];
 		
 
 

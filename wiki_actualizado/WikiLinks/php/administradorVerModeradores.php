@@ -1,4 +1,8 @@
 ﻿<?php
+session_start(); 
+	if(!isset($_SESSION['codigo_usuario']))
+		header("Location: index.php");
+		
 	include_once("../class/class_conexion.php");
 	$conexion=new Conexion();
 	echo $conexion->establecerConexion();
