@@ -203,7 +203,9 @@
 									if (isset($fila)) {
 										echo "<h2>".$fila['NOMBRE_ARTICULO']."</h2>";
 										echo "<p>".$fila['CONTENIDO']."</p>";
-									}
+								}else{
+									echo "<h1>Busqueda no encontrada</h1>";
+								}
 							$conexion->cerrarConexion();
 						
 							?>
