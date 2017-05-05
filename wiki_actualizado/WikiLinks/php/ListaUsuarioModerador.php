@@ -159,18 +159,18 @@
 												   	<th scope="col">Usuario</th>
 												</tr>
 												<tr>
-												    <td><a href="">Nombre Articulo 1</a></td>
-												    <td><a href="">Usuario que subio articulo</a></td>
+												    <td><a href="">Programacion orientada a objetos</a></td>
+												    <td><a href="">carlosrrg06</a></td>
 												</tr>
 
 												<tr>
-												    <td><a href="">Nombre Articulo 2</a></td>
-												    <td><a href="">Usuario que subio articulo</a></td>
+												    <td><a href="">Los arboles</a></td>
+												    <td><a href="">ikser789</a></td>
 												</tr>
 
 												<tr>
-												    <td><a href="">Nombre Articulo 3</a></td>
-												    <td><a href="">Usuario que subio articulo</a></td>
+												    <td><a href="">PC gaming</a></td>
+												    <td><a href="">pedro1452</a></td>
 												</tr>
 											</table>
 											<div id="mostraropcion2"></div>
