@@ -5,7 +5,7 @@
 	include_once("../class/class-historial.php");
 	$conexion = new Conexion();
 	$conexion->establecerConexion();
-	session_start($conexion);
+	
 	/*
 	if (isset($_POST['text-buscador'])) {
 		$buscador = $_POST['text-buscador'];
@@ -229,7 +229,7 @@
 									        	<h5 class="text-right" ><strong>Nombre del articulo:</strong></h5>
 									        </td>
 									        <td>
-									        	<input type="text" class="form-control" id="nombre_articulo" name="nombre-articulo">
+									        	<input type="text" class="form-control" id="nombrearticulo" name="nombrearticulo">
 									        </td>
 									        <td>
 									        	<button class="btn btn-default" id="btn_guardar">Guardar edicion</button>
@@ -239,7 +239,7 @@
 									
   									
 									
-									<textarea id="area_editor" name="area-editor">
+									<textarea id="areaeditor" name="areaeditor">
 										<?php
 											
 												echo '<h3>Comienza a editar tu artículo con las herramientas que Wikilinks te ofrece.</h3>' ;
