@@ -163,12 +163,12 @@
 								<span>Necesitas tener cookies activos para poder registrarte en Wikilinks. </span>
 								<form style="width: 400px; padding-left: px;">
 								  	<div class="form-group">
-									    <label for="text">Nombre</label>
-									    
+									    <label for="text">Correo</label>
+									    <input type="text" name="txt-nombre"  class="form-control" id="inputEmail">
 									  </div>
 								  	<div class="form-group">
 									    <label for="pwd">Contraseña</label>
-									    
+									    <input type="password" class="form-control" name="txt-contrasena" id="inputPassword">
 								 	</div>
 								 	 <div class="checkbox form-group row">
 										  	<div class="form-group">
@@ -182,10 +182,11 @@
 									</div>
 
 								</form>
+									
 							</div>
-									<input type="text" name="txt-nombre"  class="form-control" id="inputEmail">
-									<input type="password" class="form-control" name="txt-contrasena" id="inputPassword">
-									<input type="submit"  class="btn btn-primary" id="btn-login" name="btn-login" value="acceder">				
+									<input type="submit"  class="btn btn-primary" id="btn-login" name="btn-login" value="acceder">
+									
+												
 													
 					
 				</div>
