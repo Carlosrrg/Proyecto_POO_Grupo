@@ -9,9 +9,6 @@
 	$donacion->toString();
 	$donacion->guardarDonacion($conexion);
 
-
-
-
  	$conexion->cerrarConexion();
 ?>
 

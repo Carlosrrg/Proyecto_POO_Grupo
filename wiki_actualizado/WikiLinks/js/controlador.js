@@ -20,7 +20,7 @@ $("#btn-login").click(function(){
 						window.location="../perfilUsuarioModerador.php";
 					else if(respuesta.codigo_tipo_usuario =='2')
 						window.location="../perfilUsuarioNormal.php";
-					alert("que loco");
+					alert("recibio info");
 				},
 
 				error:function(e){
