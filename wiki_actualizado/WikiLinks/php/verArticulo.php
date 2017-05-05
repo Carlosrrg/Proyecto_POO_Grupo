@@ -5,22 +5,35 @@
 	include_once("../class/class-historial.php");
 	include_once("../class/class-comentario.php");
 
+/*
+
 	$conexion = new Conexion();
 	$conexion->establecerConexion();
 	if (isset($_POST['text-buscador'])) {
 		$buscador = $_POST['text-buscador'];
 		$buscar = new Buscador($buscador);
 		$fila = $buscar->buscar($conexion);
+	}
+*/
+
 	
 
 
 
 
+	
+	$contenido='';
+
+	if (isset($_POST['area-editor'])) {
+ 		$contenido = $_POST['area-editor'];
+ 	}
+ 	if (isset($_POST['areaeditor'])) {
+ 		$contenido = $_POST['areaeditor'];
+ 	}
 
 
 
 
-	}
 ?>
 
 
@@ -209,6 +222,9 @@
 							<!--Div que muestra actualmente al presionar el boton Articulo o Leer-->
 							<div class="tab-pane fade col-xs-12 col-lg-12 in active" id="articulo">
 							<?php
+							
+								echo $contenido;
+							/*
 									if (isset($fila)) {
 										echo "<h2>".$fila['NOMBRE_ARTICULO']."</h2>";
 										echo "<p>".$fila['CONTENIDO']."</p>";
@@ -216,6 +232,7 @@
 									echo "<h1>Busqueda no encontrada</h1>";
 								}
 							$conexion->cerrarConexion();
+							*/
 						
 							?>
 							</div>
@@ -260,7 +277,7 @@
 									<textarea id="area-editor" name="area-editor">
 										<?php
 											
-												echo '<h3>Articulo</h3>' ;
+												echo $contenido ;
 										?>
 									</textarea>
 									
@@ -283,12 +300,12 @@
 								    </thead>
 								    <tbody>
 								      <?php 
-								      for ($i=0; $i < 40; $i++){
+								      for ($i=0; $i < 1; $i++){
 									      echo '
 									      <tr>
-									        <td>John M.</td>
-									        <td>12/01/17</td>
-									        <td>Nuevo rector agregado</td>
+									        <td>Usuario.</td>
+									        <td>05/05/17</td>
+									        <td>Creacion del articulo '.$_POST['nombrearticulo'].'</td>
 									      </tr>';} 
 									  ?>
 								    </tbody>

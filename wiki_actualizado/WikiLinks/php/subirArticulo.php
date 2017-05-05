@@ -222,7 +222,7 @@
 							<div class="tab-pane fade col-xs-12 col-lg-12 in active well" id="editor">
 									
 								<h1>Crea un nuevo artículo</h1>
-								<form action="../class/insertar.php" method="post" name="form">
+								<form action="verArticulo.php" method="post" name="form">
 									<table class="table">
 										<tr>
 									        <td>
