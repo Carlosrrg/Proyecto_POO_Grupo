@@ -1,6 +1,8 @@
 <?php
 	include_once("../class/class_conexion.php");
 	include_once("../class/class-buscar.php");
+	include_once("../class/class-articulo.php");
+	include_once("../class/class-historial.php");
 	$conexion = new Conexion();
 	$conexion->establecerConexion();
 	if (isset($_POST['text-buscador'])) {
@@ -8,8 +10,34 @@
 		$buscar = new Buscador($buscador);
 		$fila = $buscar->buscar($conexion);
 	}
-
+    $hoy = getdate();
 	
+	$d = $hoy['mday'];
+    $m = $hoy['mon'];
+    $y = $hoy['year'];
+
+    echo $d.'-'.$m.'-'.$y;
+	
+	$historial= array();
+	$historial[] = new Historial($d.'-'.$m.'-'.$y,'Creacion del articulo.');
+
+	$recibo_contenido_area='';
+
+
+
+	$articulo= new Articulo(
+		'Unah',
+		$recibo_contenido_area,
+		'usuario1',
+		'fecha',
+		'$comentario[1]',
+		'historial',
+		'tipo',
+		'proteccion'
+
+	);
+
+
 	if(isset($_POST["nombre-articulo"])){
         $recibo_nombre=$_POST['nombre-articulo'] ;
 		echo '<strong>' .$recibo_nombre.'</strong>';
@@ -21,13 +49,7 @@
 		echo $recibo_area;
         }
 
-    $hoy = getdate();
-	
-	$d = $hoy['mday'];
-    $m = $hoy['mon'];
-    $y = $hoy['year'];
 
-    echo $d.'-'.$m.'-'.$y;
 ?>
 
 <!DOCTYPE html>
